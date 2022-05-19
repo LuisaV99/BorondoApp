@@ -1,0 +1,137 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.padre {
+    display: grid;
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+    padding: 20px 10px;
+    margin: 20px auto;
+    /* background-color: green; */
+    gap: 30px;
+}
+
+
+.card {
+    position: relative;
+    width: 70%;
+    min-width: 288px;
+    max-width: 353px;
+    min-height: 267px;
+    height: 150px;
+    margin: 15px auto;
+    padding: 15px;
+    background-color:ghostwhite;
+    border-radius: 8px;
+    box-shadow: 5px 5px 19px rgba(0, 0, 0, 0.30);
+    border-bottom: 8px solid #F3C40E;
+}
+
+.card .imgX {
+    width: 100%;
+}
+
+.card .imgX img {
+    position: absolute;
+    width: 256px;
+    height: 145px;
+    top: -40px;
+    left: calc(50% - 125px);
+    border-radius: 15px;
+    align-items: center;
+    background-size: cover;
+    object-fit: cover;
+    box-shadow: 2px 2px 14px rgb(0 0 0);
+
+}
+
+.content {
+    margin-top: 80px;
+    padding: 15px;
+}
+
+.card-titulo {
+    margin-bottom: 15px;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 10px;
+    text-align: center;
+    color: #4158d0;
+}
+
+.card-content {
+    text-align: center;
+    position: relative;
+    font-size: 9px;
+    margin-bottom: 15px;
+}
+
+.boton {
+    position: absolute;
+    width: 120px;
+    height: 31px;
+    padding: 6px;
+    left: calc(50% - 60px);
+    font-size: 1.5rem;
+    background-color: #F3C40E;
+    border-radius: 8px;
+    margin-top: -5px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 10px;
+    text-align: center;
+}
+
+/* Efecto hover */
+
+.boton:hover {
+    background-color: #4158d0;
+    transform: translateY(2px);
+    color: white;
+}
+
+/* Responsive */
+
+@media (min-width: 888px) {
+    
+    .padre {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        gap: 60px 3px;
+        position: relative;
+        width: 100%;
+        min-width: 320px;
+        height: auto;
+        padding: 20px 10px;
+        margin: 20px auto;
+        /* background-color: yellow */
+    }
+}
+
+@media (min-width: 1286px) {
+    
+    .padre {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 50px;
+        position: relative;
+        width: 100%;
+        min-width: 320px;
+        height: auto;
+        padding: 20px 10px;
+        margin: 20px auto;
+        /* background-color: yellowgreen */
+    }
+}
+
+
+
+
