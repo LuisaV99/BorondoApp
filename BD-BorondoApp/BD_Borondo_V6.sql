@@ -1,6 +1,6 @@
 -- MariaDB dump 10.19  Distrib 10.4.25-MariaDB, for Win64 (AMD64)
 --
--- Host: localhost    Database: borondoapp_lv
+-- Host: 127.0.0.1    Database: borondo_v5
 -- ------------------------------------------------------
 -- Server version	10.4.24-MariaDB
 
@@ -30,9 +30,12 @@ CREATE TABLE `alojamientos` (
   `Imagen` longblob DEFAULT NULL,
   `Id_Ciudad` int(11) NOT NULL,
   `estado` tinyint(1) DEFAULT NULL,
+  `Id_Puntuacion` int(11) NOT NULL,
   PRIMARY KEY (`ID_Alojamiento`),
   KEY `Id_Ciudad` (`Id_Ciudad`),
-  CONSTRAINT `alojamientos_ibfk_1` FOREIGN KEY (`Id_Ciudad`) REFERENCES `ciudades` (`ID_Ciudad`)
+  KEY `Id_Puntuacion` (`Id_Puntuacion`),
+  CONSTRAINT `alojamientos_ibfk_1` FOREIGN KEY (`Id_Ciudad`) REFERENCES `ciudades` (`ID_Ciudad`),
+  CONSTRAINT `alojamientos_ibfk_2` FOREIGN KEY (`Id_Puntuacion`) REFERENCES `puntuaciones` (`ID_Puntuacion`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -42,7 +45,7 @@ CREATE TABLE `alojamientos` (
 
 LOCK TABLES `alojamientos` WRITE;
 /*!40000 ALTER TABLE `alojamientos` DISABLE KEYS */;
-INSERT INTO `alojamientos` VALUES (1,'AltoPrado Popayán','El Altoprado Popayán se encuentra en Popayán y ofrece vistas a la ciudad y WiFi gratuita. el personal en general muy amable y todo, todo muy limpio y su ubicación','$170.000','',1,NULL),(2,'La mercedes boutique','Todas las habitaciones cuentan con TV de pantalla plana vía satélite y baño privado. Hay recepción 24 horas, servicio de traslado, servicio de habitaciones y WiFi gratuita en todas las instalaciones.','$250.000','',2,NULL),(3,'Cotinga hotel spa','Ofrece alojamiento con restaurante, aparcamiento privado gratuito, piscina al aire libre y bar. Ofrece habitaciones familiares y terraza. Hay servicio de habitaciones, salón compartido y servicio de cambio de divisa.','$200.000','',3,NULL),(4,'Lodge paraiso verde','Ofrece alojamiento con salón compartido, aparcamiento privado gratuito, jardín y terraza. Algunas habitaciones tienen balcón con vistas a la montaña.','$230.000','',4,NULL),(5,'Hostal caño nevera','El Hostal Caño Nevera se encuentra a 11 km de Caño Cristales y ofrece alojamiento, restaurante, bar, salón compartido y jardín.','$190.000','',5,NULL),(6,'AltoPrado Popayán','El Altoprado Popayán se encuentra en Popayán y ofrece vistas a la ciudad y WiFi gratuita. el personal en general muy amable y todo, todo muy limpio y su ubicación','$170.000','',1,NULL),(7,'La mercedes boutique','Todas las habitaciones cuentan con TV de pantalla plana vía satélite y baño privado. Hay recepción 24 horas, servicio de traslado, servicio de habitaciones y WiFi gratuita en todas las instalaciones.','$250.000','',2,NULL),(8,'Cotinga hotel spa','Ofrece alojamiento con restaurante, aparcamiento privado gratuito, piscina al aire libre y bar. Ofrece habitaciones familiares y terraza. Hay servicio de habitaciones, salón compartido y servicio de cambio de divisa.','$200.000','',3,NULL),(9,'Lodge paraiso verde','Ofrece alojamiento con salón compartido, aparcamiento privado gratuito, jardín y terraza. Algunas habitaciones tienen balcón con vistas a la montaña.','$230.000','',4,NULL),(10,'Hostal caño nevera','El Hostal Caño Nevera se encuentra a 11 km de Caño Cristales y ofrece alojamiento, restaurante, bar, salón compartido y jardín.','$190.000','',5,NULL),(11,'AltoPrado Popayán','El Altoprado Popayán se encuentra en Popayán y ofrece vistas a la ciudad y WiFi gratuita. el personal en general muy amable y todo, todo muy limpio y su ubicación','$170.000','',1,NULL),(12,'La mercedes boutique','Todas las habitaciones cuentan con TV de pantalla plana vía satélite y baño privado. Hay recepción 24 horas, servicio de traslado, servicio de habitaciones y WiFi gratuita en todas las instalaciones.','$250.000','',2,NULL),(13,'Cotinga hotel spa','Ofrece alojamiento con restaurante, aparcamiento privado gratuito, piscina al aire libre y bar. Ofrece habitaciones familiares y terraza. Hay servicio de habitaciones, salón compartido y servicio de cambio de divisa.','$200.000','',3,NULL),(14,'Lodge paraiso verde','Ofrece alojamiento con salón compartido, aparcamiento privado gratuito, jardín y terraza. Algunas habitaciones tienen balcón con vistas a la montaña.','$230.000','',4,NULL),(15,'Hostal caño nevera','El Hostal Caño Nevera se encuentra a 11 km de Caño Cristales y ofrece alojamiento, restaurante, bar, salón compartido y jardín.','$190.000','',5,NULL);
+INSERT INTO `alojamientos` VALUES (1,'AltoPrado Popayán','El Altoprado Popayán se encuentra en Popayán y ofrece vistas a la ciudad y WiFi gratuita. el personal en general muy amable y todo, todo muy limpio y su ubicación','$170.000','',1,NULL,0),(2,'La mercedes boutique','Todas las habitaciones cuentan con TV de pantalla plana vía satélite y baño privado. Hay recepción 24 horas, servicio de traslado, servicio de habitaciones y WiFi gratuita en todas las instalaciones.','$250.000','',2,NULL,0),(3,'Cotinga hotel spa','Ofrece alojamiento con restaurante, aparcamiento privado gratuito, piscina al aire libre y bar. Ofrece habitaciones familiares y terraza. Hay servicio de habitaciones, salón compartido y servicio de cambio de divisa.','$200.000','',3,NULL,0),(4,'Lodge paraiso verde','Ofrece alojamiento con salón compartido, aparcamiento privado gratuito, jardín y terraza. Algunas habitaciones tienen balcón con vistas a la montaña.','$230.000','',4,NULL,0),(5,'Hostal caño nevera','El Hostal Caño Nevera se encuentra a 11 km de Caño Cristales y ofrece alojamiento, restaurante, bar, salón compartido y jardín.','$190.000','',5,NULL,0),(6,'AltoPrado Popayán','El Altoprado Popayán se encuentra en Popayán y ofrece vistas a la ciudad y WiFi gratuita. el personal en general muy amable y todo, todo muy limpio y su ubicación','$170.000','',1,NULL,0),(7,'La mercedes boutique','Todas las habitaciones cuentan con TV de pantalla plana vía satélite y baño privado. Hay recepción 24 horas, servicio de traslado, servicio de habitaciones y WiFi gratuita en todas las instalaciones.','$250.000','',2,NULL,0),(8,'Cotinga hotel spa','Ofrece alojamiento con restaurante, aparcamiento privado gratuito, piscina al aire libre y bar. Ofrece habitaciones familiares y terraza. Hay servicio de habitaciones, salón compartido y servicio de cambio de divisa.','$200.000','',3,NULL,0),(9,'Lodge paraiso verde','Ofrece alojamiento con salón compartido, aparcamiento privado gratuito, jardín y terraza. Algunas habitaciones tienen balcón con vistas a la montaña.','$230.000','',4,NULL,0),(10,'Hostal caño nevera','El Hostal Caño Nevera se encuentra a 11 km de Caño Cristales y ofrece alojamiento, restaurante, bar, salón compartido y jardín.','$190.000','',5,NULL,0),(11,'AltoPrado Popayán','El Altoprado Popayán se encuentra en Popayán y ofrece vistas a la ciudad y WiFi gratuita. el personal en general muy amable y todo, todo muy limpio y su ubicación','$170.000','',1,NULL,0),(12,'La mercedes boutique','Todas las habitaciones cuentan con TV de pantalla plana vía satélite y baño privado. Hay recepción 24 horas, servicio de traslado, servicio de habitaciones y WiFi gratuita en todas las instalaciones.','$250.000','',2,NULL,0),(13,'Cotinga hotel spa','Ofrece alojamiento con restaurante, aparcamiento privado gratuito, piscina al aire libre y bar. Ofrece habitaciones familiares y terraza. Hay servicio de habitaciones, salón compartido y servicio de cambio de divisa.','$200.000','',3,NULL,0),(14,'Lodge paraiso verde','Ofrece alojamiento con salón compartido, aparcamiento privado gratuito, jardín y terraza. Algunas habitaciones tienen balcón con vistas a la montaña.','$230.000','',4,NULL,0),(15,'Hostal caño nevera','El Hostal Caño Nevera se encuentra a 11 km de Caño Cristales y ofrece alojamiento, restaurante, bar, salón compartido y jardín.','$190.000','',5,NULL,0);
 /*!40000 ALTER TABLE `alojamientos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -188,9 +191,12 @@ CREATE TABLE `lugares` (
   `Imagen` longblob DEFAULT NULL,
   `Id_Ciudad` int(11) NOT NULL,
   `estado` tinyint(1) DEFAULT NULL,
+  `Id_Puntuacion` int(11) NOT NULL,
   PRIMARY KEY (`ID_Lugar`),
   KEY `Id_Ciudad` (`Id_Ciudad`),
-  CONSTRAINT `lugares_ibfk_1` FOREIGN KEY (`Id_Ciudad`) REFERENCES `ciudades` (`ID_Ciudad`)
+  KEY `Id_Puntuacion` (`Id_Puntuacion`),
+  CONSTRAINT `lugares_ibfk_1` FOREIGN KEY (`Id_Ciudad`) REFERENCES `ciudades` (`ID_Ciudad`),
+  CONSTRAINT `lugares_ibfk_2` FOREIGN KEY (`Id_Puntuacion`) REFERENCES `puntuaciones` (`ID_Puntuacion`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -200,7 +206,7 @@ CREATE TABLE `lugares` (
 
 LOCK TABLES `lugares` WRITE;
 /*!40000 ALTER TABLE `lugares` DISABLE KEYS */;
-INSERT INTO `lugares` VALUES (1,'Termales del Coconuco','cuenta con los Termales de Agua Tibia y Termales de Agua Hirviendo; piscinas en las que no solo puedes bañarte sino que disfrutar de las grandiosas propiedades curativas que tienen este tipo de aguas.','$80.000','',1,NULL),(2,'Cerro tres cruces','Ubicado en el corregimiento de Montebello en el área rural del municipio. Está ubicado al noroccidente de la ciudad y tiene 1480 msnm. En su cima se encuentran el monumento de las Tres Cruces, una estación de policía y varias antenas de telecomunicaciones.','$70.000','',2,NULL),(3,'Caño cristales','Un lugar que al menos una vez en la vida debes visitar, sencillamente espectacular todos sus alrededores, su tranquilidad, belleza.','$150.000','',5,NULL),(4,'Valle del cocora','Parque pintoresco lleno de palmas de cera de más de 60 m en un entorno frondoso con senderismo y restaurantes','$145.000','',3,NULL),(5,'Termales de santa rosa','Descubre un lugar entre las montañas del paisaje cultural cafetero donde te sentirás tranquilo y te conectarás con la naturaleza por medio de experiencias únicas de bienestar y relajación para tu mente, cuerpo y alma.','$120.000','',4,NULL),(6,'Termales del Coconuco','cuenta con los Termales de Agua Tibia y Termales de Agua Hirviendo; piscinas en las que no solo puedes bañarte sino que disfrutar de las grandiosas propiedades curativas que tienen este tipo de aguas.','$80.000','',1,NULL),(7,'Cerro tres cruces','Ubicado en el corregimiento de Montebello en el área rural del municipio. Está ubicado al noroccidente de la ciudad y tiene 1480 msnm. En su cima se encuentran el monumento de las Tres Cruces, una estación de policía y varias antenas de telecomunicaciones.','$70.000','',2,NULL),(8,'Caño cristales','Un lugar que al menos una vez en la vida debes visitar, sencillamente espectacular todos sus alrededores, su tranquilidad, belleza.','$150.000','',5,NULL),(9,'Valle del cocora','Parque pintoresco lleno de palmas de cera de más de 60 m en un entorno frondoso con senderismo y restaurantes','$145.000','',3,NULL),(10,'Termales de santa rosa','Descubre un lugar entre las montañas del paisaje cultural cafetero donde te sentirás tranquilo y te conectarás con la naturaleza por medio de experiencias únicas de bienestar y relajación para tu mente, cuerpo y alma.','$120.000','',4,NULL),(11,'Termales del Coconuco','cuenta con los Termales de Agua Tibia y Termales de Agua Hirviendo; piscinas en las que no solo puedes bañarte sino que disfrutar de las grandiosas propiedades curativas que tienen este tipo de aguas.','$80.000','',1,NULL),(12,'Cerro tres cruces','Ubicado en el corregimiento de Montebello en el área rural del municipio. Está ubicado al noroccidente de la ciudad y tiene 1480 msnm. En su cima se encuentran el monumento de las Tres Cruces, una estación de policía y varias antenas de telecomunicaciones.','$70.000','',2,NULL),(13,'Caño cristales','Un lugar que al menos una vez en la vida debes visitar, sencillamente espectacular todos sus alrededores, su tranquilidad, belleza.','$150.000','',5,NULL),(14,'Valle del cocora','Parque pintoresco lleno de palmas de cera de más de 60 m en un entorno frondoso con senderismo y restaurantes','$145.000','',3,NULL),(15,'Termales de santa rosa','Descubre un lugar entre las montañas del paisaje cultural cafetero donde te sentirás tranquilo y te conectarás con la naturaleza por medio de experiencias únicas de bienestar y relajación para tu mente, cuerpo y alma.','$120.000','',4,NULL);
+INSERT INTO `lugares` VALUES (1,'Termales del Coconuco','cuenta con los Termales de Agua Tibia y Termales de Agua Hirviendo; piscinas en las que no solo puedes bañarte sino que disfrutar de las grandiosas propiedades curativas que tienen este tipo de aguas.','$80.000','',1,NULL,0),(2,'Cerro tres cruces','Ubicado en el corregimiento de Montebello en el área rural del municipio. Está ubicado al noroccidente de la ciudad y tiene 1480 msnm. En su cima se encuentran el monumento de las Tres Cruces, una estación de policía y varias antenas de telecomunicaciones.','$70.000','',2,NULL,0),(3,'Caño cristales','Un lugar que al menos una vez en la vida debes visitar, sencillamente espectacular todos sus alrededores, su tranquilidad, belleza.','$150.000','',5,NULL,0),(4,'Valle del cocora','Parque pintoresco lleno de palmas de cera de más de 60 m en un entorno frondoso con senderismo y restaurantes','$145.000','',3,NULL,0),(5,'Termales de santa rosa','Descubre un lugar entre las montañas del paisaje cultural cafetero donde te sentirás tranquilo y te conectarás con la naturaleza por medio de experiencias únicas de bienestar y relajación para tu mente, cuerpo y alma.','$120.000','',4,NULL,0),(6,'Termales del Coconuco','cuenta con los Termales de Agua Tibia y Termales de Agua Hirviendo; piscinas en las que no solo puedes bañarte sino que disfrutar de las grandiosas propiedades curativas que tienen este tipo de aguas.','$80.000','',1,NULL,0),(7,'Cerro tres cruces','Ubicado en el corregimiento de Montebello en el área rural del municipio. Está ubicado al noroccidente de la ciudad y tiene 1480 msnm. En su cima se encuentran el monumento de las Tres Cruces, una estación de policía y varias antenas de telecomunicaciones.','$70.000','',2,NULL,0),(8,'Caño cristales','Un lugar que al menos una vez en la vida debes visitar, sencillamente espectacular todos sus alrededores, su tranquilidad, belleza.','$150.000','',5,NULL,0),(9,'Valle del cocora','Parque pintoresco lleno de palmas de cera de más de 60 m en un entorno frondoso con senderismo y restaurantes','$145.000','',3,NULL,0),(10,'Termales de santa rosa','Descubre un lugar entre las montañas del paisaje cultural cafetero donde te sentirás tranquilo y te conectarás con la naturaleza por medio de experiencias únicas de bienestar y relajación para tu mente, cuerpo y alma.','$120.000','',4,NULL,0),(11,'Termales del Coconuco','cuenta con los Termales de Agua Tibia y Termales de Agua Hirviendo; piscinas en las que no solo puedes bañarte sino que disfrutar de las grandiosas propiedades curativas que tienen este tipo de aguas.','$80.000','',1,NULL,0),(12,'Cerro tres cruces','Ubicado en el corregimiento de Montebello en el área rural del municipio. Está ubicado al noroccidente de la ciudad y tiene 1480 msnm. En su cima se encuentran el monumento de las Tres Cruces, una estación de policía y varias antenas de telecomunicaciones.','$70.000','',2,NULL,0),(13,'Caño cristales','Un lugar que al menos una vez en la vida debes visitar, sencillamente espectacular todos sus alrededores, su tranquilidad, belleza.','$150.000','',5,NULL,0),(14,'Valle del cocora','Parque pintoresco lleno de palmas de cera de más de 60 m en un entorno frondoso con senderismo y restaurantes','$145.000','',3,NULL,0),(15,'Termales de santa rosa','Descubre un lugar entre las montañas del paisaje cultural cafetero donde te sentirás tranquilo y te conectarás con la naturaleza por medio de experiencias únicas de bienestar y relajación para tu mente, cuerpo y alma.','$120.000','',4,NULL,0);
 /*!40000 ALTER TABLE `lugares` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -297,6 +303,29 @@ LOCK TABLES `pqrs_contestadas` WRITE;
 /*!40000 ALTER TABLE `pqrs_contestadas` DISABLE KEYS */;
 INSERT INTO `pqrs_contestadas` VALUES (1,'Hola Santiago, Pronto te haremos llegar un correo para el restablecimiento de tu contraseña','2022-05-03',1,0),(2,'Hola German, Gracias por siempre elegirnos, Claro que si, pronto estaremos a nivel internacional','2022-03-23',2,0),(3,'Hola Juan, Pronto te contactaremos con Soporte en sitio para que puedas solucionar tu problema','2022-03-17',3,0),(4,'Hola Oliver, lamentamos tu estado de salud, porfavor diligencia el formulario que te enviamos al correo','2022-04-05',4,0),(5,'Hola Sara, En este momento nuestros servidores se encuentran en mantenimiento los cual podria tardar unos minutos','2022-05-11',5,0);
 /*!40000 ALTER TABLE `pqrs_contestadas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `puntuaciones`
+--
+
+DROP TABLE IF EXISTS `puntuaciones`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `puntuaciones` (
+  `ID_Puntuacion` int(11) NOT NULL AUTO_INCREMENT,
+  `Puntuacion` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`ID_Puntuacion`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `puntuaciones`
+--
+
+LOCK TABLES `puntuaciones` WRITE;
+/*!40000 ALTER TABLE `puntuaciones` DISABLE KEYS */;
+/*!40000 ALTER TABLE `puntuaciones` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -414,7 +443,10 @@ CREATE TABLE `transportes` (
   `Costo` varchar(30) DEFAULT NULL,
   `Imagen` longblob DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`ID_Transporte`)
+  `Id_Puntuacion` int(11) NOT NULL,
+  PRIMARY KEY (`ID_Transporte`),
+  KEY `Id_Puntuacion` (`Id_Puntuacion`),
+  CONSTRAINT `transportes_ibfk_1` FOREIGN KEY (`Id_Puntuacion`) REFERENCES `puntuaciones` (`ID_Puntuacion`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -424,7 +456,7 @@ CREATE TABLE `transportes` (
 
 LOCK TABLES `transportes` WRITE;
 /*!40000 ALTER TABLE `transportes` DISABLE KEYS */;
-INSERT INTO `transportes` VALUES (1,'Chevrolet Colorado Z21','4 Personas','Comoda, ideal para los viajes en familia, las mejores experiencias con este hermosos modelo renault','$120.000',NULL,NULL),(2,'Nissan Patrol','4 Personas','AC T8 es la pick perfecta para  combinar el trabajo con la vida en familia','$150.000',NULL,NULL),(3,'Nissan Murano','5 Personas','El interior del Murano está diseñado para unir a las personas. Una ancha consola central permite que los pasajeros interactúen sin inclinarse ni esforzarse. Los asientos delanteros Zero Gravity aumentan tu comodidad y los acabados tipo cromo y tipo madera oscura te rodean con una experiencia de lujo.','$200.000',NULL,NULL),(4,'Toyota Hilux','4 Personas','Toyota Hilux cuenta con innovadoras líneas estéticas\nque se unen con su totalmente renovado diseño frontal que complementa su\nestructura reforzada y sus dimensiones más amplias, lo que la hace más\nmoderna acentuando la robustez de su carácter así como su sólida postura.','$140.000',NULL,NULL),(5,'Corolla Sedan','4 Personas','Por su elegancia, su eficiencia y su confort, conducir el nuevo Corolla es una gozada, sea cual sea tu estilo de vida. Tanto si circulas por la ciudad como si vas más por carretera, disfrutarás del sistema híbrido autorrecargable, además de la fiabilidad que ha hecho famosa a Toyota.','$160.000',NULL,NULL);
+INSERT INTO `transportes` VALUES (1,'Chevrolet Colorado Z21','4 Personas','Comoda, ideal para los viajes en familia, las mejores experiencias con este hermosos modelo renault','$120.000',NULL,NULL,0),(2,'Nissan Patrol','4 Personas','AC T8 es la pick perfecta para  combinar el trabajo con la vida en familia','$150.000',NULL,NULL,0),(3,'Nissan Murano','5 Personas','El interior del Murano está diseñado para unir a las personas. Una ancha consola central permite que los pasajeros interactúen sin inclinarse ni esforzarse. Los asientos delanteros Zero Gravity aumentan tu comodidad y los acabados tipo cromo y tipo madera oscura te rodean con una experiencia de lujo.','$200.000',NULL,NULL,0),(4,'Toyota Hilux','4 Personas','Toyota Hilux cuenta con innovadoras líneas estéticas\nque se unen con su totalmente renovado diseño frontal que complementa su\nestructura reforzada y sus dimensiones más amplias, lo que la hace más\nmoderna acentuando la robustez de su carácter así como su sólida postura.','$140.000',NULL,NULL,0),(5,'Corolla Sedan','4 Personas','Por su elegancia, su eficiencia y su confort, conducir el nuevo Corolla es una gozada, sea cual sea tu estilo de vida. Tanto si circulas por la ciudad como si vas más por carretera, disfrutarás del sistema híbrido autorrecargable, además de la fiabilidad que ha hecho famosa a Toyota.','$160.000',NULL,NULL,0);
 /*!40000 ALTER TABLE `transportes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -469,4 +501,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-10 10:28:41
+-- Dump completed on 2022-06-13 11:47:15
