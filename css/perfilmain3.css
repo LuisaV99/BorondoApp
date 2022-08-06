@@ -1,0 +1,286 @@
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url('../fonts/poppins/Poppins-Bold.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+
+* {
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+}
+
+
+body{
+	height: 100%;
+	font-family: Poppins-medium;
+ /*  display: flex; */
+}
+
+html {
+	height: 100%;
+	font-family: Poppins-medium;
+}
+
+/*---------------------------------------------*/
+a {
+	font-family: Poppins-medium;
+	font-size: 20px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  padding-left: 5%;
+}
+
+a:focus {
+	outline: none !important;
+}
+
+a:hover {
+	text-decoration: none;
+  color: orange;
+
+}
+
+/*---------------------------------------------*/
+h1,h2,h3,h4,h5,h6 {
+	margin: 0px;
+
+}
+
+p {
+	font-family: Poppins-Regular;
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+}
+
+/*PERFIL DE USUARIO*/
+
+.todoperfil {
+
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5%;
+  height: 921px;
+ 
+}
+
+.colunm1perfil {
+  width: 27%;
+  height: 700px;
+  background-color: #e0e5eb;
+
+}
+
+.linkperfil {
+  color: #1965c8;
+}
+
+.infouserperfil {
+  width: 100%;
+  padding: 10%;
+
+}
+
+.txtesperfil {
+  padding-bottom: 7%;
+}
+
+
+
+.subcolunm1perfil {
+  width: 883px;
+  height: 700px;
+  background-color: #ccd3db;
+  margin-left: 3%;
+  border-radius: 6px;
+  padding-right: 1%;
+}
+
+.subcolunm2perfil {
+  width: 883px;
+  height: 700px; 
+  background-color: #ccd3db;
+  margin-left: 3%;
+  margin-top: 3%;
+  padding-right: 1%;
+  border-radius: 6px;
+}
+
+
+
+.block3perfil {
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+
+
+.sub1sub1perfil {
+       padding-left: 5%;
+     padding-top: 3%;
+}
+
+
+.sub2sub2perfil {
+  padding-top: 7%;
+    padding-left: 30%;
+    margin-top: 18px;
+}
+
+.checkperfil {
+  color: #5b9aec;
+  text-decoration: none;
+  font-size: 17px;
+  padding-left: 0%;
+}
+
+
+.botonesperfil {
+  background-color:#2e83d4;
+  display: block;
+  color: white;
+  padding: 2px 12px 2px 12px;
+  text-decoration: none;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+  border-style: solid; 
+  border-color: #2e83d4;
+  border-radius: 25px;
+  box-shadow: grey 2.5px 2.5px ;
+  width: 100%;
+  height: 33px;
+  font-size: 12px;
+}
+
+.titletable {
+  color: #2e83d4;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.atributetable {
+  color: #666666;
+
+}
+
+.siguientebutom {
+  text-decoration: none;
+  color: #6C757D;
+font-size: large;
+padding: 0%;
+padding-right: 1%;
+}
+
+.divsiguientebutom {
+
+  text-align: right;
+}
+
+.divpaginadobutom {
+  text-align: center;
+  
+}
+
+.paginadobutom {
+  text-decoration: none;
+  color: #6C757D;
+  font-size: 14px;
+  padding: 0%;
+}
+
+.container-buttons-search {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  width: 95%;
+  box-shadow: 0px 0px 26px -16px black;
+  padding: 20px 0 20px 0;
+  max-width: 1300px;
+}
+
+.container-buttons {
+  display: flex;
+  justify-content:space-evenly;
+  align-items: center;
+  padding: auto;
+  height: 50px;
+  width: 100%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.container-buttons button {
+  width: 150px;
+  height: 30px;
+  cursor: pointer;
+  border-style: none;
+  background-color: #150759;
+  border-radius: 8px;
+}
+
+
+.container-buttons button a {
+  padding: auto;
+  font-size: 10px;
+  flex-shrink: 1;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+.container-search {
+ 
+  justify-content: flex-end;
+  align-items: center;
+
+}
+
+.container-search input {
+  width: 173px;
+  height: 30px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 8px;
+  border-style: none;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+footer {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.container-parth {
+  width: 100vw;
+  min-width: 400px;
+  height: auto;
+  bottom: 0;
+  left: 0;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 6px 7px 12px black;
+  background-color: #171717;
+  color: white;
+}
+
+.container-parth div {
+  flex: 0 1 33%;
+  /* background-color: darkorange; */
+  /* border: 2px solid white; */
+}
+
+
+/* Bloque 1 */
+
+.container-block p {
+  text-align: center;
+  min-width: 325px;
+}
+
+.lema {
+  font-size: 25px;
+  color: white;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+.copy {
+  font-size: small;
+  margin-top: 95px;
+  color: white;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+.logo-boro {
+  width: 170px;
+  height: auto;
+  position: relative;
+  margin-top: 90px;
+  left: calc(50% - 75px);
+}
+
+
+/* Bloque 2 */
+
+.container-block:nth-child(2) {
+  min-width: 325px;
+  max-width: 490px;
+}
+
+.container-block:nth-child(2) p {
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-size:larger;
+  color: white;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+.formfooter {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 30px 30px 30px;
+  flex-wrap: wrap;
+}
+
+.column-1 {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 100%;
+  align-content: center;
+}
+
+input {
+  height: 35px;
+  border-radius: 25px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  margin-bottom: 8px;
+  padding: 7px;
+  background-color: rgb(230, 230, 230);
+  color: rgb(102, 102, 102);
+  box-shadow: 2px 5px 7px rgba(0, 0, 0, 0.80%);
+  font-weight: bolder;
+} 
+
+.input-down  {
+  margin-left: 3px;
+}
+
+
+textarea {
+  width: 100%;
+  border-radius: 25px;
+  background-color: rgb(230, 230, 230);
+  height: 135px;
+  padding: 7px;
+}
+
+textarea::placeholder {
+  font-size: 20px;
+  text-align: center;
+}
+
+.send {
+  margin-top: 10px;
+  width: 100px;
+  height: 30px;
+  padding: 5px;
+  border: 1px solid white;
+  color: white;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.send:hover {
+  background: #1965c8;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+::placeholder {
+  text-align: left;
+  padding-left: 6px;
+  font-size: 10px;
+}
+
+/* bloque 3 */
+
+.container-block:nth-child(3) {
+  justify-content: center;
+  text-align: center;
+}
+
+
+.container-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-top: 55px;
+}
+
+
+.list-nav-1 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 50%;
+}
+
+.container-block:nth-child(3) a {
+  text-decoration: none;
+  color: white;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+.container-block:nth-child(3) a:hover {
+  color: #FA8303;
+  text-shadow: 0 0 10px #FEBD66,
+  0 0 20px #FEBD66,
+  0 0 40px #FEBD66,
+  0 0 80px #FEBD66,
+  0 0 120px #FEBD66;
+}
+
+.container-block:nth-child(3) p {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  color: white;
+}
+
+.follow {
+  text-transform: uppercase;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: white;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+}
+
+
+.insta {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  /* margin-bottom: 15px; */
+  background-image: url(../images/icons/instagra.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 10px 0 0;
+}
+
+.facebook {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  /* margin-bottom: 15px; */
+  background-image: url(../images/icons/facebok.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.twitter {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  /* margin-bottom: 15px; */
+  background-image: url(../images/icons/twitte.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 0 0 10px;
+}
+
+.insta:hover {
+  transform: translateY(-10px);
+}
+
+.facebook:hover {
+  transform: translateY(-10px);
+}
+
+.twitter:hover {
+  transform: translateY(-10px); 
+}
+
+
+
+

@@ -1,0 +1,248 @@
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url('../fonts/poppins/Poppins-Bold.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
+}
+
+/*---------------------------------------------*/
+
+p {
+	font-family: Poppins-Regular;
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+}
+
+ul, li {
+	margin: 0px;
+	list-style-type: none;
+  
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ Utility ]*/
+
+.todo {
+  margin-bottom: 2%;
+}
+.txt1 {
+  font-family: Poppins-Regular;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #999999;
+}
+
+.txt2 {
+  font-family: Poppins-Regular;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #666666;
+}
+
+/*FICHA TECNICA*/
+
+.bloque1 {
+  width: 90%;
+  padding-top: 5%;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-bottom: 4%;
+
+}
+
+.titulobl1 {
+  color: whitesmoke;
+  padding-bottom: 15px;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.imgbl1 {
+  width: 100%;
+}
+
+.textbl1 {
+  text-align: justify;
+}
+
+.txtbl1 {
+  font-size: 16px;
+  color: whitesmoke;
+}
+
+
+.bloque2 {
+  display: flex;
+  width: 100%;
+
+    padding-left: 15%;
+  padding-right: 15%;
+    padding-bottom: 4%;
+}
+
+.bl21 {
+  width: 50%;
+  padding-left: 0%;
+  padding-top: 5%;
+  padding-right: 4%;
+}
+
+.titulobl2 {
+  color: whitesmoke;
+  padding-bottom: 15px;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 30px;
+}
+
+.txtbl2 {
+  font-size: 15px;
+  color: whitesmoke;
+}
+
+.check {
+  color: #5b9aec;
+  text-decoration: none;
+}
+
+.listbl21 {
+  padding-top: 6%;
+}
+
+.txtlbl2 {
+  font-size: 14px;
+  color: whitesmoke;
+}
+
+.bl22 {
+  width: 50%;
+  padding-left: 4%;
+  padding-top: 5%;
+  padding-right: 0%;
+}
+
+.titulobl2 {
+  color: whitesmoke;
+  padding-bottom: 15px;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 30px;
+}
+
+.txtbl2 {
+  font-size: 15px;
+  color: whitesmoke;
+}
+
+.listbl21 {
+  padding-top: 6%;
+}
+
+.txtlbl2 {
+  font-size: 14px;
+  color: whitesmoke;
+}
+
+.p-hotel {
+  width: 100%;
+  height: 300px;
+  border-radius: 3px;
+}
+
+.p-termal {
+  width: 100%;
+  height: 300px;
+  border-radius: 3px;
+}
+
+.contenedor {
+  padding: 4%;
+}
+
+.bloque3 {
+    width: 100%;
+  
+    padding-left: 15%;
+  padding-right: 15%;
+    padding-bottom: 4%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.bl31 {
+  width: 50%;
+  background-color: black;
+  height: 300px;
+  padding: 7%;
+}
+
+.titulobl3 {
+  color: whitesmoke;
+  padding-bottom: 15px;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 25px;
+  text-align: center;
+}
+
+.txtbl3 {
+  font-size: 12px;
+  color: whitesmoke;
+}
+
+.bl32 {
+  width: 50%;
+  background-color: #41807d;
+  height: 300px;
+  padding-top: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.turnos {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.txtbl32 {
+  font-size: 12px;
+  color: whitesmoke;
+  margin: 3px;
+}
+
+.block3perfil {
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.botonesperfil {
+  background-color:#2e83d4;
+  display: block;
+  color: white;
+  padding: 2px 12px 2px 12px;
+  text-decoration: none;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+  border-style: solid; 
+  border-color: #2e83d4;
+  border-radius: 25px;
+  box-shadow: grey 2.5px 2.5px ;
+  width: 100%;
+  height: 33px;
+  font-size: 12px;
+}
+
+
+
