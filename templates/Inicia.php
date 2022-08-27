@@ -24,7 +24,7 @@
 		
 			</button>
 	<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-			  <li>		<a href="./Login.php">Iniciar Sesión</a></li>
+			  <li>		<a href="./Login.php">Iniciar Sesion</a></li>
 			  <li>		<a href="./Registro.php">Registrarme</a></li>
 			
 			</ul>

@@ -10,9 +10,6 @@ $Nom_Usuario=$_SESSION['Nom_Usuario'];
 $users="SELECT * FROM usuarios WHERE Nom_Usuario='$Nom_Usuario'";
 // print_r($_SESSION);
 
-$var = "SELECT * FROM tipo_pqrs";
-
-
 include("model/conexion.php");
 ?>
 <!DOCTYPE html>
@@ -81,6 +78,17 @@ include 'templates/Navbar.php';
                   <label for="slide-3" class="slide-control next control-2">›</label>
                   <label for="slide-2" class="slide-control prev control-3">‹</label>
                   <label for="slide-1" class="slide-control next control-3">›</label>
+                  <!--<ol class="slide-indicador">
+                    <li>
+                      <label for="slide-1" class="slide-circulo">•</label>
+                    </li>
+                    <li>
+                      <label for="slide-2" class="slide-circulo">•</label>
+                    </li>
+                    <li>
+                      <label for="slide-3" class="slide-circulo">•</label>
+                    </li>
+                  </ol> -->
                 </div>
               </div>
             </div>
@@ -125,62 +133,7 @@ include 'templates/Navbar.php';
         </div>
     </div>
 
-    <footer>
-		<!-- contenedor del footer -->
-		<div class="container-parth">
-			<!-- bloque #1 -->
-			<div class="container-block">
-				<img class="logo-boro" src="./images/logo.png" alt="Logo" />
-				<p class="lema">¡A un click de tu destino!</p>
-				<p class="copy">Todos los derechos reservados © 2022 Copyright</p>
-			</div>
-
-			<!-- Bloque #2 -->
-			<div class="container-block">
-				<p>PQRS</p>
-				<form action="./templates/pqrs.php" method="POST">
-					<input type="email" name="email" placeholder="Correo Electrónico" required />
-					<div class="column-1">
-						<input type="text" id="nombres" name="nombre" placeholder="Nombre Completo" required />
-						<input class="input-down" type="number" name="telefono" placeholder="Teléfono" required />
-						<select class="lista" name="tipo">
-							<?php foreach ($conx->query("$var") as $values) { ?>
-								<option value="<?php echo $values['ID_Tipo'] ?>"><?php echo $values['Nombre_Tipo'] ?></option>
-							<?php } ?>
-						</select>
-						<input class="input-down" type="text" name="asunto" placeholder="Asunto" />
-					</div>
-					<textarea cols="30" rows="10" name="descripcion" placeholder="Escribe aquí tu PQRS"></textarea>
-					<a href=""><button class="send" type="submit">Enviar</button></a>
-				</form>
-			</div>
-			<!-- Bloque #3 -->
-			<div class="container-block">
-				<div class="container-list">
-					<div class="list-nav-1">
-						<span><a href="">Nosotros</a></span>
-						<span><a href="">Lugares</a></span>
-						<span><a href="">Alojamientos</a></span>
-					</div>
-					<div class="list-nav-1">
-						<span><a href="">Transporte</a></span>
-						<span><a href="">Registrarse</a></span>
-						<span><a href="">Inicio de sesión</a></span>
-					</div>
-				</div>
-				<p class="follow">Siguenos en redes sociales</p>
-				<div class="social-icons">
-					<a href=""><span class="insta"></span></a>
-					<a href=""><span class="facebook"></span></a>
-					<a href=""><span class="twitter"></span></a>
-				</div>
-				<p>@BorondoApp.Official</p>
-				<p class="allright">Todos los derechos reservados © 2022 Copyright</p>
-			</div>
-		</div>
-	</footer>
-
-
+    
 
 </body>
 </html>

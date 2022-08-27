@@ -1,16 +1,18 @@
 <?php
 include("./model/conexion.php");
 
+$document=$_POST["Documento"];
+// $Foto_Perfil=addslashes(file_get_contents($_FILES["imagen"]["tmp_name"]));
 $name=$_POST["Nombres"];
 $lastname=$_POST["Apellidos"];
-$username=$_POST["Nom_Usuario"];
+$phone=$_POST["Telefono"];
 // $pass=hash('sha512',$pass);
 $birthdate=$_POST["Fecha_Nacimiento"];
 $email=$_POST["Correo"];
 $pass=$_POST["Contraseña"];
 $ID_Rol= 1;
 
-$create="INSERT INTO usuarios (Nombres, Apellidos, Nom_Usuario, Fecha_Nacimiento, Correo, Contraseña, ID_Rol) VALUES ('$name','$lastname','$username','$birthdate','$email','$pass','$ID_Rol')";
+$create="INSERT INTO usuarios (Documento, Nombres, Apellidos, Fecha_Nacimiento, Correo, Telefono, Contraseña, ID_Rol) VALUES ('$document','$name','$lastname','$birthdate','$email','$phone','$pass','$ID_Rol')";
 $result=mysqli_query($conx,$create);
 
 if($result){

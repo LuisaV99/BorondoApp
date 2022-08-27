@@ -1,12 +1,12 @@
 <?php
 session_start();
-if(!isset($_SESSION['Nom_Usuario'])){
+if(!isset($_SESSION['Documento'])){
     echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
     session_destroy();
     die();
 }
-$Nom_Usuario=$_SESSION['Nom_Usuario'];
-$users="SELECT * FROM usuarios WHERE Nom_Usuario='$Nom_Usuario'";
+$Documento=$_SESSION['Documento'];
+$users="SELECT * FROM usuarios WHERE Documento='$Documento'";
 
 include("model/conexion.php");
 
@@ -103,11 +103,25 @@ include 'templates/Navbar.php';
 					</span>
 				</div>
 			</div>
+
+<br>
+
+			<div class="inputs">
+				<p class="tituloedit">Telefono:</p>
+				<div class="wrap-input100 validate-input" jt-c  data-validate = "Ingresa un correo valido">
+
+					<input class="input100" type="number" name="Telefono" placeholder="" value="<?php echo $row["Telefono"];?>">
+					<span class="focus-input100"></span>
+					<span class="symbol-input100">
+						<i aria-hidden="true"></i>
+					</span>
+				</div>
+			</div>
 			
 			<br>
 
 			<div class="inputs">
-				<p class="tituloedit">Anterior Contraseña:</p>
+				<p class="tituloedit">Contraseña:</p>
 				<div class="wrap-input100 validate-input" jt-c  data-validate = "Ingrese su anterior contraseña">
 
 					<input class="input100" type="text" name="Contraseña" placeholder=" " value="<?php echo $row["Contraseña"];?>">
@@ -124,7 +138,7 @@ include 'templates/Navbar.php';
 				<p class="tituloedit">Prueba:</p>
 				<div class="wrap-input100 validate-input" jt-c  data-validate = "Ingresa un correo valido">
 
-					<input class="input100" type="text" name="ID_Usuario" placeholder="" value="<?php echo $row["ID_Usuario"];?>">
+					<input class="input100" type="text" name="Documento" placeholder="" value="<?php echo $row["Documento"];?>">
 					<span class="focus-input100"></span>
 					<span class="symbol-input100">
 						<i aria-hidden="true"></i>
@@ -133,54 +147,24 @@ include 'templates/Navbar.php';
 			</div>
 			
 			<br>
-
-
-			<!-- <div class="inputs">
-				<p class="tituloedit">Nueva Contraseña:</p>
-				<div class="wrap-input100 validate-input" data-validate = "Ingresa una contraseña válida">
-
-					<input class="input100" type="password" name="pass" placeholder="">
-					<span class="focus-input100"></span>
-					<span class="symbol-input100">
-						<i aria-hidden="true"></i>
-					</span>
-				</div>
-			
-				<p class="tituloedit">Confirmar Contraseña:</p>
-				<div class="wrap-input100 validate-input" data-validate = "Ingresa una contraseña válida">
-
-					<input class="input100" type="password" name="pass" placeholder="">
-					<span class="focus-input100"></span>
-					<span class="symbol-input100">
-						<i aria-hidden="true"></i>
-					</span>
-				</div>
-			</div> -->
-
-			<br>
-
-			<!-- <div class="inputs">
-				<p class="tituloedit" >Metodo de pago:</p>
-				<div class="wrap-input100 validate-input" jt-c >
-
-					<input class="input100" type="text" name="pass" placeholder="" value="<?php echo $row["Nombres"];?>>
-					<span class="focus-input100"></span>
-					<span class="symbol-input100">
-						<i aria-hidden="true"></i>
-					</span>
-				</div>
-			</div> -->
 				
 			</div>
 			
 		</div>
 		<?php }?>
 		<center>
-			<div class="block3"><a href="editarperfil.php?id=<?php echo $row["Nom_Usuario"];?>"><button type="submit">Actualizar</button></a></div>
+			<div class="block3"><a href="editarperfil.php"><button type="submit">Actualizar</button></a></div>
 			</center>
 	</div>
 	</form>
 		</div>
+	</div>
+	
+<?php 
+
+include 'templates/footer.php';
+
+?>
 	
 
 

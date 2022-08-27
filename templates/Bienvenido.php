@@ -1,7 +1,8 @@
 <?php
 
-$Nom_Usuario=$_SESSION['Nom_Usuario'];
-$users="SELECT * FROM usuarios WHERE Nom_Usuario='$Nom_Usuario'";
+$Documento=$_SESSION['Documento'];
+// $Nom_Usuario=$_SESSION['Nom_Usuario'];
+$users="SELECT * FROM usuarios WHERE Documento='$Documento'";
 include("model/conexion.php");
 
 ?>
@@ -24,6 +25,9 @@ include("model/conexion.php");
 		
 	</header>
 	<body>
+	<?php
+			 $show=mysqli_query($conx,$users);
+        while($row=mysqli_fetch_assoc($show)) { ?>
 		
 	
 	<button class="botonperfil" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="" style="height: 24px; width: 65px; font-size: 11px; padding-top: 2px;">
@@ -31,11 +35,11 @@ include("model/conexion.php");
 		
 			</button>
 	<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-			<li>		<a href=""><?php echo $_SESSION['Nom_Usuario'] ?></a></li>
+			<li>		<a href=""><?php echo $row['Nombres'] ?></a></li>
 			  <li>		<a href="./perfilusuario.php">Ver Perfil</a></li>
-			  <li>		<a href="./cerrar.php">Cerrar sesión</a></li>
+			  <li>		<a href="./cerrar.php">Cerrar sesion</a></li>
 			
 			</ul>
 
-			
+			<?php } ?>	
 </body>

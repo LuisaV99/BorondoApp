@@ -1,10 +1,8 @@
 * {
-	margin: 0px; 
+	margin: 0px;
 	padding: 0px; 
 	box-sizing: border-box;
 }
-
-
 body, html {
 	height: 100%;
   font-family: Open Sans, sans-serif;
@@ -16,9 +14,8 @@ body, html {
   object-fit: cover;
   min-width: 100vh;
 }
-
-.contenedor-login{
-  width: 100%;
+.contenedor-login {
+  width: 100%;  
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -30,14 +27,13 @@ body, html {
   height: auto;
   margin-top: 4%;
   margin-bottom: 5%;
-
 }
-.wrap-inicio{
+.wrap-inicio {
   width: auto;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-
+  
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -48,16 +44,307 @@ body, html {
   padding: 30px 30px;
   padding-bottom: 1%;
   box-shadow: #555454 5px 5px 5px 5px;
-
 }
-.logo-formulario{
+.logo-formulario {
   width: 300px;
 }
-.logo-formulario img{
+
+.logo-formulario img {
   max-width: 100%;
 }
-
 #logo{
   position: relative;
   padding-top: 4rem;
+}
+.formulario{
+  justify-content: center;
+  margin-right: 10px;
+  padding: 20px 20px;
+  padding-left: 30px;
+}
+.login100-form {
+  width: 290px;
+}
+.titulo-login {
+  font-family: Open Sans, sans-serif;
+  font-size: 40px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 30px;
+  width: 100%;
+  display: block;
+  font-weight: bolder;
+}
+.wrap-inputs {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  margin-bottom: 10px;
+}
+
+.inputs-general {
+  font-family: Open Sans, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666666;
+  text-align:left;
+  display: flex;
+  width: 100%;
+  background: #e6e6e6;
+  height: 40px;
+  border-radius: 25px;
+  padding: 0 10px 0 68px;
+  border: 1px #666666;
+
+}
+.symbol-input100 {
+  font-size: 15px;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  border-radius: 25px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 35px;
+  pointer-events: none;
+  color: #666666;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.container-login100-form-btn {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 7px;
+}
+button.btn{
+  color:whitesmoke;
+  background-color: #4158d0;
+  border: solid 2px #4158d0;
+}
+button.btn:hover{
+  background-color: #fa8303;
+  border: solid 1px #fa8303;
+  transform: translateY(-2px);
+}
+.txt2 {
+  font-family: Open Sans, sans-serif;
+  padding-bottom: 20px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666666;
+}
+.txt1{
+  font-family: Open Sans, sans-serif;
+  color: #666666;
+}
+
+:focus {
+  outline: 1px solid #4158d0;
+}
+.txt2:hover{
+  color: #FA8303;
+}
+/*------------------------------------------------------------------
+[ Responsive ]*/
+
+
+
+@media (max-width: 992px) {
+  .wrap-inicio {
+    padding: 10px 10px;
+  }
+
+  .logo-formulario {
+    width: 35%;
+  }
+
+
+}
+
+@media (max-width: 768px) {
+  .wrap-inicio {
+    padding: 30px 30px;
+  }
+
+  .logo-formulario {
+    display: none;
+  }
+
+  .titulo-login {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .wrap-inicio {
+    padding: 15px;
+  }
+}
+
+
+/* Modal */
+.modal-title{
+  padding-left: 20px;
+  font-family: Open Sans, sans-serif;
+  font-size: 30px;
+  color: #333333;
+  font-weight: bolder;
+
+}
+.inputs-modal{
+  font-family: Open Sans, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666666;
+  text-align:center;
+  display: flex;
+  width: 67%;
+  background: #e6e6e6;
+  height: 40px;
+  border-radius: 25px;
+  border: solid 1px #666666;
+  margin-left: 80px;
+}
+.modal-footer{
+  display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.75rem;
+    border-top: 1px solid #dee2e6;
+    flex-direction: column;
+}
+.btnmodal{
+  color: black;
+font-family: Open Sans, sans-serif;
+}
+.btnmodal:hover{
+  color: #FA8303;
+}
+.contenedor-modal{
+  width: 100%;  
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin-top: 4%;
+  margin-bottom: 5%; 
+}
+.wrap-modal{
+  width: auto;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content:right;
+  padding: 30px 30px;
+  padding-bottom: 1%;
+  box-shadow: #555454 5px 5px 5px 5px;
+
+}
+.logo-modal{
+  width: 50%;
+}
+.logo-modal img{
+  max-width: 100%;
+
+}
+#logo-modal{
+  position: relative;
+  padding-top: 1rem;
+
+}
+.formulario-modal{
+  justify-content: center;
+  margin-right: 10px;
+  padding: 20px 20px;
+  padding-left: 30px;
+
+}
+.login100-form-modal {
+  width: 263px;
+}
+.wrap-inputs-modal {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  margin-bottom: 10px;
+}
+.inputs-general-modal {
+  font-family: Open Sans, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666666;
+  text-align:left;
+  display: flex;
+  width: 100%;
+  background: #e6e6e6;
+  height: 40px;
+  border-radius: 25px;
+  padding: 0 10px 0 68px;
+  border: solid 1px #666666;
+
+}
+.symbol-input100 {
+  font-size: 15px;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  border-radius: 25px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 35px;
+  pointer-events: none;
+  color: #666666;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+button.btn-modal{
+  color: whitesmoke;
+background-color: #4158d0;
+border: solid 2px #4158d0;
+padding: 3px ;
+margin-left: 82px;
+}
+button.btn-modal:hover{
+  background-color: #fa8303;
+  border: solid 1px #fa8303;
+  transform: translateY(-2px);
 }

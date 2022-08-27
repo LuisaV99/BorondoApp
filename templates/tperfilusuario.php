@@ -1,13 +1,13 @@
 <?php
 
-if(!isset($_SESSION['Nom_Usuario'])){
+if(!isset($_SESSION['Documento'])){
     echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
     session_destroy();
     die();
 	
 }
-$Nom_Usuario=$_SESSION['Nom_Usuario'];
-$users="SELECT * FROM usuarios WHERE Nom_Usuario='$Nom_Usuario'";
+$document=$_SESSION['Documento'];
+$users="SELECT * FROM usuarios WHERE Documento='$document'";
 // print_r($_SESSION);
 
 include("model/conexion.php");
@@ -64,12 +64,15 @@ include("model/conexion.php");
 			</center>
 			<div class="infouserperfil">
 
-				<p>Correo:</p>
-				<p class="txtesperfil"><?php echo $row["Correo"];?></p>
+			
+				<p class="txtesperfil">Correo: <?php echo $row["Correo"];?></p>
+
+				<p class="txtesperfil">Telefono: <?php echo $row["Telefono"];?></p>
+
 				<p class="txtesperfil">Fecha Nacimiento: <?php echo $row["Fecha_Nacimiento"];?></p>
 
-				<p>Medio de pago predeterminado:</p>
-				<p>N/A</p>
+			
+		
                 <center>
 				<div class="block3perfil"><a class="botonesperfil" href="editarperfil.php" style="font-size: 15px;">Editar</a>
 			</center>

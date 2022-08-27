@@ -1,18 +1,20 @@
 <?php
 session_start();
-if (!isset($_SESSION['Nom_Usuario'])) {
-	echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
-	session_destroy();
-	die();
+if(!isset($_SESSION['Documento'])){
+    echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
+    session_destroy();
+    die();
+	
 }
-$var = "SELECT * FROM tipo_pqrs";
-$Nom_Usuario = $_SESSION['Nom_Usuario'];
-$users = "SELECT * FROM usuarios WHERE Nom_Usuario='$Nom_Usuario'";
-$iduser = "SELECT ID_Usuario FROM usuarios WHERE Nom_Usuario='$Nom_Usuario'";
-$reserv = "SELECT * FROM reservas WHERE ID_Usuario='$iduser'";
+$document=$_SESSION['Documento'];
+// $users="SELECT * FROM usuarios WHERE Nom_Usuario='$Nom_Usuario'";
+
+// $reserv= "SELECT * FROM reservas INNER JOIN usuarios on reservas.Id_usuario = usuarios.ID_Usuario WHERE reservas.Id_usuario = '$iduser'";
+$creser= "SELECT * FROM reservas WHERE Documento='$document'";
+
+
+// $reserv="SELECT * FROM reservas WHERE Id_usuario='$iduser'";
 // print_r($_SESSION);
-
-
 
 include("model/conexion.php");
 ?>
@@ -58,28 +60,27 @@ include 'templates/Navbar.php';
 
 
 	<div class="todoperfil">
-
+	
 		<div class="colunm1perfil">
-			<?php
+		<?php
 
 			include 'templates/tperfilusuario.php';
 
-			?>
+		?>
 		</div>
-
+		
 
 
 		<div class="colunm2perfil">
-			<?php
-			// 	 $show=mysqli_query($conx,$reserv);
-			// while($row=mysqli_fetch_assoc($show)) { 
-			?>
+		<?php
+		// 	 $show=mysqli_query($conx,$reserv);
+        // while($row=mysqli_fetch_assoc($show)) { ?>
 
 			<div class="subcolunm1perfil">
 				<div class="sup1perfil">
 					<div class="sub1sub1perfil">
 
-						<h4 style="margin-bottom: 1%;">Reservas realizadas:</h4>
+						<h4 style="margin-bottom: 1%;">Reservas </h4>
 						<table class="table table-borderless">
 							<thead>
 								<tr>
@@ -91,17 +92,24 @@ include 'templates/Navbar.php';
 
 								</tr>
 							</thead>
+							<?php
+			 $show=mysqli_query($conx,$creser);
+        while($row=mysqli_fetch_assoc($show)) { ?>
 							<tbody>
+			
 								<tr>
+				
+								
+										<th scope="row"><?php echo $row["Id_resserva"];?></th>
+										<td class="atributetable"> <?php echo $row["fech_reser"];?></td>
+										<td class="atributetable">LugarX-TrasnporteY-AlojamientoZ</td>
+										<td class="atributetable"><?php echo $row["coste"];?></td>
 
-									<th scope="row">#1111</th>
-									<td class="atributetable"> <?php echo $row["Fech_reserva"]; ?></td>
-									<td class="atributetable">LugarX-TrasnporteY-AlojamientoZ</td>
-									<td class="atributetable"><?php echo $row["Costo"]; ?></td>
-
+									
 								</tr>
-
+								
 							</tbody>
+							<?php } ?>	
 						</table>
 					</div>
 
@@ -111,69 +119,19 @@ include 'templates/Navbar.php';
 				</center>
 			</div>
 
+		
 
 
-
+			</div>
 		</div>
-	</div>
 
 	</div>
+	
+	<?php
 
-    <footer>
-        <!-- contenedor del footer -->
-        <div class="container-parth">
-            <!-- bloque #1 -->
-            <div class="container-block">
-                <img class="logo-boro" src="./images/logo.png" alt="Logo" />
-                <p class="lema">¡A un click de tu destino!</p>
-                <p class="copy">Todos los derechos reservados © 2022 Copyright</p>
-            </div>
+	 include 'templates/footer.php';
 
-            <!-- Bloque #2 -->
-            <div class="container-block">
-                <p>PQRS</p>
-                <form action="./templates/pqrs.php" method="POST">
-                    <input type="email" name="email" placeholder="Correo Electrónico" required />
-                    <div class="column-1">
-                        <input type="text" id="nombres" name="nombre" placeholder="Nombre Completo" required />
-                        <input class="input-down" type="number" name="telefono" placeholder="Teléfono" required />
-                        <select class="lista" name="tipo">
-                            <?php foreach ($conx->query("$var") as $values) { ?>
-                                <option value="<?php echo $values['ID_Tipo'] ?>"><?php echo $values['Nombre_Tipo'] ?></option>
-                            <?php } ?>
-                        </select>
-                        <input class="input-down" type="text" name="asunto" placeholder="Asunto" />
-                    </div>
-                    <textarea cols="30" rows="10" name="descripcion" placeholder="Escribe aquí tu PQRS"></textarea>
-                    <a href=""><button class="send" type="submit">Enviar</button></a>
-                </form>
-            </div>
-            <!-- Bloque #3 -->
-            <div class="container-block">
-                <div class="container-list">
-                    <div class="list-nav-1">
-                        <span><a href="./index.php">Página de Inicio</a></span>
-                        <span><a href="./Cards-Lugares.php">Lugares</a></span>
-                        <span><a href="./Card-Alojamiento.php">Alojamientos</a></span>
-                    </div>
-                    <div class="list-nav-1">
-                        <span><a href="./Card-Transporte.php">Transporte</a></span>
-                        <span><a href="./Registro.php">Registrarse</a></span>
-                        <span><a href="./Login.php">Inicio de sesión</a></span>
-                    </div>
-                </div>
-                <p class="follow">Siguenos en redes sociales</p>
-                <div class="social-icons">
-                    <a href=""><span class="insta"></span></a>
-                    <a href=""><span class="facebook"></span></a>
-                    <a href=""><span class="twitter"></span></a>
-                </div>
-                <p>@BorondoApp.Official</p>
-                <p class="allright">Todos los derechos reservados © 2022 Copyright</p>
-            </div>
-        </div>
-    </footer>
-
+	?>
 
 
 </body>

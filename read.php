@@ -10,14 +10,14 @@ $pass=$_POST["Contraseña"];
 $read=mysqli_query($conx, "SELECT * FROM usuarios WHERE Nom_Usuario='$username' AND Contraseña='$pass'");
 $ok=mysqli_fetch_array($read);
 
-if($ok["Id_Rol"]==1){
+if($ok["ID_Rol"]==1){
     $_SESSION['Nom_Usuario']=$username;
     header ("location:index.php");
 }else
-if($ok["Id_Rol"]==2){
+if($ok["ID_Rol"]==2){
     $_SESSION['Nom_Usuario']=$username;
     header ("location:index.php");
 }else{
-    echo "<script>alert('Nombre o contraseña equivocada');window.history.go(-1);</script>";
+    echo "<script>alert('Nombre de usuario o contraseña equivocada');window.history.go(-1);</script>";
 }
 ?>

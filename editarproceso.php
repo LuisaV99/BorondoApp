@@ -4,10 +4,11 @@ include("model/conexion.php");
 $Nombres=$_POST["Nombres"];
 $Apellidos=$_POST["Apellidos"];
 $Correo=$_POST["Correo"];
+$Telefono=$_POST["Telefono"];
 $Contraseña=$_POST["Contraseña"];
-$ID_Usuario=$_POST["ID_Usuario"];
+$Documento=$_POST["Documento"];
 
-$upd="UPDATE usuarios SET Nombres='$Nombres', Apellidos='$Apellidos', Correo='$Correo', Contraseña='$Contraseña' WHERE ID_Usuario='$ID_Usuario'";
+$upd="UPDATE usuarios SET Nombres='$Nombres', Apellidos='$Apellidos', Correo='$Correo' , Telefono='$Telefono', Contraseña='$Contraseña' WHERE Documento='$Documento'";
 $rsl=mysqli_query($conx,$upd);
 
 if($rsl){
