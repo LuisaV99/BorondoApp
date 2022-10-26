@@ -1,0 +1,142 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+.body2 {
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(https://m.eltiempo.com/uploads/2018/06/06/5b177c3b22c8e.jpeg);
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  object-fit: cover;
+}
+.Administrador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+
+  height: auto;
+  gap: 30px;
+  /* box-shadow: 0px 0px 26px -16px black; */
+  border-radius: 20px;
+
+  background-color: transparent;
+  position: relative;
+}
+
+.wrap-formulario {
+  width: 850px;
+  margin: auto;
+  background: #fff;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 48px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 3px 5px 15px;
+}
+.logo-formulario {
+  width: auto;
+}
+
+.logo-formulario img {
+  max-width: 300px;
+}
+.formulario {
+  justify-content: center;
+  padding: 20px;
+  width: 60%;
+  background-color: white;
+  border-radius: 10px;
+}
+.titulo-formulario {
+  font-family: Open Sans, sans-serif;
+  font-size: 40px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  width: 100%;
+  display: block;
+  font-weight: bolder;
+}
+.notaagregar {
+  text-align: center;
+  font-size: small;
+  padding: 1%;
+  margin-bottom: 0%;
+  padding-bottom: 3%;
+  color: #666666;
+}
+.columna1 {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.wrap-inputs {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  margin-bottom: 1px;
+  justify-content: center;
+  margin-right: 10px;
+}
+.inputs-general {
+  font-family: Poppins-Medium;
+  font-size: 10px;
+  line-height: 1.5;
+  color: black;
+  margin-bottom: 8px;
+  margin-right: 5px;
+  display: flex;
+  width: 100%;
+  background: #e6e6e6;
+  height: 50px;
+  border-radius: 25px;
+  padding: 20px;
+  border: 1px #666666;
+}
+/* button.btn {
+  color: whitesmoke;
+  background-color: #4158d0;
+  border: solid 2px #4158d0;
+} */
+
+/* a.btn1{
+    color: whitesmoke;
+    background-color: orangered;
+    border: solid 2px orangered;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: whitesmoke;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    padding: 0.46rem 0.375rem;
+    font-family: "Open Sans", sans-serif;
+  } */
+/* 
+a.btn1:hover{
+    background-color: red;
+    color: white;
+    border: solid 1px red;
+    transform: rotateY(-2px);
+
+} */

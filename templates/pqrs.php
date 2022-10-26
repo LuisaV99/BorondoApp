@@ -2,7 +2,7 @@
 
 $Documento = $_SESSION['Documento'];
 $users = "SELECT * FROM usuarios WHERE Documento='$Documento'";
-$pqrs = "SELECT * FROM tipospqrs";
+
 
 include("model/conexion.php");
 ?>
@@ -40,7 +40,7 @@ include("model/conexion.php");
   <!-- bloque 2 -->
 
   <p>Opina sobre tu experiencia</p>
-  <form class="formfooter" action="insertarpqrs.php" method="post">
+  <form class="formfooter" action="./functions/insertarpqrs.php" method="post">
     <?php
     $show = mysqli_query($conx, $users);
     while ($row = mysqli_fetch_assoc($show)) { ?>
@@ -49,25 +49,21 @@ include("model/conexion.php");
       </div>
       <div class="column-1">
 
-<select class="inputpqrs" name="Tipopqrs" >
-  <option ></option>
-<?php
-    $show = mysqli_query($conx, $pqrs);
-    while ($row = mysqli_fetch_assoc($show)) { ?> 
-    
-    <option><?php echo $row['Tipopqrs'] ?></option>
-    
-    
-    <?php  } ?>
+<select class="inputpqrs" name="Tipopqrs" requiered>
+  <option value="0" disabled selected >Tipo Pqrs</option>
+  <option value="1">Petición</option>
+  <option value="2">Queja</option>
+  <option value="3">Reclamo</option>
+  <option value="4">Sugerencia</option>
 </select>
 
-        <input class="inputpqrs" type="text" id="asunto" name="Asunto" placeholder="Asunto" />
+        <input class="inputpqrs" type="text" id="asunto" name="Asunto" placeholder="Asunto" minlength="6" maxlength="17" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+" />
 
 
       </div>
-      <textarea cols="30" rows="10" name="Cuerpo" placeholder="Escribe Aqui tu PQR'S"></textarea>
+      <textarea cols="30" rows="10" name="Cuerpo" placeholder="Escribe Aquí tu PQR'S" minlength="40" maxlength="350" required></textarea>
 
-      <button class="send" type="summit" onclick="location.reload()">Enviar</button>
+      <button class="send" type="summit" >Enviar</button>
 
     <?php } ?>
   </form>

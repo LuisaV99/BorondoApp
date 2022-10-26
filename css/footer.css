@@ -70,14 +70,13 @@ a {
 .lema {
   font-size: 25px;
   color: white;
-  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .copy {
   font-size: small;
-  margin-top: 95px;
   color: white;
-  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .logo-boro {
@@ -100,7 +99,7 @@ a {
   margin-top: 20px;
   font-size:larger;
   color: white;
-  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .formfooter {
@@ -154,12 +153,13 @@ textarea::placeholder {
   margin-top: 10px;
   width: auto;
   height: 30px;
-  padding: 5px;
   border: 1px solid white;
   color: white;
   border-radius: 10px;
   text-transform: uppercase;
   background: #1965c8;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .send:hover {
@@ -219,7 +219,7 @@ textarea::placeholder {
 .container-block:nth-child(3) a {
   text-decoration: none;
   color: white;
-  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .container-block:nth-child(3) a:hover {
@@ -232,7 +232,7 @@ textarea::placeholder {
 }
 
 .container-block:nth-child(3) p {
-  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: white;
 }
 
@@ -241,7 +241,7 @@ textarea::placeholder {
   margin-top: 50px;
   margin-bottom: 50px;
   color: white;
-  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .social-icons {

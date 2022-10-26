@@ -1,184 +1,194 @@
 .dropdown {
-    display: none;
-    width: 50%;
-  }
-  
-  .banderas {
-    width: 145px;
-  }
-  
-  .dropdown-menu {
-    position: absolute;
-    z-index: 1000;
-    display: none;
-    min-width: 7rem;
-    padding: 0.5rem 0;
-    margin: 0;
-    font-size: 1rem;
-    color: #212529;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.15);
-    border-radius: 0.25rem;
-  }
-  
-  ul, li {
-	margin: 0px;
-	list-style-type: none;
-  
+  display: none;
+  width: 50%;
 }
 
+.sesion {
+  width: 25%;
+}
+
+.dropdown-menu {
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  min-width: 7rem;
+  padding: 0.5rem 0;
+  margin: 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
 
 .end {
-    justify-content: flex-end;
-  }
-  
-  
-  
-  
-  #hola {
-    box-shadow: #555454 5px 5px 5px 5px;
-    border-radius: 10px;
-    width: auto;
-    padding: 20px 20px 20px 20px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  
-  
-  .navlogo{
-    padding-right: 1%;
-    display: flex;
-    justify-content: left;
-   
-  }
-   button{
-    font-weight: 500;
-    font-family: Poppins 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 16px;
-    color: black;
-    text-decoration: none;
-  }
-  
-  header{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 8px 0px 7px 0px;
-    background-color: whitesmoke;
-    width: 100%;
-  }
-  ol,
-  ul {
-    padding-left: 0.1rem;
-  }
-  .logosv2{
-    display: flex;
-  }
-  .nav_links{
-    justify-content: center;
-    list-style: none;
-    padding-right: 2rem;
-  }
-  .nav_links li {
-    display: inline-block;
-    padding: 0px 20px;
-    color: #555454;
-    
-  }
-  .nav_links li a {
-    transition: all 0.3s ease 0s;
-    text-decoration: none;
-    color: #555454;
-  }
-  .EU {
-    width: 25px;
-    border-radius: 4px;
-  }
-  
-  .ES {
-    width: 25px;
-    border-radius:4px;
-    
-    
-  }
-  
-  .botones2{
-    display: block;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-left: 95px;
-    margin-right: 95px;
-  
-  }
-  
-  .navlink {
-    font-size: large;
-    text-decoration: none;
-    color: black;
-  }
-  
-   
-  
-
-
-  /*----------- REvisar ---------*/
-  a {
-	font-family: Poppins-medium;
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
-	transition: all 0.4s;
-	-webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
+  justify-content: flex-end;
 }
 
-a:focus {
-	outline: none !important;
+#hola {
+  box-shadow: #555454 5px 5px 5px 5px;
+  border-radius: 10px;
+  width: auto;
+  padding: 20px 20px 20px 20px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-a:hover {
-    text-decoration: none;
-    color: orange;
+.navlogo {
+  padding-right: 1%;
+  display: flex;
+  justify-content: left;
+}
+button {
+  font-weight: 500;
+  font-family: Poppins "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
 }
 
-@font-face {
-    font-family: Poppins-Regular;
-    src: url('../fonts/poppins/Poppins-Regular.ttf'); 
-  }
-  
-  @font-face {
-    font-family: Poppins-Bold;
-    src: url('../fonts/poppins/Poppins-Bold.ttf'); 
-  }
-  
-  @font-face {
-    font-family: Poppins-Medium;
-    src: url('../fonts/poppins/Poppins-Medium.ttf'); 
-  }
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0px 7px 0px;
+  background-color: whitesmoke;
+  width: 100%;
+  z-index: 100;
+}
+ol,
+ul {
+  padding-left: 0.1rem;
+}
+.logosv2 {
+  display: flex;
+  align-items: flex-end;
+  width: 25%;
+  padding-left: 10%;
+}
+.nav_links {
+  justify-content: center;
+  list-style: none;
+  padding-right: 2rem;
+}
+.nav_links li {
+  display: inline-block;
+  padding: 0px 20px;
+  color: #555454;
+}
+.nav_links li a {
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+  color: #555454;
+}
+.EU {
+  width: 25px;
+  border-radius: 4px;
+}
 
+.ES {
+  width: 25px;
+  border-radius: 4px;
+}
+
+.botones2 {
+  display: block;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left: 95px;
+  margin-right: 95px;
+}
+
+.navlink {
+  font-size: large;
+  text-decoration: none;
+  color: black;
+}
+a.navlink:hover {
+  color: #fa8303;
+}
 
 button {
-	outline: none !important;
-	border: none;
-	background: transparent;
+  outline: none !important;
+  border: none;
+  background: transparent;
 }
 
 button:hover {
-	cursor: pointer;
+  cursor: pointer;
+}
+a {
+  font-family: Poppins-medium;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666666;
+  margin: 0px;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  text-decoration: none;
+}
+/*----------- REvisar ---------*/
+
+a:focus {
+  outline: none !important;
+}
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url("../fonts/poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url("../fonts/poppins/Poppins-Bold.ttf");
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url("../fonts/poppins/Poppins-Medium.ttf");
 }
 
 iframe {
-	border: none !important;
+  border: none !important;
 }
 
-center{
- margin-top: 11px;
+center {
+  margin-top: 11px;
+}
+/* Pruebitas */
+.idk{
+  text-decoration: none;
+  color: black;
+}
+.idk:hover{
+  color: #fa8303;
 }
 
+.ESP{
+  font-family: 'Open Sans', sans-serif;
+font-weight: 400;
+}
+.ENG{
+  font-family: 'Open Sans', sans-serif;
 
+}
+.ESP:hover{
+  color: orange;
+
+}
+.ENG:hover{
+  color: #2e83d4;
+
+}

@@ -31,13 +31,15 @@ include("model/conexion.php");
 	<link rel="stylesheet" type="text/css" href="./css/footer.css">
 <!--===============================================================================================-->
 </head>
-<a name="footer" id="footer"></a>
 <footer>
+  
+<a name="footer" id="footer"></a>
       <!-- container footer -->
       <div class="container-parth">
+        
         <!-- bloque 1 -->
         <div class="container-block"><center>
-          <a href="../index/index.html"><img class="logo-boro" src="./images/Logo.png" alt="Logo" /></a></center>
+          <a href="./index.php"><img class="logo-boro" src="./images/Logo.png" alt="Logo" /></a></center>
           <p class="lema">¡A un click de tu destino!</p>
           <p class="copy">Todos los derechos reservados © 2022 Copyright</p>
         </div>
@@ -65,13 +67,11 @@ include("model/conexion.php");
         <div class="container-block">
             <div class="container-list">
                 <div class="list-nav-1">
-                    <span><a href="">Nosotros</a></span>
-                    <span><a href="cards-lugares.php">Lugares</a></span>
-                    <span><a href="Card-Alojamiento.php">Alojamientos</a></span>
+                    <span><a  href="./Registro.php">Nosotros</a></span>
+                    <span><a href="Cards-Lugaresp.php">Lugares</a></span>
                   </div>
                   <div class="list-nav-1">
-                    <span><a href="Card-Transporte.php">Transportes</a></span>
-                    <span><a href="#Card-paquete">Paquetes</a></span>
+                    <span><a href="./index.php#footer">Registro</a></span>
                     <span><a href="Login.php">Inicio Sesión</a></span>
                   </div>
             </div>
@@ -88,6 +88,7 @@ include("model/conexion.php");
 						<h2 class="texbloc1" style="font-size: calc(1.325rem + -0.1vw);"  >@BorondoApp.Oficial</h2>
 					</div>
           <p>@BorondoApp.Official</p>
+
         </div>
       </div>
     </footer>

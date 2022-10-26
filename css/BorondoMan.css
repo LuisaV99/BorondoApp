@@ -1,0 +1,157 @@
+.inputsu {
+  display: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(https://images3.alphacoders.com/109/1092901.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  object-fit: cover;
+}
+.body {
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(https://images3.alphacoders.com/109/1092901.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  object-fit: cover;
+}
+
+button.bperfil:hover {
+  color: whitesmoke;
+}
+.BorondoMan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin-top: 3%;
+  height: auto;
+  gap: 30px;
+  border-radius: 20px;
+}
+.container-table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: auto;
+  padding: 0 30px;
+  border-radius: 2rem;
+  background-color: #e0e5eb;
+  padding-bottom: 20px;
+}
+
+.container-buttons {
+  margin-top: 9px;
+  margin-bottom: 21px;
+}
+.bperfil {
+  background-color: #F98806;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 9px;
+  color: whitesmoke;
+}
+
+.Status a {
+    text-decoration: none;
+    width: 80px;
+    height: 30px;
+    padding-top: 8px;
+    padding: 6px;
+    border-radius: 10px;
+    color: white;
+    padding: 5px;
+
+
+}
+.Status button{
+  text-decoration: none;
+  width: 80px;
+  height: 30px;
+  padding-top: 9px;
+  padding: 6px;
+  border-radius: 10px;
+  color: white;
+  padding: 5px;
+
+
+}
+
+.Status button:hover{
+  color: whitesmoke;
+}
+
+
+
+.Status a:hover {
+  color: whitesmoke;
+}
+
+.eliminar { 
+  background-color: #DC3545;
+}
+
+.eliminar:hover {
+  background-color: #ff0019;
+  border-radius: 0%;
+}
+
+.cancelar { 
+  background-color: grey;
+}
+
+.cancelar:hover {
+  background-color: grey;
+  border-radius: 0%;
+}
+
+
+.contestar {
+  background-color: #28A745;
+}
+
+.contestar:hover {
+  background-color: green;
+  border-radius: 0%;
+}
+
+.editar {
+  background-color: #4e91cf;
+}
+
+.editar:hover {
+  background-color: #0084ff;
+  border-radius: 0%;
+}
+
+.abl1{
+    display: flex;
+    justify-content: center;
+}
+
+
+:focus {
+  outline: 1px solid #4158d0;
+}

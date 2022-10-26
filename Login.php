@@ -1,7 +1,7 @@
 <?php
 include './model/conexion.php';
 session_start();
-if (isset($_SESSION['Nom_Usuario'])) {
+if (isset($_SESSION['Documento'])) {
 	echo "<script>alert('Ya iniciaste sesion');window.history.go(-1);</script>";
 }
 
@@ -20,8 +20,8 @@ if (isset($_SESSION['Nom_Usuario'])) {
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="icon" type="image/png" href="images/Logo.png" />
-	}
+	
+    <link rel="icon" type="image/png" href="./images/logo2.png" />
 	<link rel="stylesheet" type="text/css" href="./css/login.css">
 
 
@@ -40,7 +40,7 @@ if (isset($_SESSION['Nom_Usuario'])) {
 				<img id="logo" src="images/Logo.png" alt="" width="280px"></br>
 			</div>
 			<div class="formulario">
-				<form action="read copy.php" method="POST" class="login100-form validate-form">
+				<form action="./functions/read.php" method="POST" class="login100-form validate-form">
 					<span class="titulo-login">
 						Iniciar
 						Sesión
@@ -48,15 +48,15 @@ if (isset($_SESSION['Nom_Usuario'])) {
 
 					<div class="wrap-inputs validate-input" data-validate="Ingresa un usuario válido.">
 
-						<input class="inputs-general" type="number" name="Documento" placeholder="Documento">
+						<input class="inputs-general" type="number" name="Documento" placeholder="Documento" required>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa-solid fa fa-user" aria-hidden="true"></i>
 						</span>
 					</div>
 
-					<div class="wrap-inputs validate-input" data-validate="Ingresa una contraseña válida">
-						<input class="inputs-general" type="password" name="Contraseña" placeholder="Contraseña">
+					<div class="wrap-inputs validate-input" data-validate="Ingresa una contraseña válida" >
+						<input class="inputs-general" type="password" name="Contraseña" placeholder="Contraseña" required>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -97,14 +97,14 @@ if (isset($_SESSION['Nom_Usuario'])) {
 				</div>
 				<div class="modal-body">
 					<div class="contenedor-modal">
-						<div class="wrap-modal">
+						<div class="modal-wrap">
 							<div class="logo-modal">
 								<img id="logo-modal" src="images/Logo.png" alt="" width="300px"></br>
 							</div>
 							<div class="formulario-modal">
 								<form action="#" method="POST" class="login100-form-modal validate-form">
 									<div class="wrap-inputs-modal validate-input" data-validate="Ingresa un correo válido.">
-										<input class="inputs-general-modal" type="email" name="Correo_popup" placeholder="Correo electrónico" required>
+										<input class="inputs-general" type="email" name="Correo_popup" placeholder="Correo electrónico" required>
 										<span class="focus-input100"></span>
 										<span class="symbol-input100">
 											<i class="fa-solid fa-envelope" aria-hidden="true"></i>

@@ -18,31 +18,12 @@
 		
 	</header>
 	<body>
-		
-	<button class="botonperfil" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="" style="height: 24px; width: 65px; font-size: 11px; padding-top: 2px;">
-	<img class="navlogo" src="images/User-Profile.png" alt="logo" width="60">  
-		
-			</button>
-	<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-			  <li>		<a href="./Login.php">Iniciar Sesion</a></li>
-			  <li>		<a href="./Registro.php">Registrarme</a></li>
-			
-			</ul>
-
-            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
+  <ul class="nav_links">
+	<li><a href="./login.php" class="navlink" style="font-size: 15px; text-overflow:ellipsis; white-space:pre;">Iniciar Sesión</a></li>
+  /
+	<li><a href="./Registro.php" class="navlink" style="font-size: 15px; text-overflow:ellipsis; white-space:pre;">Registrarme</a></li>
+  </ul>
+			 
 
 
 			

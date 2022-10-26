@@ -10,7 +10,7 @@
  if (isset($eliminar)){
     header("location: ../Adminalojamientos.php");
  }else {
-    echo "Funcion eliminar no lograda";
+    echo "Función eliminar no lograda";
  }
 
 ?>

@@ -19,26 +19,29 @@ include("model/conexion.php");
 <!--===============================================================================================-->
 </head>
 	<header>
-		<div class="logosv2">
-		<a href="./index.php" class="navlink"><img class="navlogo" src="images/logo2.png" alt="logo" width="60"></a>
 		
+<a name="navbar" id="navbar"></a>
 
+		<div class="logosv2">
+		<img class="navlogo" src="images/logo2.png" alt="logo" width="60">
 		<?php
 		if ($_SESSION){
 
 			
-			include 'templates/Bienvenido.php';
+			include 'templates/Saludo.php';
 
 
 		}
 		else {
 
-			include 'templates/Inicia.php';
+			
 
 		}
 		
 		
 		?>
+
+	
 		
 
 
@@ -47,11 +50,10 @@ include("model/conexion.php");
 		<nav class="botones2">
 			<ul class="nav_links">
 				<li><a href="./index.php" class="navlink">Inicio</a></li>
-				<li><a href="./Cards-Lugares.php" class="navlink">Lugares</a></li>
-				<li><a href="./Card-Transporte.php" class="navlink">Transporte</a></li>
-				<li><a href="./Card-Alojamiento.php" class="navlink">Alojamientos</a></li>
-				<li><a href="#footer" class="navlink">Contáctanos</a></li>
-				<li><a href="./Reservas.php" class="navlink">Reservas</a></li>
+				<li><a href="./Cards-LugaresP.php" class="navlink">Lugares</a></li>
+				<!-- <li><a href="./Card-Transporte.php" class="navlink">Transporte</a></li> -->
+				<li><a href="./index.php#footer" class="navlink">Contáctanos</a></li>
+				<li><a href="./Usuarioreservas.php" class="navlink">Reservas</a></li>
 			</ul>
 		</nav>
 	</center>
@@ -68,7 +70,7 @@ include("model/conexion.php");
 			<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
 			  <li><button class="dropdown-item" type="button">Inicio</button></li>
 			  <li><button class="dropdown-item" type="button">Lugares</button></li>
-			  <li><button class="dropdown-item" type="button">Transporte</button></li>
+			  <!-- <li><button class="dropdown-item" type="button">Transporte</button></li> -->
 			  <li><button class="dropdown-item" type="button">Alojamientos</button></li>
 			  <li><button class="dropdown-item" type="button">Contáctanos</button></li>
 			  <li><button class="dropdown-item" type="button">Mis Reservas</button></li>
@@ -79,11 +81,23 @@ include("model/conexion.php");
 		</div>
 	
 
-		<div class="banderas">
-		<a clas="ESP" href="#"><button>ES</button></a> 
-		<img class="ES" src="images/es.png" alt="">
-		<a clas="ENG" href="#"><button>EN</button></a> 
-		<img class="EU" src="images/eeuu.png" alt="">
+		<div class="sesion">
+		<?php
+		if ($_SESSION){
+
+			
+			include 'templates/Bienvenido.php';
+
+
+		}
+		else {
+
+			include 'templates/Inicia.php';
+
+		}
+		
+		
+		?>
 		</div>
 
 	</header>

@@ -8,9 +8,9 @@
  $resultado = mysqli_query($conx, $eliminar);
 
  if (isset($eliminar)){
-    header("location: ../Admin.php");
+    header("location: ../Adminpqrs.php");
  }else {
-    echo "Funcion eliminar no lograda";
+    echo "Función eliminar no lograda";
  }
 
 ?>

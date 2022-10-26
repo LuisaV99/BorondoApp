@@ -1,0 +1,349 @@
+.container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    padding-left: 350px;
+    /* background-color: white; */
+  }
+
+body{
+  background: url(http://blog.redbus.co/wp-content/uploads/2019/08/lar_sp7y6XijJgkQ6mI8dHfGWeVMA8KQXogaIZslLPAs.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 100vh;
+  background-position: center;
+  background-attachment: fixed;
+  object-fit: cover;
+  margin: 0;
+}
+
+.block1 {
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  width: 50%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 2% 3% 2% 3%;
+  box-shadow: 3px 5px 15px;
+  height: 40%;
+}
+
+.titulo {
+  display: flex;
+  justify-content: center;
+}
+
+.descrip1 {
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.inputsu {
+  display: none;
+  }
+
+.wrap-input100 {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1px;
+  justify-content: center;
+}
+
+.input100 {
+  font-family: Open Sans, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666666;
+  height: 100%;
+  display: flex;
+  width: 100%;
+  background: #e6e6e6;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+
+/*------------------------------------------------------------------
+[ Focus ]*/
+.focus-input100 {
+  display: block;
+  position: absolute;
+  border-radius: 25px;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 0px 0px;
+  color: #4158d0;
+}
+
+#inputfecha {
+  width: 200px;
+  height: 50px;
+}
+
+#inputentra {
+  width: 200px;
+  height: 50px;
+}
+
+#inputcosto {
+  width: 200px;
+  height: 50px;
+}
+
+
+input {
+	outline: none;
+	border: none;
+}
+
+textarea:focus, input:focus {
+  border-color: transparent !important;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+input:focus::-moz-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder { color:transparent; }
+
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea:focus:-moz-placeholder { color:transparent; }
+textarea:focus::-moz-placeholder { color:transparent; }
+textarea:focus:-ms-input-placeholder { color:transparent; }
+
+input::-webkit-input-placeholder { color: #999999; }
+input:-moz-placeholder { color: #999999; }
+input::-moz-placeholder { color: #999999; }
+input:-ms-input-placeholder { color: #999999; }
+
+textarea::-webkit-input-placeholder { color: #999999; }
+textarea:-moz-placeholder { color: #999999; }
+textarea::-moz-placeholder { color: #999999; }
+textarea:-ms-input-placeholder { color: #999999; }
+
+
+.botones{
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+  .form {
+    background: transparent;
+    border-radius: 10px;
+    padding: 10px;
+    padding-top: 5%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40%;
+  }
+
+  p {
+    font-size:medium;
+    margin-bottom: 0;
+  }
+
+  
+  .formdown {
+    display: flex;
+  }
+
+  .img {
+    max-width: 100px;
+    max-height: 300px;
+    width: 500px !important;
+    height: 400px !important;
+    border-radius: 4px;
+  }
+
+  .slide {
+    position: relative;
+    width: 500px;
+
+  }
+
+
+ 
+
+  .nombre{
+    font-family: 'League Gothic', sans-serif;
+    color: #468ac9; 
+    font-weight: bold;
+    font-size: 60px;
+  }
+
+  .character{
+    display: flex;
+    font-family: 'League Gothic', sans-serif;
+    justify-content: space-between;
+  }
+
+  .precio {
+    font-family: Poppins 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+  }
+
+  .disponibilidad{
+    font-family: Poppins 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+  }
+
+  .text {
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 3px 5px 15px;
+    display: table;
+    flex-flow: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40%;
+  }
+
+  .barr {
+    font-size: large;
+  }
+
+  .precios {
+    display: flex;
+  }
+  .h5{
+    margin-left: 30%;
+  }
+
+
+  
+
+  /* Ya no es mio */
+  .slide-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .slide-open:checked + .slide-item {
+    position: static;
+    opacity: 100;
+  }
+
+  .slide-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
+    margin-bottom: 6%;
+  }
+
+  .slide-item img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .slide-control {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+  }
+
+  .slide-control.prev {
+    left: 2%;
+  }
+
+  .slide-control.next {
+    right: 2%;
+  }
+
+  .slide-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+  }
+
+  #slide-1:checked ~ .control-1,
+  #slide-2:checked ~ .control-2,
+  #slide-3:checked ~ .control-3 {
+    display: block;
+  }
+
+  .slide-indicador {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+  }
+
+  .slide-indicador li {
+    display: inline-block;
+    margin: 0 5px;
+  }
+
+  .slide-circulo {
+    color: #828282;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+  }
+
+  .slide-circulo:hover {
+    color: #aaaaaa;
+  }
+
+  #slide-1:checked ~ .control-1 ~ .slide-indicador 
+     li:nth-child(1) .slide-circulo,
+  #slide-2:checked ~ .control-2 ~ .slide-indicador 
+      li:nth-child(2) .slide-circulo,
+  #slide-3:checked ~ .control-3 ~ .slide-indicador 
+      li:nth-child(3) .slide-circulo {
+    color: #428bca;
+  }
+
+  #titulo {
+    width: 100%;
+    position: absolute;
+    padding: 0px;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 27px;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Open Sans', sans-serif;
+    z-index: 9999;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), 
+         -1px 0px 2px rgba(255, 255, 255, 0);
+  }
+
+ 

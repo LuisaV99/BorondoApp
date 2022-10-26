@@ -1,0 +1,36 @@
+.bodyfac {
+    background-color: #4158d0;
+    justify-content: center;
+}
+
+.Factura {
+    width: 40%;
+    margin: 1% auto 4% auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    padding: 0 30px;
+    background-color: #E0E5EB;
+    padding-bottom: 20px;
+}
+.botones {
+    width: 100%;
+    margin: 1% auto 1% auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+}
+
+.descrip {
+    font-size: x-small;
+}
+
+.logo-boro {
+    width: 50%;
+}

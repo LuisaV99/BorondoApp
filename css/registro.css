@@ -54,14 +54,15 @@ body {
   border-radius: 10px;
 }
 .titulo-formulario {
-  font-family: Poppins-medium;
-  font-size: 30px;
-  color: black;
+  font-family: Open Sans, sans-serif;
+  font-size: 40px;
+  color: #333333;
   line-height: 1.2;
   text-align: center;
+  padding-bottom: 30px;
   width: 100%;
   display: block;
-  padding-bottom: 40px;
+  font-weight: bolder;
 }
 .wrap-inputs {
   position: relative;
@@ -72,7 +73,7 @@ body {
 }
 .inputs-general {
   font-family: Poppins-Medium;
-  font-size: 10px;
+  font-size: 14px !important;
   line-height: 1.5;
   color: #666666;
   margin-bottom: 3px;
@@ -85,6 +86,22 @@ body {
   padding: 20px;
   border: 1px #666666;
 }
+.inputs-general1{
+  font-family: Poppins-Medium;
+  font-size: 10px !important;
+  line-height: 1.5;
+  color: #666666;
+  margin-bottom: 3px;
+  margin-right: 5px;
+  display: flex;
+  width: 100%;
+  background: #e6e6e6;
+  height: 50px;
+  border-radius: 25px;
+  padding: 20px;
+  border: 1px #666666;
+}
+
 .columna1 {
   display: flex;
   flex-wrap: nowrap;
@@ -112,6 +129,7 @@ body {
 }
 .checkbox {
   margin-left: 11px;
+  /* accent-color: orange; */
 }
 
 button.btn {
@@ -123,6 +141,7 @@ button.btn:hover {
   background-color: #fa8303;
   border: solid 1px #fa8303;
   transform: translateY(-2px);
+  color: whitesmoke;
 }
 .text-new {
   display: flow-root;
@@ -150,7 +169,6 @@ button.btn:hover {
   }
 
   .formulario {
-    border: 1px black solid;
     width: 500px;
     padding: 15px 60px;
   }

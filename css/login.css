@@ -6,7 +6,7 @@
 body, html {
 	height: 100%;
   font-family: Open Sans, sans-serif;
-  background: url(https://www.teahub.io/photos/full/353-3532587_colombia-wallpaper-colombia-wallpapers-hd.jpg);
+  background-image: url(https://images.pexels.com/photos/185933/pexels-photo-185933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -28,6 +28,7 @@ body, html {
   margin-top: 4%;
   margin-bottom: 5%;
 }
+
 .wrap-inicio {
   width: auto;
   background: #fff;
@@ -45,6 +46,25 @@ body, html {
   padding-bottom: 1%;
   box-shadow: #555454 5px 5px 5px 5px;
 }
+
+.habili {
+  width: auto;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:right;
+  padding: 30px 30px;
+  padding-bottom: 1%;
+  box-shadow: #555454 5px 5px 5px 5px;
+}
+
 .logo-formulario {
   width: 300px;
 }
@@ -54,7 +74,7 @@ body, html {
 }
 #logo{
   position: relative;
-  padding-top: 4rem;
+  padding-top: 2rem;
 }
 .formulario{
   justify-content: center;
@@ -76,6 +96,30 @@ body, html {
   display: block;
   font-weight: bolder;
 }
+
+.subtitulo-login {
+  font-family: Open Sans, sans-serif;
+  font-size: 25px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 2%;
+  width: 100%;
+  display: block;
+  font-weight: bolder;
+}
+
+.titulito{
+ margin: 0;
+ font-size: 14px;
+ text-align: center;
+}
+
+.info{
+  text-align: center;
+
+}
+
 .wrap-inputs {
   position: relative;
   width: 100%;
@@ -98,30 +142,6 @@ body, html {
   border: 1px #666666;
 
 }
-.symbol-input100 {
-  font-size: 15px;
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  border-radius: 25px;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding-left: 35px;
-  pointer-events: none;
-  color: #666666;
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-}
 .container-login100-form-btn {
   width: 100%;
   display: -webkit-box;
@@ -133,6 +153,7 @@ body, html {
   justify-content: center;
   padding-top: 7px;
 }
+
 button.btn{
   color:whitesmoke;
   background-color: #4158d0;
@@ -141,7 +162,16 @@ button.btn{
 button.btn:hover{
   background-color: #fa8303;
   border: solid 1px #fa8303;
-  transform: translateY(-2px);
+color: whitesmoke;
+}
+button.cancelar{
+  color: whitesmoke;
+  background-color: red ;
+  border: solid 2px red;
+}
+button.cancelar:hover{
+  background-color:rgb(185, 0, 0) ;
+  border: solid 1px rgb(185, 0, 0);
 }
 .txt2 {
   font-family: Open Sans, sans-serif;
@@ -252,7 +282,7 @@ font-family: Open Sans, sans-serif;
   margin-top: 4%;
   margin-bottom: 5%; 
 }
-.wrap-modal{
+.modal-wrap{
   width: auto;
   background: #fff;
   border-radius: 10px;
@@ -266,7 +296,8 @@ font-family: Open Sans, sans-serif;
   justify-content:right;
   padding: 30px 30px;
   padding-bottom: 1%;
-  box-shadow: #555454 5px 5px 5px 5px;
+  
+  box-shadow: #555454 0px 0px 4px 1px;
 
 }
 .logo-modal{
@@ -309,7 +340,7 @@ font-family: Open Sans, sans-serif;
   height: 40px;
   border-radius: 25px;
   padding: 0 10px 0 68px;
-  border: solid 1px #666666;
+  border: 1px #666666;
 
 }
 .symbol-input100 {
@@ -346,5 +377,5 @@ margin-left: 82px;
 button.btn-modal:hover{
   background-color: #fa8303;
   border: solid 1px #fa8303;
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
 }

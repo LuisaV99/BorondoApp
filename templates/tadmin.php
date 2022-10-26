@@ -9,7 +9,6 @@ if(!isset($_SESSION['Documento'])){
 $document=$_SESSION['Documento'];
 $users="SELECT * FROM usuarios WHERE Documento='$document'";
 $users="SELECT * FROM usuarios WHERE Documento='$document'";
-// print_r($_SESSION);
 
 include("model/conexion.php");
 ?>
@@ -41,26 +40,28 @@ include("model/conexion.php");
 
     <div class="container-admin">
       <div class="imagen-admin">
-        <div class="img-adm">
-          <img src="images/user.png" alt="" />
+        <div class="">
+          <a href="./index.php"><img src="images/logo2.png" alt=""  width="222px" /></a>
         </div>
         <div>
         <?php
 			 $show=mysqli_query($conx,$users);
         while($row=mysqli_fetch_assoc($show)) { ?>
-            <a href="">Actualizar foto de perfil</a>
+            
+            
+            <h1>Datos Administrador</h1>
+            <h2>Documento</h2>
+            <p><?php echo $row['Documento'] ?></p>
+            <h2>Nombre</h2>
             <p><?php echo $row["Nombres"].' '.$row["Apellidos"];?></p>
-            <h1>Datos Personales</h1>
             <h2>Correo</h2>
             <p><?php echo $row["Correo"];?></p>
             <h2>Teléfono</h2>
             <p><?php echo $row['Telefono'] ?></p>
-            <h2>Ultima coneccion (prox)</h2>
-            <p><?php echo $row['Fecha_Hoy'] ?></p>
+            
           <?php } ?>
         </div>
-        <!-- <input type="checkbox" id="evento-click"> -->
-        <label id="open" for="evento-click">EDITAR</label>
+       
       </div>
     </div>
 

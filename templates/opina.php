@@ -34,9 +34,9 @@ include("model/conexion.php");
         <!-- bloque 2 -->
         <div class="container-blockop">
           <br>
-          <h2 class="aches">Aqui siempre valoramos tu opinion</h2>
-          <h4 class="achesp">Registrate para que podamos conocer tu experiencia y brindar un mejor servicio cada día.</h4>
-          <a href="./Registro.php"><button class="sendopi" type="summit" >Registrarme</button></a>
+          <h2 class="aches">Aquí siempre valoramos tu opinión</h2>
+          <h4 class="achesp">Inicia Sesión para que podamos conocer tu experiencia y brindar un mejor servicio cada día.</h4>
+          <a href="./Login.php"><button class="sendopi" type="summit" >Iniciar Sesión</button></a>
         </div>
         
     <script src="/JS/Footer.js"></script>

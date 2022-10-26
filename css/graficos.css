@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+.title {
+    color: transparent;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    background-image: linear-gradient(180deg, #ffe993, #eb831c);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.container__graficos {
+    width: 400px;
+    height: 400px;
+}
+
+.icon__download {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/icons/Download.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+#header-card {
+    background-color: #4158d0;
+    color: #fff;
+}
+
+#informe_pqrs {
+    height: auto !important;
+}

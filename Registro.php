@@ -1,11 +1,9 @@
 <?php
+include './model/conexion.php';
 session_start();
-if (!isset($_SESSION['Nom_Usuario'])) {
+if (isset($_SESSION['Documento'])) {
+	echo "<script>alert('Ya iniciaste sesion');window.history.go(-1);</script>";
 }
-
-// print_r($_SESSION);
-
-include("model/conexion.php");
 ?>
 
 <!DOCTYPE html>
@@ -16,8 +14,9 @@ include("model/conexion.php");
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="./images/Logo.png" />
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="icon" type="image/png" href="./images/logo2.png" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="stylesheet" type="text/css" href="./css/registro.css">
@@ -37,12 +36,12 @@ include("model/conexion.php");
 					<img id="logo" src="images/Logo.png" alt=""></br>
 				</div>
 				<div class="formulario">
-					<form action="insertar.php" method="POST">
+					<form action="./functions/insertar.php" method="POST">
 						<span class="titulo-formulario">
 							REGISTRO
 						</span>
 						<div for="txtSoloLetras" class="wrap-inputs validate-input" data-validate="Ingresa un documento válido" style="margin-bottom: 2%">
-							<input class="inputs-general" type="number" name="Documento" placeholder="Documento" min="8" max="11" required>
+							<input class="inputs-general" type="number" name="Documento" placeholder="Documento" required >
 							<span class="focus-input100"></span>
 						</div>
 						<div class="columna1" style="margin-bottom: 2%;">
@@ -61,7 +60,7 @@ include("model/conexion.php");
 								<span class="focus-input100"></span>
 							</div>
 							<div class="wrap-inputs validate-input" data-validate="Ingresa una fecha de nacimiento">
-								<input class="inputs-general" type="date" name="Fecha_Nacimiento" placeholder="Fecha de nacimiento" required>
+								<input class="inputs-general1" type="date" name="Fecha_Nacimiento" required>
 								<span class="focus-input100"></span>
 							</div>
 						</div>
@@ -70,7 +69,7 @@ include("model/conexion.php");
 							<span class="focus-input100"></span>
 						</div>
 						<div class="wrap-inputs validate-input" data-validate="Ingresa una contraseña válida">
-							<input class="inputs-general" type="password" name="Contraseña" placeholder="contraseña" required>
+							<input class="inputs-general" type="password" name="Contraseña" placeholder="contraseña" required minlength="8" maxlength="20">
 							<span class="focus-input100"></span>
 						</div></br>
 						<form method="POST">
@@ -85,6 +84,8 @@ include("model/conexion.php");
 						</form>
 						</tr>
 						<div class="text-new">
+							<b><label style="font-size: 12px;">¿Ya eres usuario?</label></b>
+							</br>
 							<a class="txt2" href="Login.php">
 								Iniciar Sesión
 								<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
