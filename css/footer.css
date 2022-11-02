@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -14,13 +14,13 @@ footer {
   flex-flow: row wrap;
 }
 
-.options{
+.options {
   text-decoration-color: #171717;
 }
 
 .container-parth {
   width: 100vw;
-  min-width: 400px;
+  min-width: 100%;
   height: auto;
   bottom: 0;
   left: 0;
@@ -39,8 +39,8 @@ footer {
 
 .inputsu {
   display: none;
-  }
-  
+}
+
 .container-parth div {
   flex: 0 1 25%;
   /* background-color: darkorange; */
@@ -54,38 +54,35 @@ a {
 }
 /* Bloque 1 */
 
-.container-block  {
+.container-block {
   text-align: center;
   min-width: 325px;
 }
 
-.aches{
+.aches {
   font-weight: bold;
 }
 
-.achesp{
-  
+.achesp {
 }
 
 .lema {
   font-size: 25px;
   color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .copy {
   font-size: small;
   color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .logo-boro {
   width: 200px;
   height: auto;
   position: relative;
-
 }
-
 
 /* Bloque 2 */
 
@@ -97,9 +94,9 @@ a {
 .container-block:nth-child(2) p {
   margin-bottom: 10px;
   margin-top: 20px;
-  font-size:larger;
+  font-size: larger;
   color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .formfooter {
@@ -127,14 +124,13 @@ a {
   padding: 7px;
   background-color: rgb(230, 230, 230);
   color: rgb(102, 102, 102);
-  box-shadow: 2px 5px 7px rgba(0, 0, 0, 0.80%);
+  box-shadow: 2px 5px 7px rgba(0, 0, 0, 0.8%);
   font-weight: bolder;
-} 
-
-.input-down  {
-  margin-left: 3px;
 }
 
+.input-down {
+  margin-left: 3px;
+}
 
 textarea {
   width: 100%;
@@ -163,7 +159,7 @@ textarea::placeholder {
 }
 
 .send:hover {
-  background: #FA8303;
+  background: #fa8303;
   font-weight: bolder;
   cursor: pointer;
 }
@@ -181,7 +177,7 @@ textarea::placeholder {
 }
 
 .sendopi:hover {
-  background: #FA8303;
+  background: #fa8303;
   font-weight: bolder;
   cursor: pointer;
 }
@@ -199,15 +195,12 @@ textarea::placeholder {
   text-align: center;
 }
 
-
 .container-list {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%;
-
 }
-
 
 .list-nav-1 {
   display: flex;
@@ -219,20 +212,17 @@ textarea::placeholder {
 .container-block:nth-child(3) a {
   text-decoration: none;
   color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .container-block:nth-child(3) a:hover {
-  color: #FA8303;
-  text-shadow: 0 0 10px #FEBD66,
-  0 0 20px #FEBD66,
-  0 0 40px #FEBD66,
-  0 0 80px #FEBD66,
-  0 0 120px #FEBD66;
+  color: #fa8303;
+  text-shadow: 0 0 10px #febd66, 0 0 20px #febd66, 0 0 40px #febd66,
+    0 0 80px #febd66, 0 0 120px #febd66;
 }
 
 .container-block:nth-child(3) p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: white;
 }
 
@@ -241,14 +231,13 @@ textarea::placeholder {
   margin-top: 50px;
   margin-bottom: 50px;
   color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .social-icons {
   display: flex;
   justify-content: center;
 }
-
 
 .insta {
   display: inline-block;
@@ -294,9 +283,5 @@ textarea::placeholder {
 }
 
 .twitter:hover {
-  transform: translateY(-10px); 
+  transform: translateY(-10px);
 }
-
-
-
-

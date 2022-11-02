@@ -12,5 +12,4 @@
  }else {
     echo "Función eliminar no lograda";
  }
-
 ?>

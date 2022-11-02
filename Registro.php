@@ -41,7 +41,7 @@ if (isset($_SESSION['Documento'])) {
 							REGISTRO
 						</span>
 						<div for="txtSoloLetras" class="wrap-inputs validate-input" data-validate="Ingresa un documento válido" style="margin-bottom: 2%">
-							<input class="inputs-general" type="number" name="Documento" placeholder="Documento" required >
+							<input class="inputs-general" type="text" name="Documento" placeholder="Documento" required pattern="[0-9]{10}" onkeypress="return onlyNumberKey(event)" >
 							<span class="focus-input100"></span>
 						</div>
 						<div class="columna1" style="margin-bottom: 2%;">
@@ -54,16 +54,16 @@ if (isset($_SESSION['Documento'])) {
 								<span class="focus-input100"></span>
 							</div>
 						</div>
-						<div class="columna2" style="margin-bottom: 2%;">
+						<!-- <div class="columna2" style="margin-bottom: 2%;">
 							<div class="wrap-inputs validate-input" data-validate="Ingresa un telefono válido">
 								<input class="inputs-general" type="number" name="Telefono" placeholder="Teléfono" minlength="10" maxlength="14" required>
 								<span class="focus-input100"></span>
 							</div>
 							<div class="wrap-inputs validate-input" data-validate="Ingresa una fecha de nacimiento">
-								<input class="inputs-general1" type="date" name="Fecha_Nacimiento" required>
+								<input class="inputs-general2" type="date" name="Fecha_Nacimiento" placeholder="Fecha de nacimiento" required>
 								<span class="focus-input100"></span>
 							</div>
-						</div>
+						</div> -->
 						<div class="wrap-inputs validate-input" jt-c data-validate="Ingresa un correo válido" style="margin-bottom: 2%;">
 							<input class="inputs-general" type="email" name="Correo" placeholder="Correo Electrónico" required>
 							<span class="focus-input100"></span>
@@ -133,6 +133,24 @@ if (isset($_SESSION['Documento'])) {
 			scale: 1.1
 		})
 	</script>
+
+
+<script>
+    function onlyNumberKey(evt) {
+          
+        // Only ASCII character in that range allowed
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
+    }
+</script>
+<script>
+    function detailssubmit() {
+        alert("Your details were Submitted");
+    }
+</script>
+
 	<!--===============================================================================================-->
 
 </body>

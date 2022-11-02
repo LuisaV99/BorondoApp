@@ -1,23 +1,30 @@
 <?php
-session_start();
-if(!isset($_SESSION['Documento'])){
-	// $document=$_SESSION['Documento'];
-
-}
-
-// print_r($_SESSION);
 
 include("model/conexion.php");
 
+session_start();
+if(!isset($_SESSION['Documento'])){
 
-// $inactiv="SELECT * FROM usuarios WHERE Documento='$document' AND ID_Estado_Usuario='2'";
-// $inactivresult= mysqli_query($conx,$inactiv);
-// if(mysqli_num_rows($inactivresult) == 1) {
+	$document=0;
 
-// 	echo "<script>alert('Tu cuenta se encuentra deshabilitada');location='./functions/cerrar.php';</script>";
-// }else{
+}else{
+	$document=$_SESSION['Documento'];
+
+$inactiv="SELECT * FROM usuarios WHERE Documento='$document' AND ID_Estado_Usuario='2'";
+$inactivresult= mysqli_query($conx,$inactiv);
+
+if(mysqli_num_rows($inactivresult) == 1) {
+	echo "<script>alert('Tu cuenta se encuentra deshabilitada');location='./functions/cerrar.php';</script>";
+}else{
   
-// }
+}
+}
+
+
+
+
+
+
 
 
 ?>
@@ -31,11 +38,16 @@ include("model/conexion.php");
 <!--===============================================================================================-->	
 
     <link rel="icon" type="image/png" href="./images/logo2.png" />
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	
 	<script src="https://kit.fontawesome.com/01f3fdcd28.js" crossorigin="anonymous"></script>	
 	
+<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,7 +67,7 @@ include("model/conexion.php");
 </head>
 <body>
 
-<div style="position: fixed; width:100%; z-index:100">
+<div class="contenedor_nav">
 
 <?php 
 
@@ -120,15 +132,15 @@ include 'templates/navbar.php';
 
 				
 			<div class="bl32">
-	<h1 class="text2bl3">BorondoApp</h1>
+	<h1 class="text2bl3">Borondo App</h1>
 	<div class="bl321">
 		
-		<div class="textbl3">BorondoApp es la iniciativa de turismo donde se le dará el protagonismo que merece el departamento de El Valle Del Cacuca y todas sus ciudades, es hora de ver, disfrutar, valorar y enriquecer nuestro gran Valle y posicionarnos como potencia turística del país.</div>
+		<div class="textbl3">BorondoApp es la iniciativa de turismo donde se le dará el protagonismo que merece el departamento de El Valle Del Cacuca y sus alrededores, es hora de ver, disfrutar, valorar y enriquecer nuestro gran Valle y posicionarnos como potencia turística del país.</div>
 	<div class="text2bl32"> Somos BorondoApp, el turismo Vallecaucano en su máxima expresión, sin más que agregar... ¿Un borondo o miedo? </div>
 	</div>
 	<div class="bl322">
 		<p class="reser"><a href="" class="check">✔</a>Mejores atractivos del Valle</p>
-		<p class="reser"><a href="" class="check">✔</a>Diversas ubicaciones de alta clase</p>
+		<p class="reser"><a href="" class="check">✔</a>Diversas establecimientos</p>
 		<p class="reser"><a href="" class="check">✔</a>Confiabilidad y contacto</p>
 		<p class="reser"><a href="" class="check">✔</a>Diversidad cultural</p>
 	</div>
@@ -145,7 +157,7 @@ include 'templates/navbar.php';
 						</div>
 						<div class="content">
 							
-							<p style="padding-top: 10px;">¿Quieres conocer lugares increíbles, hermosas vistas, zonas enriquecidas de cultura y diversión? El Valle del Cauca los tiene, mira aquí todos los lugares que posee este incomparable departamento y sus alrededores. <br>Att: BorondoApp</p>
+							<p class="card_text">¿Quieres conocer lugares increibles, hermosas vistas, zonas enriquecidas de cultura y diversion? El Valle del Cauca los tiene, mira aquí todos los lugares que posee este incomparable departamento y sus alrededores. <br>Att: BorondoApp</p>
 							<center><div class="boton">
 								<a href="Cards-LugaresP.php" class="botona">Ver más</a>
 							</div></center>

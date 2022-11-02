@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['Documento'])) {
-  echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
+  echo "<script>alert('Debes iniciar sesión');location='login.php';</script>";
   session_destroy();
   die();
 }
@@ -11,16 +11,16 @@ $bus=$_GET['bus'];
 
 if ($bus == "1") {
 
-        $lugares="SELECT * FROM `lugares`   ORDER BY  Num_Borondo DESC;";
+        $lugares="SELECT * FROM `lugares` INNER JOIN ciudades ON lugares.ID_Ciudad=ciudades.ID_Ciudad WHERE lugares.Num_Borondo > '1' ORDER BY Num_Borondo DESC;";
 
 } else {
     if ($bus == "2") {
         
-        $lugares="SELECT * FROM `lugares` ORDER BY Costo ASC;";
+        $lugares="SELECT * FROM `lugares` INNER JOIN ciudades ON lugares.ID_Ciudad=ciudades.ID_Ciudad  ORDER BY Costo ASC;";
 
     } else {
 
-        $lugares="SELECT * FROM `lugares`";
+        $lugares="SELECT * FROM `lugares` INNER JOIN ciudades ON lugares.ID_Ciudad=ciudades.ID_Ciudad ";
 
     }
 }
@@ -35,6 +35,16 @@ if(mysqli_num_rows($inactivresult) == 1) {
 }else{
   
 }
+
+$rol = "SELECT * FROM usuarios WHERE Documento='$document' AND ID_Rol='1'";
+$result = mysqli_query($conx, $rol);
+
+if (mysqli_num_rows($result) == 1) {
+} else {
+  echo "<script>alert('No tienes permisos de entrar aqui');location='index.php';</script>";
+}
+
+
 
 
 ?>
@@ -67,46 +77,7 @@ if(mysqli_num_rows($inactivresult) == 1) {
 
 <div class="botones"><a href="./Cards-LugaresP.php" class="btn btn-danger">Regresar</a></div>
     
-    <!-- <div class="busqueda">
-
-
-        <input class="busquedac" type="text" id="nombreC" name="nombreC" placeholder="Nombre">
-
-        <div class="consulta">
-            <h5 class="titlebus">Visitados</h5>
-            <div style="width: 20px; margin-left: 6px;">
-                <div style="height: 15px;"><a href=""><i class="fa-solid fa-2x fa-caret-up"></i></a></div>
-                <div style="height: 29px;"><a href=""><i class="fa-solid fa-2x fa-caret-down"></i></a></div>
-            </div>
-        </div>
-
-        <div class="consulta">
-            <h5 class="titlebus">Puntuación</h5>
-            <div style="width: 20px; margin-left: 6px;">
-                <div style="height: 15px;"><a href=""><i class="fa-solid fa-2x fa-caret-up"></i></a></div>
-                <div style="height: 29px;"><a href=""><i class="fa-solid fa-2x fa-caret-down"></i></a></div>
-            </div>
-        </div>
-
-        <div class="consulta">
-            <h5 class="titlebus">Precio</h5>
-            <div style="width: 20px; margin-left: 6px;">
-                <div style="height: 15px;"><a href=""><i class="fa-solid fa-2x fa-caret-up"></i></a></div>
-                <div style="height: 29px;"><a href=""><i class="fa-solid fa-2x fa-caret-down"></i></a></div>
-            </div>
-        </div>
-
-        <div class="consulta">
-            <h5 class="titlebus">Disponilidad</h5>
-            <div style="width: 20px; margin-left: 6px;">
-                <div style="height: 15px;"><a href=""><i class="fa-solid fa-2x fa-caret-up"></i></a></div>
-                <div style="height: 29px;"><a href=""><i class="fa-solid fa-2x fa-caret-down"></i></a></div>
-            </div>
-        </div>
-
-
-    </div> -->
-
+   
 
     <section class="container-padre">
 
@@ -120,10 +91,28 @@ if(mysqli_num_rows($inactivresult) == 1) {
             </div>
             <div class="container-content">
                 <p class="titulo"><?php echo $row['Nombre'] ?></p>
+                <p class="titulos">(<?php echo $row['Nom_Ciudad'] ?>)</p>
                 <p class="container-information"><?php echo $row['Descripcion1'] ?></p>
                 <p class="container-information">Costo:$<?php echo $row['Costo'] ?></p>
+                
+                
+               
+
                 <!-- Boton -->
+
+                <div class="moreinfo">
+
                 <a href="./Reservar.php?id=<?php echo $row['ID_Lugar']; ?>" class="buttom">Detalles</a>
+
+                <div class="submoreinfo">
+
+                <p class="container-information">Reservado:</p> <a aria-disabled="" class="titulos"> <strong><?php echo $row['Num_Borondo']; ?></strong></a>
+
+
+                </div>
+
+                </div>
+                
             </div>
         </article>
 <?php } ?>

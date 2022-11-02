@@ -48,7 +48,7 @@ if (isset($_SESSION['Documento'])) {
 
 					<div class="wrap-inputs validate-input" data-validate="Ingresa un usuario válido.">
 
-						<input class="inputs-general" type="number" name="Documento" placeholder="Documento" required>
+						<input class="inputs-general" type="text" name="Documento" placeholder="Documento" required pattern="[0-9]{10}" onkeypress="return onlyNumberKey(event)">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa-solid fa fa-user" aria-hidden="true"></i>
@@ -73,7 +73,7 @@ if (isset($_SESSION['Documento'])) {
 					</div>
 					<input type="hidden" name="oculto" value="1">
 					<div class="container-login100-form-btn">
-						<a href="read.php?id=<?php echo $row["Nom_Usuario"]; ?>"><button class="btn">ingresar</button></a>
+						<a><button class="btn">ingresar</button></a>
 					</div>
 				</form>
 
@@ -92,28 +92,40 @@ if (isset($_SESSION['Documento'])) {
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">RECUPERAR CONTRASEÑA</h5>
+				<img class="navlogo" src="images/logo2.png" alt="logo" width="50">
+					<h5 class="modal-title" id="exampleModalLabel">Olvidé mi contraseña</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
 					<div class="contenedor-modal">
-						<div class="modal-wrap">
-							<div class="logo-modal">
-								<img id="logo-modal" src="images/Logo.png" alt="" width="300px"></br>
-							</div>
 							<div class="formulario-modal">
-								<form action="#" method="POST" class="login100-form-modal validate-form">
+								<form action="./functions/olvidec.php" method="POST" class="login100-form-modal validate-form">
+
+								<p class="notaolvi">Si sus datos son correctos podrá ingresar a su perfil para cambiar su contraseña.</p>
+									<div class="wrap-inputs-modal validate-input" data-validate="Ingresa un documento válido.">
+										<input class="inputs-generalpop" type="text" name="Documento_popup" placeholder="Documento" required pattern="[0-9]{10}" onkeypress="return onlyNumberKey(event)">
+										<span class="focus-input100"></span>
+										<span class="symbol-input100">
+										<i class="fa-solid fa fa-user" aria-hidden="true"></i>
+										</span>
+									</div>
+
 									<div class="wrap-inputs-modal validate-input" data-validate="Ingresa un correo válido.">
-										<input class="inputs-general" type="email" name="Correo_popup" placeholder="Correo electrónico" required>
+										<input class="inputs-generalpop" type="email" name="Correo_popup" placeholder="Correo electrónico" required>
 										<span class="focus-input100"></span>
 										<span class="symbol-input100">
 											<i class="fa-solid fa-envelope" aria-hidden="true"></i>
 										</span>
 									</div>
+
+									
+									<div class="container-login100-form-btn">
+										<a><button class="btn">Ingresar</button></a>
+									</div>
 								</form>
-								<button type="button" class="btn-modal">Recuperar</button>
+								
 							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -136,6 +148,25 @@ if (isset($_SESSION['Documento'])) {
 		})
 	</script>
 	<!--===============================================================================================-->
+
+
+
+	<script>
+    function onlyNumberKey(evt) {
+          
+        // Only ASCII character in that range allowed
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
+    }
+</script>
+<script>
+    function detailssubmit() {
+        alert("Your details were Submitted");
+    }
+</script>
+
 
 </body>
 

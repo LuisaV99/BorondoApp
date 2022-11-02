@@ -20,6 +20,17 @@ body {
     -webkit-background-clip: text;
 }
 
+.botones {
+    width: 100%;
+    margin: 1% auto 1% auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+}
+
 .container__graficos {
     width: 400px;
     height: 400px;

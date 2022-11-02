@@ -86,10 +86,6 @@ include 'templates/Navbar.php';
                             <input class="inputs-general" type="email" name="Correo" placeholder="Correo" minlength="10" maxlength="100" required value="<?php echo $row["Correo"]; ?>">
                             <span class="focus-input100"></span>
                         </div>
-                        <div class="wrap-inputs validate-input" data-validate="Ingresa un número de telefono valido">
-                            <input class="inputs-general" type="number" name="Telefono" placeholder="Telefono" minlength="10" maxlength="14" required value="<?php echo $row["Telefono"]; ?>">
-                            <span class="focus-input100"></span>
-                        </div>
                         <div class="wrap-inputs validate-input" data-validate="Ingresa una contraseña">
                             <input class="inputs-general" type="varchar" name="Contraseña" placeholder="Contraseña" minlength="5" maxlength="14" required value="<?php echo $row["Contraseña"]; ?>">
                             <span class="focus-input100"></span>
@@ -126,6 +122,12 @@ include 'templates/Navbar.php';
     <?php
     include 'templates/footer.php';
     // ?>
+
+
+
+
+
+
 </body>
 
 </html>

@@ -25,6 +25,22 @@ if(mysqli_num_rows($inactivresult) == 1) {
   
 }
 
+$fechaActual = date('Y-m-d');
+
+$dias = 3;
+
+$fechamax = date('Y-m-d', strtotime($Date. ' +'.$dias.' days'));
+
+
+
+  // Obteniendo la fecha actual del sistema con PHP
+ 
+   
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,6 +72,8 @@ if(mysqli_num_rows($inactivresult) == 1) {
 
     include 'templates/Navbar.php';
 
+
+
     ?>
   <form action="./functions/pro-reservar.php" method="POST" enctype="multipart/form-data"> 
   
@@ -79,7 +97,9 @@ if(mysqli_num_rows($inactivresult) == 1) {
 									
 
                   <input class="inputsu" type="text" name="Nombre" minlength="2" maxlength="40" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+" value="<?php echo $row['Nombre'] ?>">
-									
+	
+                  <input class="inputsu" type="text" name="Nombre" minlength="2" maxlength="40" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+" value="<?php echo $row['Nombre'] ?>">
+
 
                   <input class="inputsu" type="text" name="Num_Borondo" minlength="2" maxlength="40" required  value="<?php echo $row['Num_Borondo'] ?>">
 								
@@ -123,13 +143,13 @@ if(mysqli_num_rows($inactivresult) == 1) {
             <div>
              
               <p class="descrip1">Costo por unidad es de: $<?php echo $row['Costo'] ?> COP</p>
-              <p class="descrip1" style="margin-bottom: 0;"><a href="<?php echo $row['Ubicacion'] ?>">Ver Ubicacion</a></p>
+              <p class="descrip1" style="margin-bottom: 0;"><a href="<?php echo $row['Ubicacion'] ?>" target="_blank">Ver Ubicacion</a></p>
             </div>
             <div class="form">
 
             <div id="inputfecha" class="wrap-input100 validate-input" data-validate = "Ingresa una fecha válida">
               <label for="">Fecha:</label>
-									<input class="input100" type="date" name="Fecha" placeholder="Fecha" minlength="2" maxlength="40" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+">
+									<input class="input100" type="date" name="Fecha" placeholder="Fecha" min="<?php echo $fechaActual ?>" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+">
 									<span class="focus-input100"></span>
 									<span class="symbol-input100">
 										<i aria-hidden="true"></i>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['Documento'])) {
-  echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
+  echo "<script>alert('Debes iniciar sesión');location='login.php';</script>";
   session_destroy();
   die();
 }
@@ -99,7 +99,8 @@ include 'templates/Navbar.php';
               Informes pdf <i class="fa-solid fa-caret-down"></i>
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item " href="./PDF/PqrsPeticion.php" target="_blank">Más reservas</a></li>
+              <li><a class="dropdown-item " href="./PDF/LUGARES/LugaresMasReservados.php" target="_blank">Más reservados</a></li>
+              <li><a class="dropdown-item " href="./PDF/LUGARES/LugaresMasReservadosMP.php" target="_blank">Más reservas <br> del mes pasado</a></li>
 
             </ul>
           </li>

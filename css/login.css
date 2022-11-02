@@ -142,6 +142,24 @@ body, html {
   border: 1px #666666;
 
 }
+
+.inputs-generalpop {
+  font-family: Open Sans, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666666;
+  text-align:left;
+  display: flex;
+  width: 100%;
+  background: #e6e6e6;
+  height: 40px;
+  border-radius: 25px;
+  padding: 0 10px 0 68px;
+  border: 1px #666666;
+
+}
+
+
 .container-login100-form-btn {
   width: 100%;
   display: -webkit-box;
@@ -231,7 +249,6 @@ button.cancelar:hover{
 
 /* Modal */
 .modal-title{
-  padding-left: 20px;
   font-family: Open Sans, sans-serif;
   font-size: 30px;
   color: #333333;
@@ -268,6 +285,15 @@ font-family: Open Sans, sans-serif;
 .btnmodal:hover{
   color: #FA8303;
 }
+
+.notaolvi{
+  font-size: unset;
+  padding: 1%;
+  text-align: center;
+  margin-bottom: 1%;
+}
+
+
 .contenedor-modal{
   width: 100%;  
   display: -webkit-box;
@@ -279,8 +305,7 @@ font-family: Open Sans, sans-serif;
   justify-content: center;
   align-items: center;
   height: auto;
-  margin-top: 4%;
-  margin-bottom: 5%; 
+  margin-bottom: 1%; 
 }
 .modal-wrap{
   width: auto;
@@ -313,36 +338,22 @@ font-family: Open Sans, sans-serif;
 
 }
 .formulario-modal{
-  justify-content: center;
-  margin-right: 10px;
-  padding: 20px 20px;
-  padding-left: 30px;
+  width: 100%;
 
 }
 .login100-form-modal {
-  width: 263px;
+  width: 100%;
+  margin: auto;
 }
+
 .wrap-inputs-modal {
   position: relative;
   width: 100%;
   z-index: 1;
   margin-bottom: 10px;
 }
-.inputs-general-modal {
-  font-family: Open Sans, sans-serif;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #666666;
-  text-align:left;
-  display: flex;
-  width: 100%;
-  background: #e6e6e6;
-  height: 40px;
-  border-radius: 25px;
-  padding: 0 10px 0 68px;
-  border: 1px #666666;
 
-}
+
 .symbol-input100 {
   font-size: 15px;
 

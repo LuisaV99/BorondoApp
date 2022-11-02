@@ -100,21 +100,6 @@ include 'templates/navbar.php';
                                 </div>
 
 
-                                <div for="txtSoloLetras" class="wrap-input10 validate-input" data-validate="Ingresa un número de teléfono válido">
-                                    <input class="input100" type="number" name="Telefono" placeholder="Teléfono" required value="<?php echo $row["Telefono"]; ?>">
-                                    <span class="focus-input100"></span>
-                                    <span class="symbol-input100">
-                                        <i class="fa-solid fa fa-air-condition" aria-hidden="true"></i>
-                                    </span>
-                                </div>
-
-                                <div for="txtSoloLetras" class="wrap-input10 validate-input" data-validate="Ingresa un nombre válido" style="margin-top: 2%;">
-                                    <input class="input100" type="email" name="Correo" placeholder="Correo" required value="<?php echo $row["Correo"]; ?>">
-                                    <span class="focus-input100"></span>
-                                    <span class="symbol-input100">
-                                        <i class="fa-solid fa fa-air-condition" aria-hidden="true"></i>
-                                    </span>
-                                </div>
 
                                 <div for="txtSoloLetras" class="wrap-input10 validate-input" data-validate="Ingresa un nombre válido" style="margin-top: 2%;">
                                     <input class="input100" type="text" name="Contraseña" placeholder="Contraseña" required value="<?php echo $row["Contraseña"]; ?>">

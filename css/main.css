@@ -891,7 +891,6 @@ section {
   }
 
   .containerd {
-      margin: 10px;
       width: 100%;
   }
 
@@ -2283,4 +2282,64 @@ li.enviar{
 
 .cucumelo{
   padding-top: 8%;
+}
+
+.contenedor_nav{
+  position: fixed; 
+  width:100%; 
+  z-index:100
+}
+
+.card_text{
+  padding-top: 10px;
+}
+
+@media (max-width: 500px) {
+
+/* NAVBAR-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+  .contenedor_nav {
+    
+}
+
+
+
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+  .card_text{
+    display: none;
+  }
+
+
+  .containerd .card {
+    position: relative;
+    max-width: 370px;
+    height: 200px;
+    background: #fff;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 5);
+    transition: 0.3s ease-in-out;
+    border-radius: 10px;
+    border-bottom: 10px solid #F2C40C;
+  }
+
+  .containerd .card:hover {
+    height: 250px;
+  }
+
+  .section {
+    display: flex;
+    align-items: center;
+  }
+
+  .bl32 {
+    width: 90% !important; 
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
 }

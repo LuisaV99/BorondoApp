@@ -73,7 +73,7 @@ body {
 }
 .inputs-general {
   font-family: Poppins-Medium;
-  font-size: 14px !important;
+  font-size: 18px;
   line-height: 1.5;
   color: #666666;
   margin-bottom: 3px;
@@ -86,21 +86,7 @@ body {
   padding: 20px;
   border: 1px #666666;
 }
-.inputs-general1{
-  font-family: Poppins-Medium;
-  font-size: 10px !important;
-  line-height: 1.5;
-  color: #666666;
-  margin-bottom: 3px;
-  margin-right: 5px;
-  display: flex;
-  width: 100%;
-  background: #e6e6e6;
-  height: 50px;
-  border-radius: 25px;
-  padding: 20px;
-  border: 1px #666666;
-}
+
 
 .columna1 {
   display: flex;

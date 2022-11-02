@@ -2,7 +2,7 @@
 
 session_start();
 if (!isset($_SESSION['Documento'])) {
-    echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
+    echo "<script>alert('Debes iniciar sesión');location='login.php';</script>";
     session_destroy();
     die();
 }
@@ -72,7 +72,7 @@ include 'templates/navbar.php';
                             Agregar Administradores
                         </span>
                         <div for="txtSoloLetras" class="wrap-input10 validate-input" data-validate="Ingresa un correo válido" style="margin-bottom: 2%;">
-                            <input class="input100" type="number" name="Documento" placeholder="Documento" minlength="2" maxlength="40" required>
+                            <input class="input100" type="text" name="Documento" placeholder="Documento" minlength="2" maxlength="40" required pattern="[0-9]{10}" onkeypress="return onlyNumberKey(event)">
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class="fa-solid fa fa-air-condition" aria-hidden="true"></i>
@@ -94,23 +94,7 @@ include 'templates/navbar.php';
                                 </div>
 
                             </div>
-                            <div class="column1" style="margin-bottom: 2%;">
 
-                                <div for="txtSoloLetras" class="wrap-input10 validate-input" data-validate="Ingresa un nombre válido">
-                                    <input class="input100" type="date" name="Fecha_Nacimiento" placeholder="Fecha Nacimiento " minlength="2" maxlength="40" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+">
-                                    <span class="focus-input100"></span>
-                                    <span class="symbol-input100">
-                                        <i class="fa-solid fa fa-air-condition" aria-hidden="true"></i>
-                                    </span>
-                                </div>
-                                <div for="txtSoloLetras" class="wrap-input10 validate-input" data-validate="Ingresa un nombre válido">
-                                    <input class="input100" type="number" name="Telefono" placeholder="Teléfono" minlength="2" maxlength="40" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+">
-                                    <span class="focus-input100"></span>
-                                    <span class="symbol-input100">
-                                        <i class="fa-solid fa fa-air-condition" aria-hidden="true"></i>
-                                    </span>
-                                </div>
-                            </div>
                             <div for="txtSoloLetras" class="wrap-input10 validate-input" data-validate="Ingresa un nombre válido">
                                 <input class="input100" type="email" name="Correo" placeholder="Correo" required>
                                 <span class="focus-input100"></span>
@@ -128,12 +112,6 @@ include 'templates/navbar.php';
                             </div>
 
                         </div>
-
-
-
-
-
-
                         <center>
                             <button type="submit" class="btn btn-primary">Registrarlo</button>
                             <a href="./BorondoMan.php" class="btn btn-danger">Cancelar</a>
@@ -168,6 +146,25 @@ include 'templates/navbar.php';
 
 
             </div>
+
+
+            <script>
+    function onlyNumberKey(evt) {
+          
+        // Only ASCII character in that range allowed
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
+    }
+</script>
+<script>
+    function detailssubmit() {
+        alert("Your details were Submitted");
+    }
+</script>
+
+
 </body>
 
 </html>

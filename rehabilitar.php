@@ -66,13 +66,12 @@ $users="SELECT * FROM usuarios WHERE Documento='$document'";
 
 					
 
-
+					<p class="titulito"><strong> Documento: </strong></p>
+					<p class="info"><?php echo $row["Documento"];?></p>
 					<p class="titulito"><strong> Nombre Completo: </strong></p>
 					<p class="info"><?php echo $row["Nombres"].' '.$row["Apellidos"];?></p>
 					<p class="titulito"><strong>Correo:</strong> </p>
 					<p class="info"><?php echo $row["Correo"];?></p>
-					<p class="titulito"><strong>Telefono:</strong></p>
-					<p class="info"> <?php echo $row["Telefono"];?></p>
 
 				</form>
 

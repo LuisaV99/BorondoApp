@@ -32,44 +32,43 @@ include("model/conexion.php");
 
 
 
-<ul class="nav_links">
-	<?php 
+	<ul class="nav_links">
+		<?php
 
-$show = mysqli_query($conx, $users);
-while ($row = mysqli_fetch_assoc($show)) { 
+		$show = mysqli_query($conx, $users);
+		while ($row = mysqli_fetch_assoc($show)) {
 
-	
-	if($row['ID_Rol'] == "1"){
+
+			if ($row['ID_Rol'] == "1") {
 
 		?>
-		<li><a href="./Usuarioreservas.php" class="navlink" style="font-size: 15px;  text-overflow:ellipsis; white-space:pre;">Ver Perfil</a></li>
-<?php
-	} else {
-		if($row['ID_Rol'] == "2"){
-			?>
-			<li><a href="./Adminpqrs.php" class="navlink" style="font-size: 15px;  text-overflow:ellipsis; white-space:pre;">Ver Perfil</a></li>
-	<?php
-		} else {
-			if($row['ID_Rol'] == "3"){
+				<li><a href="./Usuarioreservas.php" class="navlink" style="font-size: 15px;  text-overflow:ellipsis; white-space:pre;">Ver Perfil</a></li>
+				<?php
+			} else {
+				if ($row['ID_Rol'] == "2") {
 				?>
-				<li><a href="./BorondoMan.php" class="navlink" style="font-size: 15px;  text-overflow:ellipsis; white-space:pre;">Ver Perfil</a></li>
+					<li><a href="./Adminpqrs.php" class="navlink" style="font-size: 15px;  text-overflow:ellipsis; white-space:pre;">Ver Perfil</a></li>
+					<?php
+				} else {
+					if ($row['ID_Rol'] == "3") {
+					?>
+						<li><a href="./BorondoMan.php" class="navlink" style="font-size: 15px;  text-overflow:ellipsis; white-space:pre;">Ver Perfil</a></li>
 		<?php
-		
+
+					}
+				}
 			}
-	}
-	
-}
-}
+		}
 
-	?>
-	
+		?>
 
-	
-	<li><a href="./functions/cerrar.php" class="navlink" style="font-size: 15px;"><i class="fa-solid fa-arrow-right-from-bracket" style="color: #D92828; font-weight:200px;"></i></a></li>
-	
+
+
+		<li><a href="./functions/cerrar.php" class="navlink" style="font-size: 15px;"><i class="fa-solid fa-arrow-right-from-bracket" style="color: #D92828; font-weight:200px;"></i></a></li>
+
 	</ul>
-	
-	
- 
+
+
+
 
 </body>

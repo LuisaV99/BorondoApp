@@ -168,27 +168,45 @@ center {
   margin-top: 11px;
 }
 /* Pruebitas */
-.idk{
+.idk {
   text-decoration: none;
   color: black;
 }
-.idk:hover{
+.idk:hover {
   color: #fa8303;
 }
 
-.ESP{
-  font-family: 'Open Sans', sans-serif;
-font-weight: 400;
+.ESP {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
 }
-.ENG{
-  font-family: 'Open Sans', sans-serif;
-
+.ENG {
+  font-family: "Open Sans", sans-serif;
 }
-.ESP:hover{
+.ESP:hover {
   color: orange;
-
 }
-.ENG:hover{
+.ENG:hover {
   color: #2e83d4;
+}
 
+.dropdown-center {
+  display: none;
+}
+
+@media (max-width: 380px) {
+  .dropdown-center {
+    display: block;
+  }
+  .botones2 {
+    display: none;
+  }
+
+  .logosv2 {
+    display: none;
+  }
+
+  .sesion {
+    display: none;
+  }
 }

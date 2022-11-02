@@ -15,6 +15,26 @@
     display: none;
 }  */
 
+.tituloresp {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+
+.bperfil {
+    background-color: orange;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 9px;
+    color: whitesmoke;
+    
+  }
+
+  .bperfil:hover {
+    background-color: #1606f9;
+   
+  }
+
 .body2 {
     
     flex-direction: row;

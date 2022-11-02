@@ -25,7 +25,7 @@ include("model/conexion.php");
     <link rel="stylesheet" href="./css/BoroMan.css" />
     <link rel="stylesheet" href="./css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="./css/responsive.dataTables.min.css">
-    <title>admin</title>
+    <title>BorondoMan</title>
 </head>
 
 <body>
@@ -34,7 +34,7 @@ include("model/conexion.php");
     <div class="container-admin">
         <div class="imagen-admin">
             <div class="">
-                <a href="./index.php"><img src="images/logo2.png" alt="" width="222px"/></a>
+                <a href="./index.php"><img src="images/logo2.png" alt="" width="222px" /></a>
             </div>
             <div>
                 <?php
@@ -49,8 +49,6 @@ include("model/conexion.php");
                     <p><?php echo $row["Nombres"] . ' ' . $row["Apellidos"]; ?></p>
                     <h2>Correo</h2>
                     <p><?php echo $row["Correo"]; ?></p>
-                    <h2>Teléfono</h2>
-                    <p><?php echo $row['Telefono'] ?></p>
 
                 <?php } ?>
             </div>

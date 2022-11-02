@@ -16,8 +16,6 @@ include("model/conexion.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="./images/logo2.png" />
-
     <title>Graficos</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.css">
@@ -35,12 +33,69 @@ include("model/conexion.php");
 include 'templates/Navbar.php';
 
 ?>
-   
+
+<div class="botones"><a href="./Adminpqrs.php" class="btn btn-danger">Regresar</a></div>
+
+
+    <!-- <nav class="navbar navbar-light bg-light shadow mb-20">
+        <div class="container-fluid">
+            <a class="" href="#">
+                <img src="./assets/borondo.png" alt="" width="80" height="80" class="d-inline-block align-text-top">
+            </a>
+        </div>
+    </nav> -->
+
+    <!-- <div class="d-flex justify-content-around flex-row pt-5">
+        <div class="card text-white bg-primary mb-3 border" style="max-width: 18rem;">
+            <div class="card-header">Lugares Activos</div>
+            <div class="card-body">
+                <h5 class="card-title">Primary card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+
+        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+                <h5 class="card-title">Primary card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+
+        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+                <h5 class="card-title">Primary card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+    </div> -->
+
+
+
+    <!-- <div class="w-100 d-flex justify-content-center align-center">
+        <h2 class="title">Reportes</h2>
+    </div> -->
+
     <div class="row mt-20">
         <div class="col-lg-12 bg-succes d-flex flex-col justify-content-around flex-wrap" id="reportPage" style="height: auto; margin-top:25px;">
 
             <div class="col-lg-4">
-             
+                <!-- <div class="card shadow mb-5">
+                    <h5 class="card-header" id="header-card">FILTRAR REPORTE</h5>
+                    <div class="card-body d-flex flex-column justify-content-start">
+                        <div class="d-flex flex-column mb-2">
+                            <button class="btn btn-outline-primary" onclick="CargarDatosGraficoBar()">Mensual</button>
+                        </div>
+                        <div class="d-flex flex-column mb-2">
+                            <button class="btn btn-outline-primary" onclick="CargarDatosGraficoBarHorizontal()">Anual</button>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <button class="btn btn-outline-danger" onclick="descargarPDF()">Report PDF</button>
+                        </div>
+                    </div>
+                </div> -->
+
                 <div class="card shadow" id="informe_pqrs">
                     <div class="card-header d-flex justify-content-around align-items-center flex-row" id="header-card">
                         <h5 class="mb-0 text-center">INFORME DE PQRS MENSUAL</h5>
@@ -422,7 +477,6 @@ include 'templates/Navbar.php';
         config
     );
 
-
     function descargarPDFMensual() {
         const canvas = document.getElementById('graficobar');
         //create image
@@ -434,7 +488,7 @@ include 'templates/Navbar.php';
         pdf.setFontSize(20);
         pdf.addImage(canvasImage, 'JPEG', 15, 15, 100, 100);
         // pdf.text(15, 15, "Diagrama Mensual")
-        pdf.save('PDFMensual.pdf');
+        pdf.save('salesrecords.pdf');
     }
 
 

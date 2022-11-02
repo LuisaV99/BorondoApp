@@ -4,7 +4,7 @@ include("model/conexion.php");
 
 session_start();
 if (!isset($_SESSION['Documento'])) {
-  echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
+  echo "<script>alert('Debes iniciar sesión');location='login.php';</script>";
   session_destroy();
   die();
 }
@@ -87,8 +87,8 @@ include 'templates/navbar.php';
             Informes pdf <i class="fa-solid fa-caret-down"></i>
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item " href="./PDF/PqrsPeticion.php" target="_blank">Mes Pasado</a></li>
-            <li><a class="dropdown-item" href="#" target="_blank">Mes Actual</a></li>
+            <li><a class="dropdown-item " href="./PDF/RESERVAS/ReservasMesPasado.php" target="_blank">Mes Pasado</a></li>
+            <li><a class="dropdown-item" href="./PDF/RESERVAS/ReservasMesActual.php" target="_blank">Mes Actual</a></li>
 
           </ul>
         </li>
@@ -154,8 +154,6 @@ include 'templates/navbar.php';
               <?php } ?>
           </tbody>
         </table>
-
-
       </div>
 
 

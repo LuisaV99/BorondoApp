@@ -49,21 +49,23 @@ include("model/conexion.php");
       </div>
       <div class="column-1">
 
-<select class="inputpqrs" name="Tipopqrs" requiered>
-  <option value="0" disabled selected >Tipo Pqrs</option>
-  <option value="1">Petición</option>
-  <option value="2">Queja</option>
-  <option value="3">Reclamo</option>
-  <option value="4">Sugerencia</option>
-</select>
+        <select class="inputpqrs" name="Tipopqrs" requiered>
+          <option value="0" disabled selected>Tipo Pqrs</option>
+          <option value="1">Petición</option>
+          <option value="2">Queja</option>
+          <option value="3">Reclamo</option>
+          <option value="4">Sugerencia</option>
+          <option value="5">Felicitación</option>
 
-        <input class="inputpqrs" type="text" id="asunto" name="Asunto" placeholder="Asunto" minlength="6" maxlength="17" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+" />
+        </select>
+
+        <input class="inputpqrs" type="text" id="asunto" name="Asunto" placeholder="Asunto" minlength="6" maxlength="25" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+" />
 
 
       </div>
       <textarea cols="30" rows="10" name="Cuerpo" placeholder="Escribe Aquí tu PQR'S" minlength="40" maxlength="350" required></textarea>
 
-      <button class="send" type="summit" >Enviar</button>
+      <button class="send" type="summit">Enviar</button>
 
     <?php } ?>
   </form>

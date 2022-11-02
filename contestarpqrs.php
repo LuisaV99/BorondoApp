@@ -1,28 +1,28 @@
 <?php
 session_start();
-if(!isset($_SESSION['Documento'])){
-    echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
-    session_destroy();
-    die();
-	
+if (!isset($_SESSION['Documento'])) {
+  echo "<script>alert('Debes iniciar sesión');location='login.php';</script>";
+  session_destroy();
+  die();
 }
-$document=$_SESSION['Documento'];
+$document = $_SESSION['Documento'];
 
-$id = $_GET ['id'];
+$id = $_GET['id'];
 
-$espepqrs="SELECT * FROM pqrs WHERE ID_Pqrs=$id";
+$espepqrs = "SELECT * FROM pqrs INNER JOIN usuarios ON pqrs.Documento=usuarios.Documento  
+                                INNER JOIN tipospqrs ON pqrs.ID_Tipopqrs=tipospqrs.ID_Tipopqrs 
+                                WHERE ID_Pqrs=$id";
 
 
 include("model/conexion.php");
 
-$document=$_SESSION['Documento'];
+$document = $_SESSION['Documento'];
 
-$rol="SELECT * FROM usuarios WHERE Documento='$document' AND ID_Rol='2'";
-$result= mysqli_query($conx,$rol);
+$rol = "SELECT * FROM usuarios WHERE Documento='$document' AND ID_Rol='2'";
+$result = mysqli_query($conx, $rol);
 
-if(mysqli_num_rows($result) == 1) {
-  
-}else{
+if (mysqli_num_rows($result) == 1) {
+} else {
   echo "<script>alert('No tienes rol de administrador');location='index.php';</script>";
 }
 ?>
@@ -40,8 +40,8 @@ if(mysqli_num_rows($result) == 1) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&display=swap" rel="stylesheet" />
   <!-- CSS STYLE -->
-  <link rel="stylesheet" href="./css/AdminAdmin.css"/>
-  <link rel="stylesheet" href="./css/registroserv.css"/>
+  <link rel="stylesheet" href="./css/AdminAdmin.css" />
+  <link rel="stylesheet" href="./css/registroserv.css" />
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/bootstrap.min.css">
@@ -54,69 +54,82 @@ if(mysqli_num_rows($result) == 1) {
 include 'templates/navbar.php';
 
 ?>
+
 <body>
 
-<div class="body"> 
-	
-  <!-- CONTAINER ADMIN - IMG -->
-  <div class="Administrador">
+  <div class="body">
 
-  
-
-		<!--FORMULARIO-->
-		
-			<div class="wrap-login100">
-				<div class="login100-pic">
-					<img id="logo" src="images/Logo.png" alt=""></br>
-				</div>
-				<div class="formulario">
-					<form action="./functions/pro-contestarpqrs.php" method="POST" enctype="multipart/form-data">
-
-          <?php
-                            $show = mysqli_query($conx, $espepqrs);
-                            while ($row = mysqli_fetch_assoc($show)) { ?>
-
-
-          <input class="inputsu" type="text" name="ID_Pqrs"  value="<?php echo $row["ID_Pqrs"]; ?>">
-
-          <input class="inputsu" type="text" name="Fecha_pqrs"  value="<?php echo $row["Fecha_pqrs"]; ?>">
-
-          
-						<span class="login100-form-title" style="padding-bottom: 2%;">
-							Contestar pqrs 
-						</span>
-
-					
-						<p class="notaagregar">Recuerda: Este registro es inmodificable, por ende no podrá ser editado una vez se envie :3</p>
+    <!-- CONTAINER ADMIN - IMG -->
+    <div class="Administrador">
 
 
 
-				<textarea class="input100" cols="40" rows="5" name="Respuesta" placeholder="Escriba la respuesta completa" style="   height: auto; font-size: 12px; margin-bottom:8px" minlength="40" maxlength="350"></textarea>
-							 
+      <!--FORMULARIO-->
 
-					
-	<div class="botonescontestar">
-				<button type="submit" class="btn btn-primary" style="margin: 1px;">Registrarlo</button>
-					<a href="./Adminpqrs.php" class="btn btn-danger" style="margin: 1px;">Cancelar</a>
+      <div class="wrap-login100">
+        <div class="login100-pic">
+          <img id="logo" src="images/Logo.png" alt=""></br>
+        </div>
+        <div class="formulario">
+          <form action="./gmail/index.php" method="POST" enctype="multipart/form-data">
+
+            <?php
+            $show = mysqli_query($conx, $espepqrs);
+            while ($row = mysqli_fetch_assoc($show)) { ?>
+
+
+              <input class="inputsu" type="text" name="ID_Pqrs" value="<?php echo $row["ID_Pqrs"]; ?>">             
+              <input class="inputsu" type="text" name="Asunto" value="<?php echo $row["Asunto"]; ?>">
+              <input class="inputsu" type="text" name="Fecha_pqrs" value="<?php echo $row["Fecha_pqrs"]; ?>">
+              <input class="inputsu" type="text" name="Cuerpo" value="<?php echo $row["Cuerpo"]; ?>">
+
+
+              <input class="inputsu" type="text" name="NombresU" value="<?php echo $row["Nombres"]; ?>">
+              <input class="inputsu" type="text" name="Correo" value="<?php echo $row["Correo"]; ?>">
+
+
+              <input class="inputsu" type="text" name="Nom_Tipo" value="<?php echo $row["Nom_Tipopqrs"]; ?>">
+
+
+
+              <span class="login100-form-title" style="padding-bottom: 2%;">
+                Contestar pqrs
+              </span>
+
+
+              <p class="notaagregar">Recuerda: Este registro es inmodificable, por ende no podrá ser editado una vez se envíe.</p>
+
+
+              <h5 class="notaresponder"><?php echo $row["Nom_Tipopqrs"]; ?>: <?php echo $row["Cuerpo"]; ?></h5>
+
+
+
+              <textarea class="input100" cols="40" rows="5" name="Respuesta" placeholder="Escriba la respuesta completa" style="   height: auto; font-size: 12px; margin-bottom:8px" minlength="40" maxlength="350"></textarea>
+
+
+
+              <div class="botonescontestar">
+                <button type="submit" class="btn btn-primary" style="margin: 1px;">Registrarlo</button>
+                <a href="./Adminpqrs.php" class="btn btn-danger" style="margin: 1px;">Cancelar</a>
+              </div>
+
+            <?php } ?>
+
+          </form>
+          <div class="botonescp">
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+
+
+
   </div>
-
-          <?php } ?>
-					
-					</form>
-					<div class="botonescp">
-					</div>
-				</div>
-
-				
-			</div>
-	 
-		</div>
-	
-	
-
-    
-
-	</div>
 
 </body>
 

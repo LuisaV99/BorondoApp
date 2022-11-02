@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['Documento'])) {
-	echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
+	echo "<script>alert('Debes iniciar sesión');location='login.php';</script>";
 	session_destroy();
 	die();
 }
@@ -74,12 +74,12 @@ include 'templates/navbar.php';
 						</span>
 
 
-						<p class="notaagregar">Recuerda: Este registro es inmodificable, para hacer algun cambio o corrección, elimina este registro y crea uno nuevo :3</p>
+						<p class="notaagregar">Recuerda: Este registro es inmodificable, para hacer algún cambio o corrección, elimina este registro y crea uno nuevo.</p>
 
-						<textarea class="input100" cols="40" rows="5" name="Descripcion1" placeholder="Escriba una breve descripción" style=" height: 70px;  font-size: 12px; margin-bottom:8px"></textarea>
+						<textarea class="input100" cols="40" rows="5" name="Descripcion1" minlength="20" maxlength="110" placeholder="Escriba una breve descripción" style=" height: 70px;  font-size: 12px; margin-bottom:8px" required></textarea>
 
 
-						<textarea class="input100" cols="40" rows="5" name="Descripcion2" placeholder="Escriba la descripción completa" style="   height: auto; font-size: 12px; margin-bottom:8px"></textarea>
+						<textarea class="input100" cols="40" rows="5" name="Descripcion2" minlength="80" maxlength="291" placeholder="Escriba la descripción completa" style="   height: auto; font-size: 12px; margin-bottom:8px" required></textarea>
 
 
 						<div class="column1" style="margin-bottom: 2%;">
@@ -87,7 +87,7 @@ include 'templates/navbar.php';
 
 
 							<div for="txtSoloLetras" class="wrap-input10 validate-input" data-validate="Ingresa un nombre válido">
-								<input class="input100" type="text" name="Nombre" placeholder="Nombre" minlength="2" maxlength="40" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+">
+								<input class="input100" type="text" name="Nombre" placeholder="Nombre" minlength="4" maxlength="30" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+">
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									<i class="fa-solid fa fa-air-condition" aria-hidden="true"></i>
@@ -100,7 +100,7 @@ include 'templates/navbar.php';
 
 
 							<div class="wrap-input100 validate-input" data-validate="Ingresa un Apellido válido">
-								<input class="input100" type="number" name="Costo" placeholder="Costo" minlength="2" maxlength="40" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+">
+								<input class="input100" type="number" name="Costo" placeholder="Costo" min="1000" max="" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+">
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									<i aria-hidden="true"></i>
@@ -119,7 +119,7 @@ include 'templates/navbar.php';
 
 
 							<div for="txtSoloLetras" class="wrap-input10 validate-input" data-validate="Ingresa un nombre válido">
-								<input class="input100" type="text" name="Ubicacion" placeholder="Ubicación" minlength="2">
+								<input class="input100" type="text" name="Ubicacion" placeholder="Ubicacion" minlength="10" required>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									<i class="fa-solid fa fa-air-condition" aria-hidden="true"></i>
@@ -132,7 +132,7 @@ include 'templates/navbar.php';
 							</div>
 
 
-							<select class="input100" name="Nom_Ciudad">
+							<select class="input100" name="Nom_Ciudad" required>
 								<option disabled selected value="">Ciudad</option>
 								<option value="1">Cali</option>
 								<option value="2">El Cerrito</option>
@@ -140,14 +140,30 @@ include 'templates/navbar.php';
 								<option value="4">Palmira</option>
 								<option value="5">Buga</option>
 								<option value="6">Darien</option>
+								<option value="7">Montenegro</option>
+								<option value="8">Santa Elena</option>
+								<option value="9">Pradera</option>
+
+
+
 
 							</select>
 
 						</div>
-						<p class="notaagregar">Nota: Insertar solo imágenes de formato png y del menor tamaño posible :3</p>
+
+						<div for="txtSoloLetras" class="wrap-input10 validate-input" data-validate="Ingresa un numero de cuenta válido">
+							<input class="input100" type="text" name="N_Cuenta" placeholder="Numero de cuenta" required pattern="[0-9]{10}" onkeypress="return onlyNumberKey(event)">
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<i class="fa-solid fa fa-air-condition" aria-hidden="true"></i>
+							</span>
+
+						</div>
+
+						<p class="notaagregar">Nota: Insertar solo imágenes de formato png y del menor tamaño posible.</p>
 
 						<div for="txtSoloLetras" class="wrap-input10 validate-input" data-validate="Ingresa un documento válido">
-							<input class="input100" type="file" name="Img1">
+							<input class="input100" type="file" name="Img1" required>
 							<span class="focus-input100"></span>
 							<span class="symbol-input100">
 								<i class="fa-solid fa fa-air-condition" aria-hidden="true"></i>
@@ -155,7 +171,7 @@ include 'templates/navbar.php';
 
 						</div>
 						<div for="txtSoloLetras" class="wrap-input10 validate-input" data-validate="Ingresa un documento válido" style="margin-top: 8px;">
-							<input class="input100" type="file" name="Img2">
+							<input class="input100" type="file" name="Img2" required>
 							<span class="focus-input100"></span>
 							<span class="symbol-input100">
 								<i class="fa-solid fa fa-air-condition" aria-hidden="true"></i>
@@ -163,7 +179,7 @@ include 'templates/navbar.php';
 
 						</div>
 						<div for="txtSoloLetras" class="wrap-input10 validate-input" data-validate="Ingresa un documento válido" style="margin-top: 8px;">
-							<input class="input100" type="file" name="Img3">
+							<input class="input100" type="file" name="Img3" required>
 							<span class="focus-input100"></span>
 							<span class="symbol-input100">
 								<i class="fa-solid fa fa-air-condition" aria-hidden="true"></i>
@@ -216,6 +232,26 @@ include 'templates/navbar.php';
 
 
 			</div>
+
+
+			<script>
+    function onlyNumberKey(evt) {
+          
+        // Only ASCII character in that range allowed
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
+    }
+</script>
+<script>
+    function detailssubmit() {
+        alert("Your details were Submitted");
+    }
+</script>
+
+
+
 </body>
 
 </html>

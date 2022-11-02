@@ -89,6 +89,8 @@ include 'templates/navbar.php';
                     <a href="./Usuariopqrs.php" ><button class="bperfil">Mis Pqrs</button></a>
                     </div>
                 </div>
+
+                <a href="./Cards-LugaresP.php"><button  class="bperfil">Hacer una reserva</button></a>
                 <!-- </section> -->
 
 

@@ -4,14 +4,12 @@ include ("../model/conexion.php");
 $Documento = $_POST["Documento"];
 $Nombres = $_POST["Nombres"];
 $Apellidos = $_POST["Apellidos"];
-$Fecha_Nacimiento = $_POST["Fecha_Nacimiento"];
-$Telefono = $_POST["Telefono"];
 $Correo = $_POST["Correo"];
 $Contraseña = $_POST["Contraseña"];
 $ID_Rol= 2;
 
 
-$create="INSERT INTO usuarios (Documento, Nombres, Apellidos, Fecha_Nacimiento, Telefono, Correo,Contraseña, ID_Rol) VALUES ('$Documento','$Nombres','$Apellidos','$Fecha_Nacimiento','$Telefono','$Correo','$Contraseña','$ID_Rol')";
+$create="INSERT INTO usuarios (Documento, Nombres, Apellidos, Correo,Contraseña, ID_Rol) VALUES ('$Documento','$Nombres','$Apellidos','$Correo','$Contraseña','$ID_Rol')";
 $result=mysqli_query($conx,$create);
 
 if($result){

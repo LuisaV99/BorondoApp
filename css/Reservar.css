@@ -181,10 +181,10 @@ textarea:-ms-input-placeholder { color: #999999; }
  
 
   .nombre{
-    font-family: 'League Gothic', sans-serif;
+    font-family: 'Poppins-Medium';
     color: #468ac9; 
     font-weight: bold;
-    font-size: 60px;
+    font-size: 50px;
   }
 
   .character{

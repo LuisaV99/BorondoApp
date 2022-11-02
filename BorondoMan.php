@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['Documento'])) {
-    echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
+    echo "<script>alert('Debes iniciar sesión');location='login.php';</script>";
     session_destroy();
     die();
 }
@@ -75,7 +75,6 @@ include 'templates/Navbar.php';
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Correo</th>
-                        <th>Teléfono</th>
                         <th>ACCIONES</th>
                     </thead>
                     <?php
@@ -88,7 +87,6 @@ include 'templates/Navbar.php';
                                 <td data-label="ID"><?php echo $row['Nombres'] ?></td>
                                 <td data-label="ID"><?php echo $row['Apellidos'] ?></td>
                                 <td data-label="ID"><?php echo $row['Correo'] ?></td>
-                                <td data-label="ID"><?php echo $row['Telefono'] ?></td>
                                 <td data-label="ACCIONES">
                                     <div class="Status">
                                         <a class="eliminar"><button type="button" data-bs-toggle="modal" data-bs-target="#a<?php echo $row['Documento']; ?>">Eliminar</button></a>
@@ -117,6 +115,7 @@ include 'templates/Navbar.php';
                                         <button type="button" class=" cancelar d-flex justify-content-center align-items-center" data-bs-dismiss="modal">Cancelar</button>
                                         <a class="eliminar text-center" href="./functions/delete-admin.php?id=<?php echo $row['Documento']; ?>">Eliminar</a>
                                     </div>
+
                                 </div>
                             </div>
                         </div> <?php } ?>

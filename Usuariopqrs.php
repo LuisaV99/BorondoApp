@@ -94,13 +94,15 @@ include 'templates/navbar.php';
         </div>
         <!-- </section> -->
 
+        <a href="./index.php#footer"><button  class="bperfil">Hacer una pqrs</button></a>
+
+
 
         <table class="table" id="example" class="table table-bordered display nowrap " cellspacing="0" width="100%">
           <thead>
             <th>N.Identidad</th>
             <th>Tipo</th>
             <th>Asunto</th>
-            <th>Descripcion</th>
             <th>Respuesta</th>
           </thead>
           <tbody>
@@ -115,7 +117,7 @@ include 'templates/navbar.php';
                
 
                 <td data-label="ASUNTO"><?php echo $row['Asunto'] ?></td>
-                <td data-label="DESCRIPCIÓN"><?php echo $row['Cuerpo'] ?></td>
+
                 <td data-label="Respuesta">
 
                 <div class="Status">
@@ -151,6 +153,15 @@ include 'templates/navbar.php';
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
+ <h5>Hola!</h5>
+
+ <?php
+                                                                    echo $row['Cuerpo']
+                                                                    ?>
+                                                                    
+                                                                    <h5 class="tituloresp">Respuesta:</h5>
+                                                                    
+
 
                                        <?php
                                                                     echo $row['Respuesta']

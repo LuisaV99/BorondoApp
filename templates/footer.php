@@ -71,7 +71,7 @@ include("model/conexion.php");
                     <span><a href="Cards-Lugaresp.php">Lugares</a></span>
                   </div>
                   <div class="list-nav-1">
-                    <span><a href="./index.php#footer">Registro</a></span>
+                    <span><a href="./registro.php">Registro</a></span>
                     <span><a href="Login.php">Inicio Sesión</a></span>
                   </div>
             </div>
@@ -85,7 +85,6 @@ include("model/conexion.php");
 						<a href="#"><img class="rdi" src="images/twit.png" alt="linkedin" width="34px"></a>
 					</div>
 					</div>
-						<h2 class="texbloc1" style="font-size: calc(1.325rem + -0.1vw);"  >@BorondoApp.Oficial</h2>
 					</div>
           <p>@BorondoApp.Official</p>
 

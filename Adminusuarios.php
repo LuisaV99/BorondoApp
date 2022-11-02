@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['Documento'])) {
-  echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
+  echo "<script>alert('Debes iniciar sesión');location='login.php';</script>";
   session_destroy();
   die();
 }
@@ -91,10 +91,13 @@ include 'templates/navbar.php';
             Informes pdf <i class="fa-solid fa-caret-down"></i>
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item " href="./PDF/UsuariosRg.php" target="_blank">Más Recientes</a></li>
-            <li><a class="dropdown-item" href="./PDF/UsuariosRga.php" target="_blank">Más Antiguos</a></li>
-            <li><a class="dropdown-item" href="./PDF/Usuariosreser.php">Más Reservas</a></li>
-            <li><a class="dropdown-item" href="#">Mes Anterior</a></li>
+            <li><a class="dropdown-item " href="./PDF/CLIENTES/UsuariosMasRecientes.php" target="_blank">Más Recientes</a></li>
+            <li><a class="dropdown-item" href="./PDF/CLIENTES/UsuariosMasAntiguos.php" target="_blank">Más Antiguos</a></li>
+            <li><a class="dropdown-item" href="./PDF/CLIENTES/UsuariosMasReservas.php" target="_blank">Más Reservas</a></li>
+            <li><a class="dropdown-item" href="./PDF/CLIENTES/UsuariosInactivos.php" target="_blank">Ináctivos</a></li>
+
+
+
           </ul>
         </li>
 
@@ -107,7 +110,6 @@ include 'templates/navbar.php';
             <th>DOCUMENTO</th>
             <th>NOMBRE</th>
             <th>CORREO</th>
-            <th>TELEFONO</th>
             <th>REGISTRO</th>
           </thead>
           <tbody>
@@ -118,7 +120,6 @@ include 'templates/navbar.php';
                 <td data-label="DOCUMENTO"><?php echo $row['Documento'] ?></td>
                 <td data-label="NOMBRE"><?php echo $row["Nombres"] . ' ' . $row["Apellidos"]; ?></td>
                 <td data-label="CORREO"><?php echo $row['Correo'] ?></td>
-                <td data-label="TELEFONO"><?php echo $row['Telefono'] ?></td>
                 <td data-label="UL. CONECCION"><?php echo $row['FechaRgU'] ?></td>
 
 
@@ -152,19 +153,7 @@ include 'templates/navbar.php';
 
 
 
-        <!-- ventana pqrs contestadas -->
 
-        <div class="container-main-contestadas">
-          <div class="container-contestadas">
-            <form action="./functions/actuadmin.php" method="POST">
-              <h2>CONTESTAR PQRS</h2>
-              <input type="text" name="contestar" placeholder="Contestar PQRS" value="">
-              <div class="container-btn">
-                <button type="submit">Enviar</button>
-              </div>
-            </form>
-          </div>
-        </div>
       </div>
 
 

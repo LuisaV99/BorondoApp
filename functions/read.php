@@ -30,5 +30,5 @@ if($ok["ID_Rol"]==3){
     $_SESSION['Documento']=$document;
     header ("location:../BorondoMan.php");}
 else {
-    echo "<script>alert('Nombre o contraseña equivocada');window.history.go(-1);</script>";
+    echo "<script>alert('Documento o contraseña equivocada');window.history.go(-1);</script>";
 }

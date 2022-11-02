@@ -4,7 +4,7 @@ include("model/conexion.php");
 
 session_start();
 if (!isset($_SESSION['Documento'])) {
-  echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
+  echo "<script>alert('Debes iniciar sesión');location='login.php';</script>";
   session_destroy();
   die();
 }
@@ -94,9 +94,10 @@ include 'templates/navbar.php';
               Informes pdf <i class="fa-solid fa-caret-down"></i>
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item " href="#" target="_blank">Mes Anterior</a></li>
-              <li><a class="dropdown-item" href="#" target="_blank">Mes Actual</a></li>
-              <li><a class="dropdown-item" href="#" target="_blank">Sin Contestar <br> mes anterior</a></li>
+              <li><a class="dropdown-item " href="./PDF/PQRS/PqrsMesActual.php" target="_blank">Mes Actual</a></li>
+              <li><a class="dropdown-item" href="./PDF/PQRS/PqrsMesAnterior.php" target="_blank">Mes Anterior</a></li>
+              <li><a class="dropdown-item" href="./PDF/PQRS/PqrsSinContestarMAC.php" target="_blank">Sin Contestar <br> mes Actual</a></li>
+              <li><a class="dropdown-item" href="./PDF/PQRS/PqrsSinContestarMAN.php" target="_blank">Sin Contestar <br> mes Anterior</a></li>
 
             </ul>
           </li>
@@ -106,11 +107,11 @@ include 'templates/navbar.php';
               Por tipo<i class="fa-solid fa-caret-down"></i>
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item " href="./PDF/PqrsPeticion.php" target="_blank">Peticiones</a></li>
-              <li><a class="dropdown-item" href="#" target="_blank">Quejas</a></li>
-              <li><a class="dropdown-item" href="#">Reclamos</a></li>
-              <li><a class="dropdown-item" href="#">Sugerencias</a></li>
-              <li><a class="dropdown-item" href="#">Felicitaciones</a></li>
+              <li><a class="dropdown-item " href="./PDF/PQRS/PqrsPeticion.php" target="_blank">Peticiones</a></li>
+              <li><a class="dropdown-item" href="./PDF/PQRS/PqrsQueja.php" target="_blank">Quejas</a></li>
+              <li><a class="dropdown-item" href="./PDF/PQRS/PqrsReclamo.php">Reclamos</a></li>
+              <li><a class="dropdown-item" href="./PDF/PQRS/PqrsSugerencia.php">Sugerencias</a></li>
+              <li><a class="dropdown-item" href="./PDF/PQRS/PqrsFelicitaciones.php">Felicitaciones</a></li>
 
             </ul>
           </li>

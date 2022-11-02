@@ -1,13 +1,13 @@
 <?php
 
-if(!isset($_SESSION['Documento'])){
-    echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
-    session_destroy();
-    die();
-	
+if (!isset($_SESSION['Documento'])) {
+  echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
+  session_destroy();
+  die();
 }
-$document=$_SESSION['Documento'];
-$users="SELECT * FROM usuarios WHERE Documento='$document'";
+$document = $_SESSION['Documento'];
+$users = "SELECT * FROM usuarios WHERE Documento='$document'";
+// print_r($_SESSION);
 
 include("model/conexion.php");
 ?>
@@ -33,77 +33,74 @@ include("model/conexion.php");
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/dataTables.bootstrap5.min.css">
   <link rel="stylesheet" href="./css/responsive.dataTables.min.css">
-  <title>admin</title>
+  <title>Usuario</title>
 </head>
 
 <body>
   <!-- CONTAINER ADMIN - IMG -->
 
-    <div class="container-admin">
-      <div class="imagen-admin">
-        <div class="">
-          <a href="./index.php"><img src="images/logo2.png" alt="" width="222px"/></a>
-        </div>
-        <div>
+  <div class="container-admin">
+    <div class="imagen-admin">
+      <div class="">
+        <a href="./index.php"><img src="images/logo2.png" alt="" width="222px" /></a>
+      </div>
+      <div>
         <?php
-			 $show=mysqli_query($conx,$users);
-        while($row=mysqli_fetch_assoc($show))
-         { ?>
-            
-            
-            <h1>Datos Usuario</h1>
-            <h2>Documento</h2>
-            <p><?php echo $row['Documento'] ?></p>
-            <h2>Nombres</h2>
-            <p><?php echo $row["Nombres"].' '.$row["Apellidos"];?></p>
-            <h2>Correo</h2>
-            <p><?php echo $row["Correo"];?></p>
-            <h2>Teléfono</h2>
-            <p><?php echo $row['Telefono'] ?></p>
-          <?php } ?>
+        $show = mysqli_query($conx, $users);
+        while ($row = mysqli_fetch_assoc($show)) { ?>
+
+
+          <h1>Datos Usuario</h1>
+          <h2>Documento</h2>
+          <p><?php echo $row['Documento'] ?></p>
+          <h2>Nombres</h2>
+          <p><?php echo $row["Nombres"] . ' ' . $row["Apellidos"]; ?></p>
+          <h2>Correo</h2>
+          <p><?php echo $row["Correo"]; ?></p>
+        <?php } ?>
+      </div>
+
+      <div style="display: flex; justify-content:space-evenly; margin-top:4%">
+
+        <div class="Status">
+
+          <a href="./Usuarioeditar.php"><button type="button" class="btn btn-primary">Editar</button></a>
+          <a><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Eliminar</button></a>
+
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <img class="navlogo" src="images/logo2.png" alt="logo" width="50">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Deshabilitar Perfil</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ¿Estás seguro de deshabilitar tu cuenta? De esta manera no serás visible para BorondoApp
+                  <p>Nota: Una vez deshabilitado podrás habilitarlo nuevamente iniciando sesión de manera usual.</p>
+                </div>
+                <div class="modal-footer" style="display: flex; justify-content:space-evenly">
+                  <a><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button></a>
+                  <a href="./functions/hiden-user.php"><button type="button" class="btn btn-danger">Confirmar</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        <div style="display: flex; justify-content:space-evenly">
-         
-        <div class="Status">
-        
-        <a href="./Usuarioeditar.php"><button type="button" class="btn btn-primary" >Editar</button></a>
-        <a><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Eliminar</button></a>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-      <img class="navlogo" src="images/logo2.png" alt="logo" width="50">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Deshabilitar Perfil</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+
       </div>
-      <div class="modal-body">
-        ¿Estás seguro de deshabilitar tu cuenta? De esta manera no serás visible para BorondoApp
-       <p>Nota: Una ves deshabilitado podrás habilitarlo nuevamente iniciando sesión de manera usual</p> 
-      </div>
-      <div class="modal-footer" style="display: flex; justify-content:space-evenly">
-      <a><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button></a>
-        <a href="./functions/hiden-user.php" ><button type="button" class="btn btn-danger">Confirmar</button></a>
-      </div>
+
+
+
     </div>
   </div>
-</div>
-
-        </div>
-
-     
-        
-
-      </div>
 
 
+</body>
 
-    </div>
-    </div>
 
-      
-    </body>
-
- 
 </html>

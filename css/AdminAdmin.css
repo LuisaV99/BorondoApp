@@ -314,6 +314,13 @@ justify-content: center;
     padding: 1%;
     margin-bottom: 0%;
 }
+
+.notaresponder{
+    font-size: unset;
+    padding: 1%;
+    margin-bottom: 0%;
+}
+
 .notaagregari{
     font-size: x-small;
     padding: 1%;
