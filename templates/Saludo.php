@@ -34,7 +34,7 @@ include("model/conexion.php");
 		$show = mysqli_query($conx, $users);
 		while ($row = mysqli_fetch_assoc($show)) { ?>
 
-			<li><a href="" class="navlink" style="font-size: 15px; text-overflow:ellipsis; white-space:pre;">Hola <?php echo $row['Nombres'] ?> </a></li>
+			<li class="saludo"><a href="" class="navlink" style="font-size: 15px; text-overflow:ellipsis; white-space:pre;">Hola <?php echo $row['Nombres'] ?> </a></li>
 		<?php } ?>
 
 	</ul>

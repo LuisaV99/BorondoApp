@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['Documento'])) {
-    echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
+    echo "<script>alert('Debes iniciar sesion');location='InicioSesion.php';</script>";
     session_destroy();
     die();
 }
@@ -19,6 +19,19 @@ if(mysqli_num_rows($inactivresult) == 1) {
 }else{
   
 }
+
+
+$rol = "SELECT * FROM usuarios WHERE Documento='$document' AND ID_Rol=!'1'";
+$result = mysqli_query($conx, $rol);
+
+if (mysqli_num_rows($result) == 1) {
+} else {
+  echo "<script>alert('No tienes permisos de entrar aqui');location='index.php';</script>";
+}
+
+
+
+$contador=0;
 
 
 ?>
@@ -52,7 +65,7 @@ if(mysqli_num_rows($inactivresult) == 1) {
 
 </head>
 
-<div style="position: fixed; width:100%">
+<div style="position: fixed; width:100%; z-index: 2">
 
 <?php 
 
@@ -65,7 +78,6 @@ include 'templates/navbar.php';
 <body>
 
     <div class="body2">
-        <br><br>
 
         <!-- CONTAINER ADMIN - IMG -->
         <div class="Administrador">
@@ -90,10 +102,10 @@ include 'templates/navbar.php';
                     </div>
                 </div>
 
-                <a href="./Cards-LugaresP.php"><button  class="bperfil">Hacer una reserva</button></a>
+                <a href="./Cards-LugaresP.php" class="haceruna"><button  class="bperfil">Hacer una reserva</button></a>
                 <!-- </section> -->
 
-
+<div style="max-width:150;">
                 <table class="table" id="example" class="table table-bordered display nowrap " cellspacing="0" width="100%">
                     <thead>
                         <th>N.Identidad</th>
@@ -107,10 +119,15 @@ include 'templates/navbar.php';
                     <tbody>
                         <?php
                         $show = mysqli_query($conx, $creser);
-                        while ($row = mysqli_fetch_assoc($show)) { ?>
+                        while ($row = mysqli_fetch_assoc($show)) { 
+                            
+                            
+                            $contador=$contador + 1;
+                            
+                            ?>
                             <tr>
 
-                                <td data-label="N.Identidad"><?php echo $row['ID_Reserva'] ?></td>
+                                <td data-label="N.Identidad"><?php echo $contador ?></td>
                                 <td data-label="Fecha"><?php echo $row['FechaRs'] ?></td>
                                 <td data-label="Lugar"><?php echo $row['Nombre'] ?></td>
                                 <td data-label="N°Entradas"><?php echo $row['N_Entradas'] ?></td>
@@ -118,6 +135,8 @@ include 'templates/navbar.php';
                                 <td data-label="Acciones">
 <div class="Status">
 <a class="eliminar" href="./Factura.php?id=<?php echo $row['ID_Reserva']; ?>" >Ver Factura</a>
+<a class="eliminar2" href="./Factura.php?id=<?php echo $row['ID_Reserva']; ?>" >Ver</a>
+
                   </div>
 
        
@@ -127,7 +146,7 @@ include 'templates/navbar.php';
                         <?php } ?>
                     </tbody>
                 </table>
-
+                </div>
 
 
 

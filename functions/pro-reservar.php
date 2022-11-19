@@ -11,12 +11,15 @@ $ID_Lugar=$_POST["ID_Lugar"];
 $Nombre=$_POST["Nombre"];
 $Costo_Unidad=$_POST["Costo_Unidad"];
 $N_Entradas=$_POST["N_Entradas"];
-$Paga= "No";
 $Num_Borondo= $_POST["Num_Borondo"] ;
 
 
 
 
+if ($N_Entradas == 0){
+    echo "<script>alert('Selecciona un numero de entradas por favor');window.history.go(-1);</script>";
+
+}else{
 
     $create="INSERT INTO reservas (ID_Reserva, Documento, FechaRs, ID_Lugar, Nombre, Costo_Unidad, N_Entradas) 
     VALUES (NULL, '$Documento', '$Fecha', '$ID_Lugar', '$Nombre', '$Costo_Unidad', '$N_Entradas')";
@@ -35,6 +38,8 @@ $Num_Borondo= $_POST["Num_Borondo"] ;
         echo "<script>alert('Ocurrió algún error');window.history.go(-1);</script>";
     }
 
+}
+   
 
 
 

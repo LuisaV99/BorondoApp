@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['Documento'])) {
-  echo "<script>alert('Debes iniciar sesión');location='login.php';</script>";
+  echo "<script>alert('Debes iniciar sesión');location='InicioSesion.php';</script>";
   session_destroy();
   die();
 }
@@ -109,7 +109,7 @@ include 'templates/navbar.php';
 
 
               <div class="botonescontestar">
-                <button type="submit" class="btn btn-primary" style="margin: 1px;">Registrarlo</button>
+                <button type="submit" class="btn btn-primary" style="margin: 1px;">Contestar</button>
                 <a href="./Adminpqrs.php" class="btn btn-danger" style="margin: 1px;">Cancelar</a>
               </div>
 

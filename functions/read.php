@@ -5,7 +5,7 @@ include("../model/conexion.php");
 
 $document=$_POST["Documento"];
 $pass=$_POST["Contraseña"];
-// $pass=hash('sha512',$pass);
+$pass=hash('sha512',$pass);
 
 $read=mysqli_query($conx, "SELECT * FROM usuarios WHERE Documento='$document' AND Contraseña='$pass'");
 $ok=mysqli_fetch_array($read);

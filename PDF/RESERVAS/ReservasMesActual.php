@@ -23,8 +23,8 @@ function Header()
     $this->Ln(20);
  
    //las sumas de los primeros valoren deben dar un total de 80 por tamaño
-   $this->Cell(108,10, 'Quién',1,0,'C',0);
-   $this->Cell(40,10, 'Dónde',1,0,'C',0);
+   $this->Cell(108,10, 'Quien',1,0,'C',0);
+   $this->Cell(40,10, 'Donde',1,0,'C',0);
    $this->Cell(17,10, 'N.Entr',1,0,'C',0);
    $this->Cell(25,10, 'Precio',1,1,'C',0);
  

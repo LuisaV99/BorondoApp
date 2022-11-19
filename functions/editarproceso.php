@@ -5,6 +5,8 @@ $Nombres=$_POST["Nombres"];
 $Apellidos=$_POST["Apellidos"];
 $Correo=$_POST["Correo"];
 $Contraseña=$_POST["Contraseña"];
+$Contraseña=hash('sha512',$Contraseña);
+
 $Documento=$_POST["Documento"];
 $FechaRg=$_POST["FechaRg"];
 

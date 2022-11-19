@@ -12,13 +12,11 @@
 <link rel="stylesheet" type="text/css" href="css/nav.css">
 <!--===============================================================================================-->
 </head>
-<header>
 
-</header>
 
 <body>
 	<ul class="nav_links">
-		<li><a href="./login.php" class="navlink" style="font-size: 15px; text-overflow:ellipsis; white-space:pre;">Iniciar Sesión</a></li>
+		<li><a href="./InicioSesion.php" class="navlink" style="font-size: 15px; text-overflow:ellipsis; white-space:pre;">Iniciar Sesión</a></li>
 		/
 		<li><a href="./Registro.php" class="navlink" style="font-size: 15px; text-overflow:ellipsis; white-space:pre;">Registrarme</a></li>
 	</ul>

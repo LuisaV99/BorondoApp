@@ -93,7 +93,7 @@ try {
 }
 
 if($rsl){
-    echo "<script>alert('Pqrs contestada');window.history.go(-1);</script>";
+    echo "<script>alert('Respuesta enviada 🎇');location='../Adminpqrs.php';</script>";
 }else{
-    echo "<script>alert('No se pudo actualizar');window.history.go(-1);</script>";
+    echo "<script>alert('Algo salio mal :C');window.history.go(-1);</script>";
 }

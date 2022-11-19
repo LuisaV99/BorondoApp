@@ -34,3 +34,30 @@
 .logo-boro {
     width: 50%;
 }
+.contep{
+    margin-bottom: 2px;
+}
+
+.contenido {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+  @media (max-width: 1000px) {
+  
+    .Factura  {
+      width: 60%;
+    }
+  
+  
+  }
+
+  @media (max-width: 670px) {
+  
+    .Factura  {
+      width: 85%;
+    }
+  
+  
+  }

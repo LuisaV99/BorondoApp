@@ -113,7 +113,7 @@ include 'templates/navbar.php';
 				<hr style="height: 1px;">
 				<p class="explain"><strong> Reserva</strong> a tu lugar favorito.</p></div>
 
-		  <div class="block3"><a  class="botones" href="#conoce">  <img src="images/Conoce.png" class="imgbt" alt="" width="35px">Conoce</a>
+		  <div class="block3"><a  class="botones" href="#conocer">  <img src="images/Conoce.png" class="imgbt" alt="" width="35px">Conoce</a>
 			<hr style="height: 1px">
 			<p class="explain"><strong>Conoce </strong>más sobre BorondoAPP.</p></div>
 
@@ -121,10 +121,13 @@ include 'templates/navbar.php';
 			<hr style="height: 1px">
 			<p class="explain"><strong>Contacta </strong>con nosotros.</p></div></li>
 
+			<a name="conocer" id="conocer"></a>
+
 			<br>
-		  
+			
 			<div class="bloque2">
-				<br><br>
+			
+				<br>
 			<center><h1 class="titulobloque21"><strong> Descubramos juntos</strong></h1></center>
 			<br>
 

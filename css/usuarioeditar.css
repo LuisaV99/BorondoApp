@@ -10,7 +10,7 @@
   justify-content: center;
   align-content: center;
   align-items: center;
-  height: 100vh;
+  height: auto;
   background-image: url(https://m.eltiempo.com/uploads/2018/06/06/5b177c3b22c8e.jpeg);
   /* background-repeat: no-repeat; */
   background-size: cover;
@@ -31,6 +31,7 @@
 
   background-color: transparent;
   position: relative;
+  padding-bottom: 6%;
 }
 
 .wrap-formulario {
@@ -43,7 +44,7 @@
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 48px;
+  margin-top: 5%;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
@@ -140,3 +141,28 @@ a.btn1:hover{
     transform: rotateY(-2px);
 
 } */
+
+
+
+
+
+@media (max-width: 800px) {
+  
+  .formulario {
+    
+    width: 70%;
+  }
+  
+
+
+}
+@media (max-width: 500px) {
+  
+  .formulario {
+    
+    width: 100%;
+  }
+  
+
+
+}

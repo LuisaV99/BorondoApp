@@ -1,7 +1,7 @@
 <?php
 
 if (!isset($_SESSION['Documento'])) {
-  echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
+  echo "<script>alert('Debes iniciar sesion');location='InicioSesion.php';</script>";
   session_destroy();
   die();
 }

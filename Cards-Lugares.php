@@ -1,11 +1,28 @@
 <?php
+
+include("model/conexion.php");
+
 session_start();
-if (!isset($_SESSION['Documento'])) {
-  echo "<script>alert('Debes iniciar sesión');location='login.php';</script>";
-  session_destroy();
-  die();
+if(!isset($_SESSION['Documento'])){
+
+	$document=0;
+
+}else{
+	$document=$_SESSION['Documento'];
+
+$inactiv="SELECT * FROM usuarios WHERE Documento='$document' AND ID_Estado_Usuario='2'";
+$inactivresult= mysqli_query($conx,$inactiv);
+
+if(mysqli_num_rows($inactivresult) == 1) {
+	echo "<script>alert('Tu cuenta se encuentra deshabilitada');location='./functions/cerrar.php';</script>";
+}else{
+  
 }
-$document = $_SESSION['Documento'];
+
+
+
+
+}
 
 $bus=$_GET['bus'];
 
@@ -25,24 +42,8 @@ if ($bus == "1") {
     }
 }
 
-include("model/conexion.php");
 
-$inactiv="SELECT * FROM usuarios WHERE Documento='$document' AND ID_Estado_Usuario='2'";
-$inactivresult= mysqli_query($conx,$inactiv);
 
-if(mysqli_num_rows($inactivresult) == 1) {
-	echo "<script>alert('Tu cuenta se encuentra deshabilitada');location='./functions/cerrar.php';</script>";
-}else{
-  
-}
-
-$rol = "SELECT * FROM usuarios WHERE Documento='$document' AND ID_Rol='1'";
-$result = mysqli_query($conx, $rol);
-
-if (mysqli_num_rows($result) == 1) {
-} else {
-  echo "<script>alert('No tienes permisos de entrar aqui');location='index.php';</script>";
-}
 
 
 
@@ -92,28 +93,34 @@ if (mysqli_num_rows($result) == 1) {
             <div class="container-content">
                 <p class="titulo"><?php echo $row['Nombre'] ?></p>
                 <p class="titulos">(<?php echo $row['Nom_Ciudad'] ?>)</p>
-                <p class="container-information"><?php echo $row['Descripcion1'] ?></p>
-                <p class="container-information">Costo:$<?php echo $row['Costo'] ?></p>
+                <p class="container-information" id="des"><?php echo $row['Descripcion1'] ?></p>
                 
                 
                
 
                 <!-- Boton -->
 
-                <div class="moreinfo">
+                
+                
+            </div>
 
-                <a href="./Reservar.php?id=<?php echo $row['ID_Lugar']; ?>" class="buttom">Detalles</a>
+            <div class="moreinfo">
+
+                <a href="./Reservar.php?id=<?php echo $row['ID_Lugar']; ?>" class="buttom">Reservar</a>
 
                 <div class="submoreinfo">
 
-                <p class="container-information">Reservado:</p> <a aria-disabled="" class="titulos"> <strong><?php echo $row['Num_Borondo']; ?></strong></a>
+                <p class="container-information" id="reservas">Reservas:</p> <a aria-disabled="" class="titulos" id="reservasN"> <strong><?php echo $row['Num_Borondo']; ?></strong></a>
 
 
                 </div>
 
-                </div>
                 
-            </div>
+
+                </div>
+                <p id="costo" class="container-information">Costo:$<?php echo $row['Costo'] ?> </p>
+
+
         </article>
 <?php } ?>
     </section>

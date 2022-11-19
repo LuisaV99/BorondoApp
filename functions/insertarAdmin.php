@@ -2,14 +2,18 @@
 include ("../model/conexion.php");
 
 $Documento = $_POST["Documento"];
+$ID_Estado_Usuario= 1;
+
 $Nombres = $_POST["Nombres"];
 $Apellidos = $_POST["Apellidos"];
 $Correo = $_POST["Correo"];
 $Contraseña = $_POST["Contraseña"];
+$Contraseña=hash('sha512',$Contraseña);
+
 $ID_Rol= 2;
 
 
-$create="INSERT INTO usuarios (Documento, Nombres, Apellidos, Correo,Contraseña, ID_Rol) VALUES ('$Documento','$Nombres','$Apellidos','$Correo','$Contraseña','$ID_Rol')";
+$create="INSERT INTO usuarios (Documento, ID_Estado_Usuario, Nombres, Apellidos, Correo,Contraseña, ID_Rol) VALUES ('$Documento','$ID_Estado_Usuario','$Nombres','$Apellidos','$Correo','$Contraseña','$ID_Rol')";
 $result=mysqli_query($conx,$create);
 
 if($result){

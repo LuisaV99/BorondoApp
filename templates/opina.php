@@ -38,7 +38,7 @@ include("model/conexion.php");
         <br>
         <h2 class="aches">Aquí siempre valoramos tu opinión</h2>
         <h4 class="achesp">Inicia Sesión para que podamos conocer tu experiencia y brindar un mejor servicio cada día.</h4>
-        <a href="./Login.php"><button class="sendopi" type="summit">Iniciar Sesión</button></a>
+        <a href="./InicioSesion.php"><button class="sendopi" type="summit">Iniciar Sesión</button></a>
     </div>
 
     <script src="/JS/Footer.js"></script>

@@ -158,20 +158,44 @@
   .container-information {
     text-align: center;
     position: relative;
-    font-size: 9px;
+    font-size: 13px;
     margin-bottom: 15px;
+  }
+
+  .block1 {
+    margin: auto;
+    background: #fff;
+    border-radius: 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+  
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 3px 5px 15px;
+
+    width: 70%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    padding: 10px 10px 0px 10px;
+    border-bottom: 8px solid #f1c50d;
+
   }
   
   .buttom {
     position: absolute;
     width: 120px;
     height: 31px;
-    padding: 6px;
+    padding: 4px;
     left: calc(50% - 60px);
     margin-top: -5px;
     font-weight: bold;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 14px;
     text-align: center;
     border-radius: 8px;
     color: white;

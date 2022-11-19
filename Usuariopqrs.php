@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['Documento'])) {
-  echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
+  echo "<script>alert('Debes iniciar sesion');location='InicioSesion.php';</script>";
   session_destroy();
   die();
 }
@@ -23,6 +23,17 @@ if(mysqli_num_rows($inactivresult) == 1) {
   
 }
 
+
+$rol = "SELECT * FROM usuarios WHERE Documento='$document' AND ID_Rol=!'1'";
+$result = mysqli_query($conx, $rol);
+
+if (mysqli_num_rows($result) == 1) {
+} else {
+  echo "<script>alert('No tienes permisos de entrar aqui');location='index.php';</script>";
+}
+
+
+$contador=0;
 
 ?>
 
@@ -57,7 +68,7 @@ if(mysqli_num_rows($inactivresult) == 1) {
 
 </head>
 
-<div>
+<div style="position: fixed; width:100%; z-index: 2">
 
 <?php 
 
@@ -94,7 +105,7 @@ include 'templates/navbar.php';
         </div>
         <!-- </section> -->
 
-        <a href="./index.php#footer"><button  class="bperfil">Hacer una pqrs</button></a>
+        <a href="./index.php#footer" class="haceruna"><button  class="bperfil">Hacer una pqrs</button></a>
 
 
 
@@ -108,10 +119,15 @@ include 'templates/navbar.php';
           <tbody>
             <?php
             $show = mysqli_query($conx, $pqrs);
-            while ($row = mysqli_fetch_assoc($show)) { ?>
+            while ($row = mysqli_fetch_assoc($show)) { 
+              
+
+              $contador=$contador + 1;
+              
+              ?>
               <tr>
 
-                <td data-label="TIPO"><?php echo $row['ID_Pqrs'] ?></td>
+                <td data-label="TIPO"><?php echo $contador ?></td>
                
                 <td data-label="TIPO"><?php echo $row['Nom_Tipopqrs'] ?></td>
                

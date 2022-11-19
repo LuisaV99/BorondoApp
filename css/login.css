@@ -6,14 +6,14 @@
 body, html {
 	height: 100%;
   font-family: Open Sans, sans-serif;
-  background-image: url(https://images.pexels.com/photos/185933/pexels-photo-185933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-image: url(../images/fondologinregistro.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   object-fit: cover;
-  min-width: 100vh;
 }
+
 .contenedor-login {
   width: 100%;  
   display: -webkit-box;
@@ -51,15 +51,14 @@ body, html {
   width: auto;
   background: #fff;
   border-radius: 10px;
-  overflow: hidden;
   
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  justify-content:right;
   padding: 30px 30px;
   padding-bottom: 1%;
   box-shadow: #555454 5px 5px 5px 5px;
@@ -78,7 +77,6 @@ body, html {
 }
 .formulario{
   justify-content: center;
-  margin-right: 10px;
   padding: 20px 20px;
   padding-left: 30px;
 }
@@ -389,4 +387,11 @@ button.btn-modal:hover{
   background-color: #fa8303;
   border: solid 1px #fa8303;
   /* transform: translateY(-2px); */
+}
+
+@media (max-width: 434px) {
+
+  .habili {
+   width: 90%;
+  }
 }

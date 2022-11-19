@@ -40,7 +40,7 @@ button.bperfil:hover {
 }
 .BorondoMan {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   align-content: center;
   margin-top: 3%;

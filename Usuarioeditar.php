@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['Documento'])) {
-    echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
+    echo "<script>alert('Debes iniciar sesion');location='InicioSesion.php';</script>";
     session_destroy();
     die();
 }
@@ -18,6 +18,15 @@ if(mysqli_num_rows($inactivresult) == 1) {
 	echo "<script>alert('Tu cuenta se encuentra deshabilitada');location='./functions/cerrar.php';</script>";
 }else{
   
+}
+
+
+$rol = "SELECT * FROM usuarios WHERE Documento='$document' AND ID_Rol=!'1'";
+$result = mysqli_query($conx, $rol);
+
+if (mysqli_num_rows($result) == 1) {
+} else {
+  echo "<script>alert('No tienes permisos de entrar aqui');location='index.php';</script>";
 }
 
 
@@ -87,7 +96,7 @@ include 'templates/Navbar.php';
                             <span class="focus-input100"></span>
                         </div>
                         <div class="wrap-inputs validate-input" data-validate="Ingresa una contraseña">
-                            <input class="inputs-general" type="varchar" name="Contraseña" placeholder="Contraseña" minlength="5" maxlength="14" required value="<?php echo $row["Contraseña"]; ?>">
+                            <input class="inputs-general" type="varchar" name="Contraseña" placeholder="Contraseña" minlength="8" maxlength="" required >
                             <span class="focus-input100"></span>
                         </div>
                         <!-- <div class="wrap-inputs validate-input" data-validate="Ingresa un correo válido">

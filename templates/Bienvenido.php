@@ -24,9 +24,7 @@ include("model/conexion.php");
 <link rel="stylesheet" type="text/css" href="css/nav.css">
 <!--===============================================================================================-->
 </head>
-<header>
 
-</header>
 
 <body>
 
@@ -61,6 +59,8 @@ include("model/conexion.php");
 		}
 
 		?>
+
+
 
 
 

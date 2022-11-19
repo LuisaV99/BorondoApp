@@ -8,6 +8,7 @@ $name=$_POST["Nombres"];
 $lastname=$_POST["Apellidos"];
 $email=$_POST["Correo"];
 $pass=$_POST["Contraseña"];
+$pass=hash('sha512',$pass);
 $ID_Rol= 1;
 
 
@@ -22,7 +23,7 @@ if ($vali3 !=0) {
 $result=mysqli_query($conx,$create);
 
 if($result){
-    echo "<script>alert('Registro Guardado');location='../Login.php';</script>";
+    echo "<script>alert('Registro Guardado');location='../InicioSesion.php';</script>";
 }else{
     echo "<script>alert('No se pudo registrar');window.history.go(-1);</script>";
 }

@@ -4,7 +4,7 @@
 
  session_start();
  if (!isset($_SESSION['Documento'])) {
-   echo "<script>alert('Debes iniciar sesión');location='login.php';</script>";
+   echo "<script>alert('Debes iniciar sesión');location='InicioSesion.php';</script>";
    session_destroy();
    die();
  }
@@ -22,7 +22,7 @@ $document=$_SESSION['Documento'];
    if (isset($ocultar)){
       session_start();
       session_destroy();
-      header('Location:../login.php');
+      header('Location:../InicioSesion.php');
    }else {
       echo "Función eliminar no lograda";
    }

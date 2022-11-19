@@ -72,7 +72,7 @@ include("model/conexion.php");
                   </div>
                   <div class="list-nav-1">
                     <span><a href="./registro.php">Registro</a></span>
-                    <span><a href="Login.php">Inicio Sesión</a></span>
+                    <span><a href="./InicioSesion.php">Inicio Sesión</a></span>
                   </div>
             </div>
             

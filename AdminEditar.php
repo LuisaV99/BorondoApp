@@ -5,7 +5,7 @@ $id = $_GET['id'];
 
 session_start();
 if (!isset($_SESSION['Documento'])) {
-    echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
+    echo "<script>alert('Debes iniciar sesion');location='InicioSesion.php';</script>";
     session_destroy();
     die();
 }
@@ -102,7 +102,7 @@ include 'templates/navbar.php';
 
 
                                 <div for="txtSoloLetras" class="wrap-input10 validate-input" data-validate="Ingresa un nombre válido" style="margin-top: 2%;">
-                                    <input class="input100" type="text" name="Contraseña" placeholder="Contraseña" required value="<?php echo $row["Contraseña"]; ?>">
+                                    <input class="input100" type="text" name="Contraseña" placeholder="Contraseña" required>
                                     <span class="focus-input100"></span>
                                     <span class="symbol-input100">
                                         <i class="fa-solid fa fa-air-condition" aria-hidden="true"></i>

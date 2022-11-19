@@ -983,6 +983,12 @@ section {
 }
 
 
+.check:hover {
+  color: orange;
+  text-decoration: none;
+}
+
+
 .reser {
   color: #fff;
 
@@ -1195,15 +1201,6 @@ ul {
   
 }
 
-.botones2{
-  display: block;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-left: 95px;
-  margin-right: 95px;
-
-}
 
 .navlink {
   font-size: large;
@@ -1355,6 +1352,7 @@ ul {
   .botones {
     font-size: 11px;
     height: 29px;
+    display: flex;
   }
 
   .explain {
@@ -2019,15 +2017,7 @@ header {
   text-decoration: none;
 }
 
-.botones2 {
-  display: block;
-  color: white;
-  padding: 2px 12px 2px 12px;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-left: 95px;
-  margin-right: 95px;
-}
+
 button {
   outline: none !important;
   border: none;

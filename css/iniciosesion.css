@@ -10,6 +10,12 @@ body {
   width: 100%;
   margin: 0 auto;
 }
+
+.txt1{
+  font-family: Open Sans, sans-serif;
+  color: #666666;
+}
+
 .contenedor-formulario {
   width: 100%;
   display: -webkit-box;
@@ -21,9 +27,10 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  margin-top: 4%;
+  margin-bottom: 6%;
 }
 .wrap-formulario {
-  width: 850px;
   margin: auto;
   background: #fff;
   border-radius: 10px;
@@ -33,12 +40,13 @@ body {
   display: -ms-flexbox;
   display: flex;
 
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  /* flex-wrap: wrap; */
+  justify-content: center;
   align-items: center;
   padding: 10px;
   box-shadow: 3px 5px 15px;
 }
+
 .logo-formulario {
   width: auto;
 }
@@ -59,7 +67,7 @@ body {
   color: #333333;
   line-height: 1.2;
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
   width: 100%;
   display: block;
   font-weight: bolder;
@@ -147,6 +155,24 @@ button.btn:hover {
   color: #fa8303;
 }
 
+.inputs-generalpop {
+  font-family: Open Sans, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666666;
+  text-align:left;
+  display: flex;
+  width: 100%;
+  background: #e6e6e6;
+  height: 40px;
+  border-radius: 25px;
+  padding: 0 10px 0 68px;
+  border: 1px #666666;
+  margin-bottom: 2%;
+
+}
+
+
 /* responsive */
 @media (max-width: 1200px) {
   #logo {
@@ -154,8 +180,10 @@ button.btn:hover {
     margin: 0 0 35px 0;
   }
 
-  .formulario {
-    width: 500px;
+ 
+
+  .titulo-formulario {
+    padding: 10px;
   }
 
   .contenedor-formulario {
@@ -179,11 +207,29 @@ button.btn:hover {
 
 @media (max-width: 882px) {
   .wrap-formulario {
-    width: 100%;
 
-    gap: 7px;
+  flex-wrap: wrap;
+   gap: 7px;
     padding: 3px;
   }
+
+  .formulario {
+    padding: 0 0 20px 0;
+  }
+
+  #logo {
+    margin: 0;
+  }
+
+}
+
+@media (max-width: 408px) {
+  
+  .text-new {
+    display: grid;
+  }
+
+
 }
 
 .text-new {

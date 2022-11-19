@@ -110,7 +110,7 @@ body {
 .container-card {
   position: relative;
   background-color: white;
-  width: 58%;
+  width: 92%;
   min-width: 288px;
   max-width: 353px;
   min-height: 267px;
@@ -120,6 +120,7 @@ body {
   box-shadow: 5px 5px 19px rgb(0 0 0);
   border-bottom: 8px solid #f1c50d;
   padding: 15px;
+  padding-bottom: 10px;
 }
 
 .container-card .container-img {
@@ -140,19 +141,24 @@ body {
 
 .container-content {
   margin-top: 80px;
-  padding: 15px 0px 0px 15px;
+  padding: 15px 0px 0px 0px;
+  height: 130px;
 }
 
 .titulo {
   margin-bottom: 6px;
   margin-top: 10px;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: bold;
-  line-height: 10px;
+  line-height: 17px;
   text-align: center;
   color: #4158d0;
 }
 
+
+#costo{
+  margin: 0;
+}
 .titulos {
   margin-bottom: 5px;
   margin-top: 0px;
@@ -163,20 +169,35 @@ body {
   color: #4158d0;
 }
 
+#reservas {
+  font-size: 11px;
+
+}
+
+#reservasN{
+  margin-top: 3px;
+  font-size: 13px;
+}
+
+
+
 .container-information {
   text-align: center;
   position: relative;
-  font-size: 9px;
+  font-size: 13px;
   margin-bottom: 15px;
-  height: 20px;
+  height: auto;
     width: 100%;
 }
 
+#des {
+  margin-bottom: 10px !important;
+}
 
 .moreinfo{
   display: flex;
   justify-content: space-evenly;
-
+  margin-top: 2%;
 }
 
 .submoreinfo{
@@ -188,12 +209,12 @@ body {
 .buttom {
   width: 120px;
   height: 31px;
-  padding: 6px;
+  padding: 4px;
   left: calc(50% - 60px);
   margin-top: -5px;
   font-weight: bold;
   text-decoration: none;
-  font-size: 10px;
+  font-size: 14px;
   text-align: center;
   border-radius: 8px;
   color: white;

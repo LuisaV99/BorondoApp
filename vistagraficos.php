@@ -1,12 +1,14 @@
-<?php
+<?php 
+
 session_start();
-if(!isset($_SESSION['Documento'])){
-
+if (!isset($_SESSION['Documento'])) {
+  echo "<script>alert('Debes iniciar sesión');location='InicioSesion.php';</script>";
+  session_destroy();
+  die();
 }
+$document = $_SESSION['Documento'];
+$users = "SELECT * FROM usuarios WHERE Documento='$document'";
 
-// print_r($_SESSION);
-
-include("model/conexion.php");
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +26,7 @@ include("model/conexion.php");
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- Style -->
-    <link rel="stylesheet" href="./css/graficos.css">
+    <link rel="stylesheet" href="css/graficos.css">
 </head>
 
 <body>
@@ -34,9 +36,11 @@ include 'templates/Navbar.php';
 
 ?>
 
-<div class="botones"><a href="./Adminpqrs.php" class="btn btn-danger">Regresar</a></div>
-
-
+<div class="botones" style="    
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;"            
+    ><a href="./Adminpqrs.php" class="btn btn-danger">Regresar</a></div>
     <!-- <nav class="navbar navbar-light bg-light shadow mb-20">
         <div class="container-fluid">
             <a class="" href="#">
@@ -100,7 +104,7 @@ include 'templates/Navbar.php';
                     <div class="card-header d-flex justify-content-around align-items-center flex-row" id="header-card">
                         <h5 class="mb-0 text-center">INFORME DE PQRS MENSUAL</h5>
                         <a class="d-flex align-items-center" onclick="descargarPDFMensual()">
-                            <span class="icon__download"></span>
+                            <span class="icon__download"><img src="./images/icons/Download.png" alt=""></span>
                         </a>
                     </div>
                     <div class="card-body d-flex justify-content-center">
@@ -460,11 +464,19 @@ include 'templates/Navbar.php';
         const canvas = document.getElementById('graficobarhorizontal');
         // create image
         const canvasImage = canvas.toDataURL('image/jpeg', 1.0);
+        const logo = new Image();
+        logo.src = './assets/blanco-logo.png';
         console.log(canvasImage)
         // image must go to PDF
         let pdf = new jsPDF('landscape');
         pdf.setFontSize(20);
-        pdf.addImage(canvasImage, 'JPEG', 15, 15, 100, 100);
+        pdf.addImage(logo, 'JPEG', 20, 5,30, 30);
+        pdf.addImage(canvasImage, 'JPEG', 95, 43, 100, 100);
+        pdf.setFontSize(14);
+        pdf.setTextColor(0,85,136);
+        pdf.setFont("helvetica");
+        pdf.setFontType("bold");
+        pdf.text('INFORME ANUAL DE PQRS', 115, 20);
         pdf.save('Graficos.pdf');
     };
 
@@ -481,13 +493,21 @@ include 'templates/Navbar.php';
         const canvas = document.getElementById('graficobar');
         //create image
         const canvasImage = canvas.toDataURL('image/jpeg', 1.0);
+        const logo = new Image();
+        logo.src = './assets/blanco-logo.png';
         console.log(canvasImage);
         // image muest to go PDF
 
         let pdf = new jsPDF('landscape');
         pdf.setFontSize(20);
-        pdf.addImage(canvasImage, 'JPEG', 15, 15, 100, 100);
-        // pdf.text(15, 15, "Diagrama Mensual")
+        pdf.addImage(logo, 'JPEG', 20, 5,30, 30);
+        pdf.addImage(canvasImage, 'JPEG', 95, 43, 100, 100);
+        pdf.setFontSize(14);
+        pdf.setTextColor(0,85,136);
+        pdf.setFont("helvetica");
+        pdf.setFontType("bold");
+        pdf.text('INFORME MENSUAL DE PQRS', 103, 20);
+        pdf.save('grafico1.pdf');
         pdf.save('salesrecords.pdf');
     }
 
@@ -505,13 +525,21 @@ include 'templates/Navbar.php';
         const canvas = document.getElementById('graficobar');
         //create image
         const canvasImage = canvas.toDataURL('image/jpeg', 1.0);
+        const logo = new Image();
+        logo.src = './assets/blanco-logo.png';
         console.log(canvasImage);
         // image muest to go PDF
 
         let pdf = new jsPDF('landscape');
         pdf.setFontSize(20);
-        pdf.addImage(canvasImage, 'JPEG', 15, 15, 100, 100);
-        // pdf.text(15, 15, "Diagrama Mensual")
+        pdf.addImage(logo, 'JPEG', 20, 5,30, 30);
+        pdf.addImage(canvasImage, 'JPEG', 95, 43, 100, 100);
+        pdf.setFontSize(14);
+        pdf.setTextColor(0,85,136);
+        pdf.setFont("helvetica");
+        pdf.setFontType("bold");
+        pdf.text('LUGARES MAS VISITADOS POR AÑO', 103, 20);
+        pdf.save('grafico1.pdf');
         pdf.save('salesrecords.pdf');
     }
 
@@ -529,13 +557,21 @@ include 'templates/Navbar.php';
         const canvas = document.getElementById('graficopolararea_parametro');
         //create image
         const canvasImage = canvas.toDataURL('image/jpeg', 1.0);
+        const logo = new Image();
+        logo.src = './assets/blanco-logo.png';
+
         console.log(canvasImage);
         // image muest to go PDF
 
         let pdf = new jsPDF('landscape');
         pdf.setFontSize(20);
-        pdf.addImage(canvasImage, 'JPEG', 15, 15, 100, 100);
-        // pdf.text(15, 15, "Diagrama Mensual")
+        pdf.addImage(logo, 'JPEG', 20, 5,30, 30);
+        pdf.addImage(canvasImage, 'JPEG', 95, 43, 100, 100);
+        pdf.setFontSize(14);
+        pdf.setTextColor(0,85,136);
+        pdf.setFont("helvetica");
+        pdf.setFontType("bold");
+        pdf.text('LUGARES MAS VISITADOS POR AÑO', 103, 20);
         pdf.save('grafico1.pdf');
     }
 
@@ -552,15 +588,25 @@ include 'templates/Navbar.php';
         const canvas = document.getElementById('graficodoughnut_parametro');
         //create image
         const canvasImage = canvas.toDataURL('image/jpeg', 1.0);
+        const logo = new Image();
+        logo.src = './assets/blanco-logo.png';
+        
+ 
+        
+        
         console.log(canvasImage);
         // image muest to go PDF
-
         let pdf = new jsPDF('landscape');
+        // pdf.text(35, 25, 'BorondoApp')
         pdf.setFontSize(20);
-        pdf.addImage(canvasImage, 'JPEG', 15, 15, 100, 100);
-        // pdf.text(15, 15,"Diagrama Mensual")
+        pdf.addImage(logo, 'JPEG', 20, 5,30, 30);
+        pdf.addImage(canvasImage, 'JPEG', 95, 43, 100, 100);
+        pdf.setFontSize(14);
+        pdf.setTextColor(0,85,136);
+        pdf.setFont("helvetica");
+        pdf.setFontType("bold");
+        pdf.text('LUGARES MAS VISITADOS POR AÑO', 103, 20);
         pdf.save('grafico2.pdf');
-
         // document.getElementById("graficobar").style.display = "none";
     }
 </script>

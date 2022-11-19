@@ -19,6 +19,15 @@ if (mysqli_num_rows($inactivresult) == 1) {
 } else {
 }
 
+
+$rol = "SELECT * FROM usuarios WHERE Documento='$document' AND ID_Rol=!'1'";
+$result = mysqli_query($conx, $rol);
+
+if (mysqli_num_rows($result) == 1) {
+} else {
+  echo "<script>alert('No tienes permisos de entrar aqui');location='index.php';</script>";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -80,18 +89,39 @@ if (mysqli_num_rows($inactivresult) == 1) {
 			<h1>Detalles</h1>
 			<p>Código de reserva: <?php echo $row['ID_Reserva'] ?></p>
 			<h5>Contenido</h5>
-			<p>Lugar: <?php echo $row['Nombre'] ?></p>
-			<p>Cantidad entradas: <?php echo $row['N_Entradas'] ?></p>
-			<p style="margin-bottom: 0;">Cuando: <?php echo $row['FechaRs'] ?></p>
-			<p class="descrip">Fecha de reserva</p>
-			<h5>Valor</h5>
-			<p>Total: $<?php echo $row['Total'] ?> COP</p>
+
+			<div class="contenido">
+				<div class="conte1"><p class="contep">Lugar:</p></div>
+				<div class="conte2"><p class="contep"><?php echo $row['Nombre'] ?></p></div>
+			</div>
+
+			<div class="contenido">
+				<div class="conte1"><p class="contep">No.Entradas:</p></div>
+				<div class="conte2"><p class="contep"><?php echo $row['N_Entradas'] ?></p></div>
+			</div>
+
+			<div class="contenido">
+				<div class="conte1"><p style="margin-bottom: 0;"  class="contep">Salida:</p>
+				</div>
+				<div class="conte2"><p class="contep"><?php echo $row['FechaRs'] ?></p></div>
+			</div>
+
+			<div class="contenido">
+				<div class="conte1"><h5>Valor:</h5></div>
+				<div class="conte2"><p class="contep"><strong>Total: $<?php echo $row['Total'] ?> COP</strong>  </p></div>
+			</div>
+			
+			 
+			 
+			
+			
+			
 
 			<hr width="100%">
 
 			<h3>Cómo pagar</h3>
 			<p>Número de cuenta: <strong> <?php echo $row['N_Cuenta'] ?> </strong> </p>
-			<img src="https://i0.wp.com/bixxus.com/wp-content/uploads/2022/06/nequi-logo-1.png?resize=1920%2C1842&ssl=1" alt="Oculto ajjajajja no sabia que esto se podia" width="45px" />
+			<img src="./images/nequii.png" alt="Oculto ajjajajja no sabia que esto se podia" width="45px" />
 
 			<hr width="100%">
 

@@ -1,13 +1,13 @@
 <?php
 session_start();
 if (!isset($_SESSION['Documento'])) {
-  echo "<script>alert('Debes iniciar sesión');location='login.php';</script>";
+  echo "<script>alert('Debes iniciar sesión');location='InicioSesion.php';</script>";
   session_destroy();
   die();
 }
 $document = $_SESSION['Documento'];
 $users = "SELECT * FROM usuarios WHERE Documento='$document'";
-$lugares = "SELECT * FROM lugares INNER JOIN `ciudades` ON lugares.ID_Ciudad=ciudades.ID_Ciudad";
+$lugares = "SELECT * FROM lugares INNER JOIN `ciudades` ON lugares.ID_Ciudad=ciudades.ID_Ciudad ";
 // print_r($_SESSION);
 
 
@@ -41,14 +41,12 @@ if (mysqli_num_rows($result) == 1) {
   <!-- CSS STYLE -->
   <link rel="stylesheet" href="./css/AdminAdmin.css" />
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/dataTables.bootstrap5.min.css">
   <link rel="stylesheet" href="./css/responsive.dataTables.min.css">
 
   <!-- CSS only -->
   <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
   <title>Administrador</title>
 </head>

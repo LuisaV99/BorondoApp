@@ -86,7 +86,7 @@ if (isset($_SESSION['Documento'])) {
 						<div class="text-new">
 							<b><label style="font-size: 12px;">¿Ya eres usuario?</label></b>
 							</br>
-							<a class="txt2" href="Login.php">
+							<a class="txt2" href="InicioSesion.php">
 								Iniciar Sesión
 								<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 							</a>

@@ -294,7 +294,6 @@ justify-content: center;
 
 .Administrador {
     display: flex;
-    align-items: center;
     justify-content: center;
     align-content: center;
     margin-top: 5%;
@@ -333,7 +332,6 @@ justify-content: center;
 .container-table {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     align-content: center;
     flex-wrap: wrap;

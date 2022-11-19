@@ -1,32 +1,50 @@
 <?php
-session_start();
-if (!isset($_SESSION['Documento'])) {
-    echo "<script>alert('Debes iniciar sesion');location='login.php';</script>";
-    session_destroy();
-    die();
-}
-
-$document = $_SESSION['Documento'];
-$lugares = "SELECT * FROM lugares";
-
 
 include("model/conexion.php");
 
-$inactiv = "SELECT * FROM usuarios WHERE Documento='$document' AND ID_Estado_Usuario='2'";
-$inactivresult = mysqli_query($conx, $inactiv);
+session_start();
+if(!isset($_SESSION['Documento'])){
 
-if (mysqli_num_rows($inactivresult) == 1) {
-    echo "<script>alert('Tu cuenta se encuentra deshabilitada');location='./functions/cerrar.php';</script>";
-} else {
+	$document=0;
+
+}else{
+	$document=$_SESSION['Documento'];
+
+$inactiv="SELECT * FROM usuarios WHERE Documento='$document' AND ID_Estado_Usuario='2'";
+$inactivresult= mysqli_query($conx,$inactiv);
+
+if(mysqli_num_rows($inactivresult) == 1) {
+	echo "<script>alert('Tu cuenta se encuentra deshabilitada');location='./functions/cerrar.php';</script>";
+}else{
+  
 }
 
-$rol = "SELECT * FROM usuarios WHERE Documento='$document' AND ID_Rol='1'";
-$result = mysqli_query($conx, $rol);
 
-if (mysqli_num_rows($result) == 1) {
-} else {
-  echo "<script>alert('No tienes permisos de entrar aqui');location='index.php';</script>";
+
 }
+
+
+// session_start();
+// if (!isset($_SESSION['Documento'])) {
+//     echo "<script>alert('Debes iniciar sesion');location='InicioSesion.php';</script>";
+//     session_destroy();
+//     die();
+// }
+
+// $document = $_SESSION['Documento'];
+// $lugares = "SELECT * FROM lugares";
+
+
+// include("model/conexion.php");
+
+// $inactiv = "SELECT * FROM usuarios WHERE Documento='$document' AND ID_Estado_Usuario='2'";
+// $inactivresult = mysqli_query($conx, $inactiv);
+
+// if (mysqli_num_rows($inactivresult) == 1) {
+//     echo "<script>alert('Tu cuenta se encuentra deshabilitada');location='./functions/cerrar.php';</script>";
+// } else {
+// }
+
 
 ?>
 <!DOCTYPE html>
@@ -57,10 +75,19 @@ if (mysqli_num_rows($result) == 1) {
     ?>
     <br><br><br>
 
-
     <div class="contentitulo">
         <h1 class="TituloCard">Bienvenido, quieres ver los lugares...</h1>
     </div>
+
+<div class="block1">
+    
+   
+<p>
+    <img src="./images/alerta.png" alt="Advertencia" width="30">
+    <strong>Antes de continuar con tu reserva</strong> debes tener en cuenta aspectos como, tu reserva como minimo deberá tener un día de antelación, tu reserva una vez realizada no se podrá eliminar y solo se realizara una vez se transfiera el pago.
+</p>
+
+</div>
     <section class="container-padre">
 
 
@@ -70,7 +97,7 @@ if (mysqli_num_rows($result) == 1) {
                 <img height="50px" src="./images/cafe-2020.jpg">
             </div>
             <div class="container-content">
-                <p class="titulo">Más Populares</p>
+                <p class="titulo">Más Reservados</p>
                 <p class="container-information">Ver los lugares más visitados por los demás usuarios de BorondoApp</p>
                 <!-- Boton -->
                 <a href="./Cards-Lugares.php?bus=1" class="buttom">IR</a>
